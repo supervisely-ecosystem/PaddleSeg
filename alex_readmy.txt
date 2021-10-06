@@ -1,0 +1,9 @@
+1) Open new project in pycharm
+
+2) Install requirements in venv
+
+3) Download hrnet18_ocr64_cocolvis.pdparams or hrnet18s_ocr48_cocolvis.pdparams from site
+
+4) In pycharm terminal run: sudo apt install libxcb-xinerama0
+
+5) Run: PaddleSeg/contrib/EISeg/eiseg/exe.py
