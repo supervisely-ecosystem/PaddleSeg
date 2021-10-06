@@ -111,5 +111,10 @@ venv.bak/
 # js
 node_modules/
 package-lock.json
-test_tipc/web/models/
+*.png
+*.jpg
+hrnet18_ocr64_cocolvis.pdparams
+hrnet18s_ocr48_cocolvis.pdparams
+images
+debug.env
 secret_debug.env

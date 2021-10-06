@@ -8,4 +8,16 @@ tqdm
 filelock
 scipy
 prettytable
-sklearn
+eiseg
+paddlepaddle
+pyqt5
+qtpy
+opencv-python
+scipy
+paddleseg
+albumentations
+cython
+pyyaml
+wget
+supervisely == 6.1.98
+diskcache==5.2.1
