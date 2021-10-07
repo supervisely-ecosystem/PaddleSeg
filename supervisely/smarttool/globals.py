@@ -2,7 +2,6 @@ import os
 import supervisely_lib as sly
 from diskcache import Cache
 from supervisely_lib.io.fs import mkdir
-#from ui import Ui_EISeg
 from contrib.EISeg.eiseg.ui import Ui_EISeg
 from util import MODELS
 from supervisely_lib.io.fs import download
@@ -46,7 +45,6 @@ mkdir(param_dir)
 prob_thresh = float(os.environ['modal.state.thresh'])
 param_name = os.environ['modal.state.modelName'] + '.pdparams'
 
-#param_name = 'hrnet18_ocr64_cocolvis.pdparams'
 param_path = os.path.join(param_dir, param_name)
 
 if param_name == 'hrnet18_ocr64_cocolvis.pdparams':
@@ -56,12 +54,10 @@ else:
     model_name = 'HRNet18s_OCR48'
     model_link = 'https://bj.bcebos.com/paddleseg/dygraph/interactive_segmentation/ritm/hrnet18s_ocr48_cocolvis.pdparams'
 
-my_app.logger.warn("77777777 {}".format(param_name))
 download_file_from_link(api, model_link, param_path, param_name, f"Download {param_name}", my_app.logger)
 
 model = MODELS[model_name]()
 model.load_param(param_path)
 
-#prob_thresh = 0.5
 my_predictor_params = {"brs_mode": "NoBRS", "zoom_in_params": {"skip_clicks": -1, "target_size": (400, 400), "expansion_ratio": 1.4},
                        "predictor_params": {"net_clicks_limit": None, "max_size": 800}}
