@@ -1,12 +1,9 @@
-import functools, os
-import functions as f
-import supervisely_lib as sly
-import globals as g
-
-
 # ROOTS
 import sys
 from pathlib import Path
+import supervisely_lib as sly
+import functools, os
+
 
 repo_root_source_dir = str(Path(sys.argv[0]).parents[2])
 sly.logger.info(f"Repo root source directory: {repo_root_source_dir}")
@@ -19,6 +16,10 @@ sys.path.append(app_root_source_dir)
 sources_dir = str(Path(sys.argv[0]).parents[0])
 sly.logger.info(f"Source directory: {sources_dir}")
 sys.path.append(sources_dir)
+
+
+import globals as g
+import functions as f
 
 
 def send_error_data(func):
