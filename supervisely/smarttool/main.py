@@ -8,13 +8,17 @@ import globals as g
 import sys
 from pathlib import Path
 
-root_source_dir = str(Path(sys.argv[0]).parents[1])
-sly.logger.info(f"Root source directory: {root_source_dir}")
-sys.path.append(root_source_dir)
+repo_root_source_dir = str(Path(sys.argv[0]).parents[2])
+sly.logger.info(f"Repo root source directory: {repo_root_source_dir}")
+sys.path.append(repo_root_source_dir)
 
-sly_sources_dir = str(Path(sys.argv[0]).parents[0])
-sly.logger.info(f"Source directory: {sly_sources_dir}")
-sys.path.append(sly_sources_dir)
+app_root_source_dir = str(Path(sys.argv[0]).parents[1])
+sly.logger.info(f"App root source directory: {app_root_source_dir}")
+sys.path.append(app_root_source_dir)
+
+sources_dir = str(Path(sys.argv[0]).parents[0])
+sly.logger.info(f"Source directory: {sources_dir}")
+sys.path.append(sources_dir)
 
 
 def send_error_data(func):
