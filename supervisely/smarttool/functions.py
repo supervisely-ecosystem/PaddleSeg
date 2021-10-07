@@ -55,9 +55,6 @@ def get_bitmap_from_points(pos_points, neg_points, image, crop_list):
     result_mask = np.zeros(image.shape[:2], dtype=np.uint8)
     result_mask[y1:y2, x1:x2] = mask[y1:y2, x1:x2]
 
-    #import cv2
-    #cv2.imwrite('test.png', result_mask*255)
-
     bool_mask = np.array(result_mask, dtype=bool)
     bitmap = sly.Bitmap(bool_mask)
     return bitmap
