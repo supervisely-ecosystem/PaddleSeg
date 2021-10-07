@@ -26,6 +26,8 @@ WORKSPACE_ID = int(os.environ['context.workspaceId'])
 PROJECT_ID = int(os.environ["modal.state.slyProjectId"])
 TASK_ID = int(os.environ["TASK_ID"])
 
+cache_item_expire_time = 600
+
 storage_dir = os.path.join(my_app.data_dir, "storage_dir")
 mkdir(storage_dir, True)
 work_dir = os.path.join(storage_dir, "work_dir")
