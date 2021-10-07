@@ -42,17 +42,26 @@ mkdir(cache_dir)
 
 param_dir = os.path.join(storage_dir, "param_dir")
 mkdir(param_dir)
-param_name = 'hrnet18_ocr64_cocolvis.pdparams'
+
+prob_thresh = float(os.environ['modal.state.thresh'])
+param_name = os.environ['modal.state.modelName']
+
+#param_name = 'hrnet18_ocr64_cocolvis.pdparams'
 param_path = os.path.join(param_dir, param_name)
 
-modelName = 'HRNet18_OCR64'
-model_link = 'https://bj.bcebos.com/paddleseg/dygraph/interactive_segmentation/ritm/hrnet18_ocr64_cocolvis.pdparams'
+if param_name == 'hrnet18_ocr64_cocolvis.pdparams':
+    model_name = 'HRNet18_OCR64'
+    model_link = 'https://bj.bcebos.com/paddleseg/dygraph/interactive_segmentation/ritm/hrnet18_ocr64_cocolvis.pdparams'
+else:
+    model_name = 'HRNet18s_OCR48'
+    model_link = 'https://bj.bcebos.com/paddleseg/dygraph/interactive_segmentation/ritm/hrnet18s_ocr48_cocolvis.pdparams'
+
 
 download_file_from_link(api, model_link, param_path, param_name, f"Download {param_name}", my_app.logger)
 
-model = MODELS[modelName]()
+model = MODELS[model_name]()
 model.load_param(param_path)
 
-prob_thresh = 0.5
+#prob_thresh = 0.5
 my_predictor_params = {"brs_mode": "NoBRS", "zoom_in_params": {"skip_clicks": -1, "target_size": (400, 400), "expansion_ratio": 1.4},
                        "predictor_params": {"net_clicks_limit": None, "max_size": 800}}
