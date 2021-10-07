@@ -2,7 +2,8 @@ import os
 import supervisely_lib as sly
 from diskcache import Cache
 from supervisely_lib.io.fs import mkdir
-from ui import Ui_EISeg
+#from ui import Ui_EISeg
+from contrib.EISeg.eiseg.ui import Ui_EISeg
 from util import MODELS
 from supervisely_lib.io.fs import download
 import requests
