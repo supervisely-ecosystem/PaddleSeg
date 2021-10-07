@@ -87,5 +87,5 @@ class HRNet18_OCR64(EISegModel):
             use_disks=True,
             norm_radius=5,
             with_prev_mask=True,
-            cpu_dist_maps=False,  # 目前打包cython有些问题，先默认用False
+            cpu_dist_maps=True,  # 目前打包cython有些问题，先默认用False
         )
