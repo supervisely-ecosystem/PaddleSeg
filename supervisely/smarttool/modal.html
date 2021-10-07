@@ -1,0 +1,19 @@
+<div>
+      <sly-card
+            class="mt15"
+            title="Choose parameters:"
+    >
+            <sly-field title="Model name:" style="margin: 0 10px 0 0;">
+            <el-select v-model="state.modelName" placeholder="Select model">
+                <el-option key="big" label="hrnet18_ocr64_cocolvis" value="hrnet18_ocr64_cocolvis.pdparams"></el-option>
+                <el-option key="small" label="hrnet18s_ocr48_cocolvis" value="hrnet18s_ocr48_cocolvis.pdparams"></el-option>
+            </el-select>
+            </sly-field>
+
+        <sly-field title="Segmentation Threshold" style="margin: 15px 10px 0 0;">
+        <el-slider v-model="state.thresh" :min="0" :max="1" :step="0.01" show-input></el-slider>
+    </sly-field>
+
+      </sly-card>
+
+</div>

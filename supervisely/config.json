@@ -7,6 +7,8 @@
   "description": "",
   "docker_image": "supervisely/base-py-sdk:6.1.97",
   "main_script": "supervisely/smarttool/main.py",
+  "modal_template": "supervisely/smarttool/modal.html",
+  "modal_template_state": {"modelName": "hrnet18_ocr64_cocolvis", "thresh": 0.5},
   "task_location": "workspace_tasks",
   "icon": "https://i.imgur.com/P6BjsxA.png",
   "icon_background": "#FFFFFF",
