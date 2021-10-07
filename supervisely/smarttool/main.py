@@ -4,6 +4,19 @@ import supervisely_lib as sly
 import globals as g
 
 
+# ROOTS
+import sys
+from pathlib import Path
+
+root_source_dir = str(Path(sys.argv[0]).parents[1])
+sly.logger.info(f"Root source directory: {root_source_dir}")
+sys.path.append(root_source_dir)
+
+sly_sources_dir = str(Path(sys.argv[0]).parents[0])
+sly.logger.info(f"Source directory: {sly_sources_dir}")
+sys.path.append(sly_sources_dir)
+
+
 def send_error_data(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
