@@ -44,7 +44,7 @@ param_dir = os.path.join(storage_dir, "param_dir")
 mkdir(param_dir)
 
 prob_thresh = float(os.environ['modal.state.thresh'])
-param_name = os.environ['modal.state.modelName']
+param_name = os.environ['modal.state.modelName'] + '.pdparams'
 
 #param_name = 'hrnet18_ocr64_cocolvis.pdparams'
 param_path = os.path.join(param_dir, param_name)
