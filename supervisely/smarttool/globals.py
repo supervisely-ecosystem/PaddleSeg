@@ -56,7 +56,7 @@ else:
     model_name = 'HRNet18s_OCR48'
     model_link = 'https://bj.bcebos.com/paddleseg/dygraph/interactive_segmentation/ritm/hrnet18s_ocr48_cocolvis.pdparams'
 
-
+my_app.logger.warn("77777777 {}".format(param_name))
 download_file_from_link(api, model_link, param_path, param_name, f"Download {param_name}", my_app.logger)
 
 model = MODELS[model_name]()
