@@ -42,16 +42,14 @@ def send_error_data(func):
 def smart_segmentation(api: sly.Api, task_id, context, state, app_logger):
 
     x1, y1, x2, y2 = f.get_smart_bbox(context["crop"])
-    bbox = sly.Rectangle(y1, x1, y2, x2) #new
+    bbox = sly.Rectangle(y1, x1, y2, x2)
     pos_points, neg_points = f.get_pos_neg_points_list_from_context(context)
-    pos_points, neg_points = f.get_pos_neg_points_list_from_context_bbox_relative(x1, y1, pos_points, neg_points)  #new
+    pos_points, neg_points = f.get_pos_neg_points_list_from_context_bbox_relative(x1, y1, pos_points, neg_points)
     img_path = os.path.join(g.img_dir, "base_image.png")
     base_image_np = f.get_image_by_hash(context["image_hash"], img_path)
-    crop_np = sly.image.crop(base_image_np, bbox)  #new
-
-    #bitmap = f.get_bitmap_from_points(pos_points, neg_points, base_image_np, (x1, y1, x2, y2))
-    bitmap = f.get_bitmap_from_points(pos_points, neg_points, crop_np) #new
-    bitmap_origin, bitmap_data = f.unpack_bitmap(bitmap)
+    crop_np = sly.image.crop(base_image_np, bbox)
+    bitmap = f.get_bitmap_from_points(pos_points, neg_points, crop_np)
+    bitmap_origin, bitmap_data = f.unpack_bitmap(bitmap, y1, x1)
 
     request_id = context["request_id"]
     g.my_app.send_response(request_id, data={"origin": bitmap_origin, "bitmap": bitmap_data, "success": True, "error": None})

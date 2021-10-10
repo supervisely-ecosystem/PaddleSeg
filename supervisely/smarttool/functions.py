@@ -51,42 +51,6 @@ def get_pos_neg_points_list_from_context(context):
     return pos_points_list, neg_points_list
 
 
-# def get_bitmap_from_points(pos_points, neg_points, image, crop_list):
-#
-#     mask = np.zeros(image.shape[:2], dtype=np.uint8)
-#
-#     my_predictor = get_predictor(g.model.model, **g.my_predictor_params)
-#     my_predictor.set_input_image(image)
-#     my_clicker = clicker.Clicker()
-#     for point in pos_points:
-#         click = clicker.Click(is_positive=True, coords=(point[1], point[0]))
-#         my_clicker.add_click(click)
-#     for point in neg_points:
-#         click = clicker.Click(is_positive=False, coords=(point[1], point[0]))
-#         my_clicker.add_click(click)
-#     pred = my_predictor.get_prediction(my_clicker)
-#
-#     object_mask = pred > g.prob_thresh
-#     mask[object_mask] = 1
-#
-#     x1, y1, x2, y2 = crop_list
-#     result_mask = np.zeros(image.shape[:2], dtype=np.uint8)
-#     result_mask[y1:y2, x1:x2] = mask[y1:y2, x1:x2]
-#
-#     bool_mask = np.array(result_mask, dtype=bool)
-#     bitmap = sly.Bitmap(bool_mask)
-#     return bitmap
-
-
-# def unpack_bitmap(bitmap):
-#     bitmap_json = bitmap.to_json()["bitmap"]
-#     bitmap_origin = bitmap_json["origin"]
-#     bitmap_origin = {"y": bitmap_origin[1], "x": bitmap_origin[0]}
-#
-#     bitmap_data = bitmap_json["data"]
-#     return bitmap_origin, bitmap_data
-
-
 def get_bitmap_from_points(pos_points, neg_points, image):
 
     mask = np.zeros(image.shape[:2], dtype=np.uint8)
