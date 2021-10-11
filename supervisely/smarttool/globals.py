@@ -50,10 +50,10 @@ param_path = os.path.join(param_dir, param_name)
 
 if param_name == 'hrnet18_ocr64_cocolvis.pdparams':
     model_name = 'HRNet18_OCR64'
-    model_link = 'https://bj.bcebos.com/paddleseg/dygraph/interactive_segmentation/ritm/hrnet18_ocr64_cocolvis.pdparams'
+    model_link = 'https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18_ocr64_cocolvis.pdparams'
 else:
     model_name = 'HRNet18s_OCR48'
-    model_link = 'https://bj.bcebos.com/paddleseg/dygraph/interactive_segmentation/ritm/hrnet18s_ocr48_cocolvis.pdparams'
+    model_link = 'https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18s_ocr48_cocolvis.pdparams'
 
 download_file_from_link(api, model_link, param_path, param_name, f"Download {param_name}", my_app.logger)
 
