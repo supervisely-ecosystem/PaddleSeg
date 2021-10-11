@@ -1,3 +1,4 @@
+supervisely == 6.1.98
 pre-commit
 yapf == 0.26.0
 flake8
@@ -19,5 +20,4 @@ albumentations
 cython
 pyyaml
 wget
-supervisely == 6.1.98
 diskcache==5.2.1
