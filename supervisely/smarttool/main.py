@@ -58,8 +58,7 @@ def smart_segmentation(api: sly.Api, task_id, context, state, app_logger):
 def main():
     sly.logger.info("Script arguments", extra={
         "context.teamId": g.TEAM_ID,
-        "context.workspaceId": g.WORKSPACE_ID,
-        "context.projectId": g.PROJECT_ID
+        "context.workspaceId": g.WORKSPACE_ID
     })
 
     g.my_app.run()
