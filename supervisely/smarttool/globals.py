@@ -65,6 +65,8 @@ if os.path.isfile(param_path) is False:
         model_link = 'https://bj.bcebos.com/paddleseg/dygraph/interactive_segmentation/ritm/hrnet18s_ocr48_cocolvis.pdparams'
 
     download_file_from_link(api, model_link, param_path, param_name, f"Download {param_name}", my_app.logger)
+else:
+    my_app.logger.info(f"{param_name} has been loaded from docker image")
 
 model = MODELS[model_name]()
 model.load_param(param_path)
