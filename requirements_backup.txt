@@ -13,11 +13,8 @@ eiseg
 paddlepaddle
 pyqt5
 qtpy
-opencv-python
-scipy
 paddleseg
 albumentations
 cython
-pyyaml
 wget
 diskcache==5.2.1
