@@ -40,22 +40,31 @@ cache = Cache(directory=cache_dir)
 cache_item_limit = 30
 mkdir(cache_dir)
 
-param_dir = os.path.join(storage_dir, "param_dir")
-mkdir(param_dir)
+
 
 prob_thresh = float(os.environ['modal.state.thresh'])
 param_name = os.environ['modal.state.modelName'] + '.pdparams'
 
-param_path = os.path.join(param_dir, param_name)
+
+param_path = f"/eiseg_models/{param_name}"
 
 if param_name == 'hrnet18_ocr64_cocolvis.pdparams':
     model_name = 'HRNet18_OCR64'
-    model_link = 'https://bj.bcebos.com/paddleseg/dygraph/interactive_segmentation/ritm/hrnet18_ocr64_cocolvis.pdparams'
 else:
     model_name = 'HRNet18s_OCR48'
-    model_link = 'https://bj.bcebos.com/paddleseg/dygraph/interactive_segmentation/ritm/hrnet18s_ocr48_cocolvis.pdparams'
 
-download_file_from_link(api, model_link, param_path, param_name, f"Download {param_name}", my_app.logger)
+if os.path.isfile(param_path) is False:
+    param_dir = os.path.join(storage_dir, "param_dir")
+    mkdir(param_dir)
+    param_path = os.path.join(param_dir, param_name)
+    if param_name == 'hrnet18_ocr64_cocolvis.pdparams':
+        model_name = 'HRNet18_OCR64'
+        model_link = 'https://bj.bcebos.com/paddleseg/dygraph/interactive_segmentation/ritm/hrnet18_ocr64_cocolvis.pdparams'
+    else:
+        model_name = 'HRNet18s_OCR48'
+        model_link = 'https://bj.bcebos.com/paddleseg/dygraph/interactive_segmentation/ritm/hrnet18s_ocr48_cocolvis.pdparams'
+
+    download_file_from_link(api, model_link, param_path, param_name, f"Download {param_name}", my_app.logger)
 
 model = MODELS[model_name]()
 model.load_param(param_path)
