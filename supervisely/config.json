@@ -5,7 +5,7 @@
     "Neural Network"
   ],
   "description": "Smart Tool integration of EISeg",
-  "docker_image": "supervisely/eiseg:1.0.0",
+  "docker_image": "supervisely/eiseg:1.0.1",
   "main_script": "supervisely/smarttool/main.py",
   "modal_template": "supervisely/smarttool/modal.html",
   "modal_template_state": {"modelName": "hrnet18_ocr64_cocolvis", "thresh": 0.5},
