@@ -118,4 +118,6 @@ hrnet18s_ocr48_cocolvis.pdparams
 images
 debug.env
 secret_debug.env
-supervisely/Docker/models
+supervisely/docker/models
+supervisely/secret_debug.env
+supervisely/smarttool/debug

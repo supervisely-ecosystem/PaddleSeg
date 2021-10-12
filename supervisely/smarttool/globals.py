@@ -21,9 +21,9 @@ def download_file_from_link(api, link, model_path, file_name, progress_message, 
 my_app = sly.AppService()
 api: sly.Api = my_app.public_api
 
+TASK_ID = int(os.environ["TASK_ID"])
 TEAM_ID = int(os.environ['context.teamId'])
 WORKSPACE_ID = int(os.environ['context.workspaceId'])
-TASK_ID = int(os.environ["TASK_ID"])
 
 cache_item_expire_time = 600
 
@@ -43,13 +43,24 @@ mkdir(cache_dir)
 prob_thresh = float(os.environ['modal.state.thresh'])
 param_name = os.environ['modal.state.modelName'] + '.pdparams'
 
+model_name = None
+model_link = None
+
+
 param_path = f"/eiseg_models/{param_name}"
 if param_name == 'hrnet18_ocr64_cocolvis.pdparams':
     model_name = 'HRNet18_OCR64'
     model_link = 'https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18_ocr64_cocolvis.pdparams'
-else:
+elif param_name == 'hrnet18s_ocr48_cocolvis.pdparams':
     model_name = 'HRNet18s_OCR48'
     model_link = 'https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18s_ocr48_cocolvis.pdparams'
+elif param_name == 'hrnet18_ocr64_human.pdparams':
+    model_name = 'HRNet18_OCR64'
+    model_link = 'https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18_ocr64_human.pdparams'
+elif param_name == 'hrnet18s_ocr48_human.pdparams':
+    model_name = 'HRNet18s_OCR48'
+    model_link = 'https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18s_ocr48_human.pdparams'
+
 
 if os.path.isfile(param_path) is False:
     param_dir = os.path.join(storage_dir, "param_dir")
