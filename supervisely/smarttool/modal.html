@@ -1,21 +1,23 @@
 <div>
-      <sly-card
-            class="mt15"
-            title="Choose parameters:"
-    >
-            <sly-field title="Model name:" style="margin: 0 10px 0 0;">
+
+        <sly-field title="Model"
+                   description="Select provided pretrained models with different backbones for interactive segmentation.">
             <el-select v-model="state.modelName" placeholder="Select model">
-                <el-option key="hrnet18_ocr64_cocolvis" label="HRNet18 OCR64 COCOLVIS" value="hrnet18_ocr64_cocolvis"></el-option>
-                <el-option key="hrnet18s_ocr48_cocolvis" label="HRNet18s OCR48 COCOLVIS" value="hrnet18s_ocr48_cocolvis"></el-option>
-                <el-option key="hrnet18_ocr64_human" label="HRNet18s OCR64 Human" value="hrnet18_ocr64_human"></el-option>
-                <el-option key="hrnet18s_ocr48_human" label="HRNet18s OCR48 Human" value="hrnet18s_ocr48_human"></el-option>
+                <el-option key="hrnet18_ocr64_cocolvis" label="HRNet18 OCR64 COCOLVIS"
+                           value="hrnet18_ocr64_cocolvis"></el-option>
+                <el-option key="hrnet18s_ocr48_cocolvis" label="HRNet18s OCR48 COCOLVIS"
+                           value="hrnet18s_ocr48_cocolvis"></el-option>
+                <el-option key="hrnet18_ocr64_human" label="HRNet18s OCR64 Human"
+                           value="hrnet18_ocr64_human"></el-option>
+                <el-option key="hrnet18s_ocr48_human" label="HRNet18s OCR48 Human"
+                           value="hrnet18s_ocr48_human"></el-option>
             </el-select>
-            </sly-field>
+        </sly-field>
 
-        <sly-field title="Segmentation Threshold" style="margin: 15px 10px 0 0;">
-        <el-slider v-model="state.thresh" :min="0" :max="1" :step="0.01" show-input></el-slider>
-    </sly-field>
-
-      </sly-card>
+        <sly-field title="Probability Threshold"
+                   description="Threshold for binarization of probability map. Recommended value is 0.5">
+            <el-slider v-model="state.thresh" :min="0" :max="1" :step="0.1" show-input
+                       style="flex:1; max-width: 99%; margin-left: 15px;"></el-slider>
+        </sly-field>
 
 </div>
