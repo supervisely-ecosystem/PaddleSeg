@@ -43,18 +43,18 @@ EISeg (Efficient Interactive Segmentation) is an efficient and intelligent inter
 
 # How to run
 
-1. Add [RITM interactive segmentation smart tool](https://ecosystem.supervise.ly/apps/ritm-interactive-segmentation) to your team from Ecosystem.
+1. Add [EISeg interactive segmentation SmartTool](https://ecosystem.supervise.ly/apps/PaddleSeg) to your team from Ecosystem.
 
-<img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/ritm-interactive-segmentation" src="https://i.imgur.com/mQJpKgA.png" width="600px" style='padding-bottom: 20px'/>  
+<img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/PaddleSeg" src="https://i.imgur.com/xp7xFz6.png" width="600px" style='padding-bottom: 20px'/>  
 
 2. Run app from **Plugins & Apps** page:
 
-<img src="https://i.imgur.com/nTZTuVh.png" width="100%"/>
+<img src="https://i.imgur.com/uWMA1x3.png" width="100%"/>
 
 3. Select options in modal window and press the `Run` button.
  
 <div align="center" markdown>
-<img src="https://i.imgur.com/ZF6OZIg.png" width="500"/>
+<img src="https://i.imgur.com/ZJZRg17.png" width="500"/>
 </div>
 
 # How to use
