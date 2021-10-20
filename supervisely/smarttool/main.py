@@ -20,6 +20,7 @@ sys.path.append(sources_dir)
 
 import globals as g
 import functions as f
+import load_model
 
 
 def send_error_data(func):
@@ -58,9 +59,10 @@ def smart_segmentation(api: sly.Api, task_id, context, state, app_logger):
 def main():
     sly.logger.info("Script arguments", extra={
         "context.teamId": g.TEAM_ID,
-        "context.workspaceId": g.WORKSPACE_ID
+        "model_name": g.param_name,
+        "prob_thresh": g.prob_thresh
     })
-
+    load_model.deploy(g.param_name)
     g.my_app.run()
 
 
