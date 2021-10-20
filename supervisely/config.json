@@ -4,7 +4,7 @@
   "categories": [
     "Neural Network"
   ],
-  "description": "SmartTool integration of EISeg",
+  "description": "SmartTool integration of Efficient Interactive Segmentation (EISeg)",
   "docker_image": "supervisely/eiseg:1.0.1",
   "main_script": "supervisely/smarttool/main.py",
   "modal_template": "supervisely/smarttool/modal.html",
