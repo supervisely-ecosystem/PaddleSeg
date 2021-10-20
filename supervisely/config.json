@@ -10,7 +10,7 @@
   "modal_template": "supervisely/smarttool/modal.html",
   "modal_template_state": {"modelName": "hrnet18_ocr64_cocolvis", "thresh": 0.5},
   "task_location": "application_sessions",
-  "icon": "https://i.imgur.com/P6BjsxA.png",
+  "icon": "https://i.imgur.com/SL7H4GB.png",
   "icon_background": "#FFFFFF",
   "headless": true,
   "session_tags": [
