@@ -43,6 +43,12 @@ EISeg (Efficient Interactive Segmentation) is an efficient and intelligent inter
 
 # How to run
 
+### ⚠️ Notice  
+ * The application may already be launched by the instance administrator (**Enterprise**) or the Supervisely team (**Community**). If the app is not available in dropdown menu in Labeling tool, please contact us. If the Smart Tool responds slowly, please run additional application sessions in your team.
+ * **Enterprise only**: You can share started application with all users on your instance using **share** button in front of running session. We recommend to run multiple sessions if large number of users are using Smart Tool simultaneously.
+
+---
+
 1. Add [EISeg interactive segmentation SmartTool](https://ecosystem.supervise.ly/apps/PaddleSeg) to your team from Ecosystem.
 
 <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/PaddleSeg" src="https://i.imgur.com/xp7xFz6.png" width="600px" style='padding-bottom: 20px'/>  
@@ -61,7 +67,10 @@ EISeg (Efficient Interactive Segmentation) is an efficient and intelligent inter
 
 `Place for video guide`
 
-## Controls:
+<a data-key="sly-embeded-video-link" href="https://youtu.be/q1IVBrZDSGk" data-video-code="q1IVBrZDSGk"> <img src="https://imgur.com/MWHDZQy.png" alt="SLY_EMBEDED_VIDEO_LINK"  width="100%"> </a>  
+
+
+## Controls
 
 | Key                                                           | Description                               |
 | ------------------------------------------------------------- | ------------------------------------------|
@@ -73,6 +82,18 @@ EISeg (Efficient Interactive Segmentation) is an efficient and intelligent inter
 | <kbd>Shift + H</kbd>                                          | Higlight instances with random colors     |
 | <kbd>Ctrl + H</kbd>                                           | Hide all labels                           |
 
+
+<p align="left"> <img align="center" src="https://i.imgur.com/jxySekj.png" width="50"> <b>—</b> Auto add positivie point to rectangle button (<b>ON</b> by default for SmartTool apps) </p>
+
+<div align="center" markdown>
+<img src="https://i.imgur.com/dlaLrsi.png" width="90%"/>
+</div>
+
+<p align="left"> <img align="center" src="https://i.imgur.com/kiwbBkj.png" width="200"> <b>—</b> SmartTool selector button, switch between SmartTool apps and models</p>
+
+<div align="center" markdown>
+<img src="https://i.imgur.com/FATcNZU.png" width="90%"/>
+</div>
 
 # Demo
 
