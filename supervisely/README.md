@@ -24,8 +24,8 @@
 SAMPLE TEXT
 
 <p float="left">
-  <img src="https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/overview_1.gif?raw=true" style="width:49%;"/>
-  <img src="https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/overview_2.gif?raw=true" style="width:49%;"/>
+  <img src="https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/overview_3.gif?raw=true" style="width:49%;"/>
+  <img src="https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/overview_4.gif?raw=true" style="width:49%;"/>
 </p>
 
 # Supervisely integration
