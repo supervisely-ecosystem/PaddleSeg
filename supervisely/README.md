@@ -32,7 +32,6 @@ Application key points:
 - Capability to correct prediction errors on the fly
 - Select from [4 pretrained models](../contrib/EISeg/README.md#模型准备)
 - Models are class agnostic you can segment any object from any industry
-- Ability to share application session with team members as an Admin (Enterprise edition only)
 
 EISeg (Efficient Interactive Segmentation) is an efficient and intelligent interactive segmentation and annotation software developed based on flying paddles. Covers high-quality interactive segmentation models in different directions such as high-precision and lightweight, which is convenient for developers to quickly implement semantic and instance label labeling, and reduce labeling costs. In addition, by applying the annotations obtained by EISeg to other segmentation models provided by PaddleSeg for training, a high-precision model of a customized scene can be obtained, and the entire process of segmentation tasks from data annotation to model training and prediction can be opened up.
 
