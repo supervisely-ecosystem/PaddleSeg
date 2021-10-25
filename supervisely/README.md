@@ -67,8 +67,6 @@ EISeg (Efficient Interactive Segmentation) is an efficient and intelligent inter
 
 `Place for video guide`
 
-<a data-key="sly-embeded-video-link" href="https://youtu.be/q1IVBrZDSGk" data-video-code="q1IVBrZDSGk"> <img src="https://imgur.com/MWHDZQy.png" alt="SLY_EMBEDED_VIDEO_LINK"  width="100%"> </a>  
-
 
 ## Controls
 
