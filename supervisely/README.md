@@ -1,5 +1,5 @@
 <div align="center" markdown>
-<img src="https://i.imgur.com/1bJgrIn.png"/>
+<img src="https://i.imgur.com/lLTl8to.png"/>
 
 # Efficient Interactive Segmentation
   
@@ -82,14 +82,10 @@ EISeg (Efficient Interactive Segmentation) is an efficient and intelligent inter
 
 <p align="left"> <img align="center" src="https://i.imgur.com/jxySekj.png" width="50"> <b>—</b> Auto add positivie point to rectangle button (<b>ON</b> by default for SmartTool apps) </p>
 
-<div align="center" markdown>
-<img src="https://i.imgur.com/dlaLrsi.png" width="90%"/>
-</div>
-
 <p align="left"> <img align="center" src="https://i.imgur.com/kiwbBkj.png" width="200"> <b>—</b> SmartTool selector button, switch between SmartTool apps and models</p>
 
 <div align="center" markdown>
-<img src="https://i.imgur.com/FATcNZU.png" width="90%"/>
+<img src="https://i.imgur.com/cr2jdW2.png" width="90%"/>
 </div>
 
 # Demo
