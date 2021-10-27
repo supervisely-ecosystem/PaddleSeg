@@ -107,7 +107,7 @@ We have prepared a videos and demonstrated how EISEG works for the different dom
       </tr>
     <tr style="width: 100%">
       <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/c1sCQKTt4bg" data-video-code="c1sCQKTt4bg">     <img src="https://i.imgur.com/Vz4kZqh.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/hoXB1m8qHJM" data-video-code="hoXB1m8qHJM">     <img src="https://i.imgur.com/biwvd44.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
       </td>
       <td>
         <a data-key="sly-embeded-video-link" href="https://youtu.be/cBp6-VPdKQA" data-video-code="cBp6-VPdKQA"> <img src="https://i.imgur.com/pSQWzUV.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
@@ -118,7 +118,7 @@ We have prepared a videos and demonstrated how EISEG works for the different dom
         <a data-key="sly-embeded-video-link" href="https://youtu.be/uYhrJz44g0M" data-video-code="uYhrJz44g0M">     <img src="https://i.imgur.com/lapuFFU.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
       </td>
       <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/zj5ojW3079Y" data-video-code="zj5ojW3079Y"> <img src="https://i.imgur.com/4fL2X7R.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/VV_akThOIwY" data-video-code="VV_akThOIwY"> <img src="https://i.imgur.com/Uyvh86r.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
       </td>
     </tr>
     <tr style="width: 100%">
