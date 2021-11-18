@@ -1,9 +1,19 @@
+import os
 import numpy as np
 import globals as g
 import supervisely_lib as sly
 from supervisely_lib.io.fs import silent_remove
 from eiseg.inference.predictor import get_predictor
 from eiseg.inference import clicker
+
+
+def download_image_from_context(context):
+    if "image_hash" in list(context.keys()):
+        img_path = os.path.join(g.img_dir, "base_image.png")
+        base_image_np = get_image_by_hash(context["image_hash"], img_path)
+    else:
+        base_image_np = g.api.video.frame.download_np(context["video"]["video_id"], context["video"]["frame_index"])
+    return base_image_np
 
 
 def get_smart_bbox(crop):
@@ -54,7 +64,6 @@ def get_pos_neg_points_list_from_context(context):
 def get_bitmap_from_points(pos_points, neg_points, image):
 
     mask = np.zeros(image.shape[:2], dtype=np.uint8)
-
     my_predictor = get_predictor(g.model.model, **g.my_predictor_params)
     my_predictor.set_input_image(image)
     my_clicker = clicker.Clicker()
