@@ -1,21 +1,7 @@
 import os
-import supervisely_lib as sly
 from diskcache import Cache
+import supervisely_lib as sly
 from supervisely_lib.io.fs import mkdir
-from contrib.EISeg.eiseg.ui import Ui_EISeg
-from util import MODELS
-from supervisely_lib.io.fs import download
-import requests
-import dl_progress
-
-
-def download_file_from_link(api, link, model_path, file_name, progress_message, app_logger):
-    response = requests.head(link, allow_redirects=True)
-    sizeb = int(response.headers.get('content-length', 0))
-    progress_cb = dl_progress.get_progress_cb(api, TASK_ID, progress_message, sizeb, is_size=True)
-    download(link, model_path, cache=my_app.cache, progress=progress_cb)
-    dl_progress.reset_progress(api, TASK_ID)
-    app_logger.info(f'{file_name} has been successfully downloaded')
 
 
 my_app = sly.AppService()

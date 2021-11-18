@@ -1,16 +1,16 @@
 {
-  "name": "EISeg interactive segmentation smarttool",
+  "name": "EISeg interactive segmentation SmartTool",
   "type": "app",
   "categories": [
     "Neural Network"
   ],
-  "description": "Smart Tool integration of EISeg",
+  "description": "SmartTool integration of Efficient Interactive Segmentation (EISeg)",
   "docker_image": "supervisely/eiseg:1.0.1",
   "main_script": "supervisely/smarttool/main.py",
   "modal_template": "supervisely/smarttool/modal.html",
   "modal_template_state": {"modelName": "hrnet18_ocr64_cocolvis", "thresh": 0.5},
   "task_location": "application_sessions",
-  "icon": "https://i.imgur.com/P6BjsxA.png",
+  "icon": "https://i.imgur.com/SL7H4GB.png",
   "icon_background": "#FFFFFF",
   "headless": true,
   "session_tags": [
