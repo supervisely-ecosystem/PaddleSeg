@@ -30,3 +30,5 @@ param_name = os.environ['modal.state.modelName'] + '.pdparams'
 my_predictor_params = {"brs_mode": "NoBRS",
                        "zoom_in_params": {"skip_clicks": -1, "target_size": (400, 400), "expansion_ratio": 1.4},
                        "predictor_params": {"net_clicks_limit": None, "max_size": 800}}
+
+model = None

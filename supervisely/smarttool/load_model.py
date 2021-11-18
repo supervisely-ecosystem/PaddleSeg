@@ -45,5 +45,6 @@ def deploy(param_name):
         g.my_app.logger.info(f"{param_name} has been loaded from docker image")
 
     model = MODELS[model_name]()
+    g.model = model
     model.load_param(param_path)
     sly.logger.info("🟩 Model has been successfully deployed")
