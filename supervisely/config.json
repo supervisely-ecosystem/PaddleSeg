@@ -2,7 +2,8 @@
   "name": "EISeg interactive segmentation SmartTool",
   "type": "app",
   "categories": [
-    "Neural Network"
+    "Neural Network",
+    "SmartTool"
   ],
   "description": "SmartTool integration of Efficient Interactive Segmentation (EISeg)",
   "docker_image": "supervisely/eiseg:1.0.1",
