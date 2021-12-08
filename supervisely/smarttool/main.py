@@ -23,23 +23,23 @@ import functions as f
 import load_model
 
 
-# def send_error_data(func):
-#     @functools.wraps(func)
-#     def wrapper(*args, **kwargs):
-#         value = None
-#         try:
-#             value = func(*args, **kwargs)
-#         except Exception as e:
-#             request_id = kwargs["context"]["request_id"]
-#             g.my_app.send_response(request_id, data={"error": repr(e)})
-#         return value
-#
-#     return wrapper
+def send_error_data(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        value = None
+        try:
+            value = func(*args, **kwargs)
+        except Exception as e:
+            request_id = kwargs["context"]["request_id"]
+            g.my_app.send_response(request_id, data={"error": repr(e)})
+        return value
+
+    return wrapper
 
 
 @g.my_app.callback("smart_segmentation")
 @sly.timeit
-# @send_error_data
+@send_error_data
 def smart_segmentation(api: sly.Api, task_id, context, state, app_logger):
     x1, y1, x2, y2 = f.get_smart_bbox(context["crop"])
     bbox = sly.Rectangle(y1, x1, y2, x2)
