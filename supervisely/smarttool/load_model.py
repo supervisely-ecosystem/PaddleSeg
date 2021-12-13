@@ -16,8 +16,12 @@ def download_file_from_link(api, link, model_path, file_name, progress_message, 
 
 
 def deploy(model_name):
-    # model_path = f"/eiseg_models/{model_name}/{model_name}.pdiparams"
-    model_path = f"/home/paul/Documents/Work/Applications/PaddleSeg/supervisely/smarttool/eiseg_models/{model_name}/{model_name}.pdiparams"
+    model_path = f"/eiseg_models/{model_name}/{model_name}.pdiparams"
+
+    if model_name == "static_edgeflow_cocolvis":
+        with_mask = False
+    else:
+        with_mask = True
 
     predictor_params = {
         "brs_mode": "NoBRS",
@@ -30,7 +34,7 @@ def deploy(model_name):
         "predictor_params": {
             "net_clicks_limit": None,
             "max_size": 800,
-            "with_mask": True,
+            "with_mask": with_mask,
         },
     }
 
