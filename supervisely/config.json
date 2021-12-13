@@ -10,57 +10,63 @@
   "docker_image": "supervisely/eiseg:1.0.3",
   "main_script": "supervisely/smarttool/main.py",
   "modal_template": "supervisely/smarttool/modal.html",
+  "modal_width": 870,
   "modal_template_state": {
     "selectedModel": "static_hrnet18_ocr64_cocolvis",
     "thresh": 0.5,
     "models": [
-             {
-            "Type": "High precision model",
-            "Applying": "Suitable for general labeling",
-            "Structure": "HRNet18_OCR64",
-            "Name": "static_hrnet18_ocr64_cocolvis"
-        },
-        {
-            "Type": "Lightweight model",
-            "Applying": "Suitable for general labeling",
-            "Structure": "HRNet18s_OCR48",
-            "Name": "static_hrnet18s_ocr48_cocolvis"
-        },
-        {
-            "Type": "High precision model",
-            "Applying": "Suitable for human portrait labeling",
-            "Structure": "HRNet18_OCR64",
-            "Name": "static_hrnet18_ocr64_human"
-        },
-        {
-            "Type": "Lightweight model",
-            "Applying": "Suitable for human portrait labeling",
-            "Structure": "HRNet18s_OCR48",
-            "Name": "static_hrnet18s_ocr48_human"
-        },
-        {
-            "Type": "High precision model",
-            "Applying": "Suitable for general labeling",
-            "Structure": "EdgeFlow",
-            "Name": "static_edgeflow_cocolvis"
-        },
-        {
-            "Type": "Lightweight model",
-            "Applying": "Suitable for human portrait labeling",
-            "Structure": "HRNet18s_OCR48",
-            "Name": "static_hrnet18_ocr48_rsbuilding_instance"
-        },
-        {
-            "Type": "Lightweight model",
-            "Applying": "Suitable for medical scenes of liver labeling",
-            "Structure": "HRNet18s_OCR48",
-            "Name": "static_hrnet18s_ocr48_lits"
-        }
+      {
+        "Name": "static_hrnet18_ocr64_cocolvis",
+        "Structure": "HRNet18_OCR64",
+        "Applying": "general labeling",
+        "Type": "High precision model"
+      },
+      {
+        "Name": "static_hrnet18s_ocr48_cocolvis",
+        "Structure": "HRNet18s_OCR48",
+        "Applying": "general labeling",
+        "Type": "Lightweight model"
+      },
+      {
+        "Name": "static_hrnet18_ocr64_human",
+        "Structure": "HRNet18_OCR64",
+        "Applying": "human portrait labeling",
+        "Type": "High precision model"
+      },
+      {
+        "Name": "static_hrnet18s_ocr48_human",
+        "Structure": "HRNet18s_OCR48",
+        "Applying": "human portrait labeling",
+        "Type": "Lightweight model"
+      },
+      {
+        "Name": "static_edgeflow_cocolvis",
+        "Structure": "EdgeFlow",
+        "Applying": "general labeling",
+        "Type": "High precision model"
+      },
+      {
+        "Name": "static_hrnet18_ocr48_rsbuilding_instance",
+        "Structure": "HRNet18s_OCR48",
+        "Applying": "human portrait labeling",
+        "Type": "Lightweight model"
+      },
+      {
+        "Name": "static_hrnet18s_ocr48_lits",
+        "Structure": "HRNet18s_OCR48",
+        "Applying": "medical scenes of liver labeling",
+        "Type": "Lightweight model"
+      }
     ],
     "modelColumns": [
       {
-        "key": "Type",
-        "title": "Type",
+        "key": "Name",
+        "title": "Name",
+        "subtitle": null
+      },
+      {
+        "key": "Structure",
+        "title": "Structure",
         "subtitle": null
       },
       {
@@ -68,20 +74,13 @@
         "title": "Applying",
         "subtitle": null
       },
-            {
-        "key": "Structure",
-        "title": "Structure",
-        "subtitle": null
-      },
-            {
-        "key": "Name",
-        "title": "Name",
+      {
+        "key": "Type",
+        "title": "Type",
         "subtitle": null
       }
     ]
   },
-
-
   "task_location": "application_sessions",
   "icon": "https://i.imgur.com/SL7H4GB.png",
   "icon_background": "#FFFFFF",
