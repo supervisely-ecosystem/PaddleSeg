@@ -46,6 +46,7 @@ from .pointrend import PointRend
 from .ginet import GINet
 from .segmenter import *
 from .segnet import SegNet
+<<<<<<< HEAD
 from .encnet import ENCNet
 from .hrnet_contrast import HRNetW48Contrast
 from .espnet import ESPNetV2
@@ -54,3 +55,7 @@ from .espnetv1 import ESPNetV1
 from .bisenetv1 import BiseNetV1
 from .fastfcn import FastFCN
 from .pfpnnet import PFPNNet
+=======
+from .hrnet_contrast import HRNetW48Contrast
+from .espnet import ESPNetV2
+>>>>>>> 9c8570af (add new models)

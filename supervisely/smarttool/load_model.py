@@ -1,12 +1,9 @@
-import os
 import requests
 import download_progress
 import globals as g
-from contrib.EISeg.eiseg.ui import Ui_EISeg
-from util import MODELS
 import supervisely_lib as sly
-from supervisely_lib.io.fs import mkdir
 from supervisely_lib.io.fs import download
+from eiseg.controller import InteractiveController
 
 
 def download_file_from_link(api, link, model_path, file_name, progress_message, app_logger):
@@ -18,33 +15,25 @@ def download_file_from_link(api, link, model_path, file_name, progress_message, 
     app_logger.info(f'{file_name} has been successfully downloaded')
 
 
-def deploy(param_name):
-    model_name = None
-    model_link = None
+def deploy(model_name):
+    # model_path = f"/eiseg_models/{model_name}/{model_name}.pdiparams"
+    model_path = f"/home/paul/Documents/Work/Applications/PaddleSeg/supervisely/smarttool/eiseg_models/{model_name}/{model_name}.pdiparams"
 
-    param_path = f"/eiseg_models/{param_name}"
-    if param_name == 'hrnet18_ocr64_cocolvis.pdparams':
-        model_name = 'HRNet18_OCR64'
-        model_link = 'https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18_ocr64_cocolvis.pdparams'
-    elif param_name == 'hrnet18s_ocr48_cocolvis.pdparams':
-        model_name = 'HRNet18s_OCR48'
-        model_link = 'https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18s_ocr48_cocolvis.pdparams'
-    elif param_name == 'hrnet18_ocr64_human.pdparams':
-        model_name = 'HRNet18_OCR64'
-        model_link = 'https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18_ocr64_human.pdparams'
-    elif param_name == 'hrnet18s_ocr48_human.pdparams':
-        model_name = 'HRNet18s_OCR48'
-        model_link = 'https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18s_ocr48_human.pdparams'
+    predictor_params = {
+        "brs_mode": "NoBRS",
+        "with_flip": False,
+        "zoom_in_params": {
+            "skip_clicks": -1,
+            "target_size": (400, 400),
+            "expansion_ratio": 10,
+        },
+        "predictor_params": {
+            "net_clicks_limit": None,
+            "max_size": 800,
+            "with_mask": True,
+        },
+    }
 
-    if os.path.isfile(param_path) is False:
-        param_dir = os.path.join(g.storage_dir, "param_dir")
-        mkdir(param_dir)
-        param_path = os.path.join(param_dir, param_name)
-        download_file_from_link(g.api, model_link, param_path, param_name, f"Download {param_name}", g.my_app.logger)
-    else:
-        g.my_app.logger.info(f"{param_name} has been loaded from docker image")
-
-    model = MODELS[model_name]()
-    g.model = model
-    model.load_param(param_path)
+    g.CONTROLLER = InteractiveController(predictor_params, prob_thresh=g.PROB_THRESH)
+    g.CONTROLLER.setModel(model_path)
     sly.logger.info("🟩 Model has been successfully deployed")

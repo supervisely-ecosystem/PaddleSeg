@@ -10,6 +10,7 @@ Next, we will tell you how to use lovasz loss for training. It should be noted t
 -(1) Used in combination with cross entropy loss or bce loss (binary cross-entropy loss) weighting.
 -(2) First use cross entropy loss or bce loss for training, and then use lovasz softmax loss or lovasz hinge loss for finetuning.
 
+<<<<<<< HEAD
 Taking method (1) as an example, the loss function during training is selected through the `MixedLoss` class, and different losses are weighted through the `coef` parameter, so as to flexibly adjust the training parameters.
 
 The general network has only one output logit, and the usage example is as follows:
@@ -54,6 +55,29 @@ loss:
        coef: [0.8, 0.2]
    coef: [1, 0.4]
    ````
+=======
+Taking method (1) as an example, the loss function during training is selected through the `MixedLoss` class, and different losses are weighted through the `coef` parameter, so as to flexibly adjust the training parameters. As follows:
+
+```yaml
+loss:
+  types:
+    - type: MixedLoss
+      losses:
+        - type: CrossEntropyLoss
+        - type: LovaszSoftmaxLoss
+      coef: [0.8, 0.2]
+```
+
+```yaml
+loss:
+  types:
+    - type: MixedLoss
+      losses:
+        - type: CrossEntropyLoss
+        - type: LovaszHingeLoss
+      coef: [1, 0.02]
+```
+>>>>>>> 9c8570af (add new models)
 
 
 ## Lovasz softmax loss experimental comparison

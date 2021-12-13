@@ -68,9 +68,15 @@ paddleseg.core.predict(
 | image_dir       | str               | The directory of the image path to be predicted     | No         | None     |
 | save_dir        | str               | Output directory                                         | No         | 'output' |
 | aug_pred        | bool              | Whether to use multi-scale and flip augmentation for prediction          | No         | False    |
+<<<<<<< HEAD
 | scales          | list/float        | Set the zoom factor, take effect when `aug_pred` is True                 | No         | 1.0      |
 | flip_horizontal | bool              | Whether to use horizontal flip, take effect when `aug_pred` is True  | No         | True     |
 | flip_vertical   | bool              | Whether to use vertical flip, take effect when `aug_pred` is True    | No         | False    |
+=======
+| scales          | list/float        | Set the zoom factor, take effect when aug_pred is True                   | No         | 1.0      |
+| flip_horizontal | bool              | Whether to use horizontal flip, take effect when `aug_eval` is True      | No         | True     |
+| flip_vertical   | bool              | Whether to use vertical flip, take effect when `aug_eval` is True        | No         | False    |
+>>>>>>> 9c8570af (add new models)
 | is_slide        | bool              | Whether to evaluate through a sliding window                             | No         | False    |
 | stride          | tuple/list        | Set the width and height of the sliding window, effective when `is_slide` is True       | No         | None     |
 | crop_size       | tuple/list        | Set the width and height of the crop of the sliding window, which takes effect when `is_slide` is True | No         | None     |
@@ -106,4 +112,40 @@ If you don't specify the output location, `added_prediction` and `pseudo_color_p
         |  |--...
 
 
+<<<<<<< HEAD
 
+=======
+## 4.Custom Color Map
+After prediction, what we get is the predicted segmentation result depend on default color map. Take the medical video disc segmentation dataset as an example:
+![](./color_map/before_mapped.jpeg)
+
+​                                                                                            pseudo map / blended prediction
+
+In the segmentation result, the foreground is marked in red, and the background is marked in black. If you want to use other colors, you can refer to the following command:
+```python
+python predict.py \
+       --config configs/quick_start/bisenet_optic_disc_512x512_1k.yml \
+       --model_path output/iter_1000/model.pdparams \
+       --image_path data/optic_disc_seg/JPEGImages/H0003.jpg \
+       --save_dir output/result \
+       --custom_color 0 0 0 255 255 255
+```
+The segmentation results are as follows:
+![](./color_map/after_mapped.jpeg)
+
+​                                                                                            pseudo map / blended prediction
+
+- Parameters
+- You can see that we added `--custom_color 0 0 0 255 255 255` at the end. What does this mean? In the RGB image, the final color of each pixel is determined by the components of the three RGB channels, so every three digits after the command line parameter represent the color of a pixel, and the color of each class in `label.txt` is releated to 3 digits sequentially.
+- If you use a custom color map, the number of input `color values` should be equal to `3 * pixel classes` (depending on the dataset you are using). For example, if your data set has 3 types of pixels, you can consider run:
+```pythons
+python predict.py \
+       --config configs/quick_start/bisenet_optic_disc_512x512_1k.yml \
+       --model_path output/iter_1000/model.pdparams \
+       --image_path data/optic_disc_seg/JPEGImages/H0003.jpg \
+       --save_dir output/result \
+       --custom_color 0 0 0 100 100 100 200 200 200
+```
+
+We recommend that you refer to the RGB color value comparison table to set `--custom_color`.
+>>>>>>> 9c8570af (add new models)

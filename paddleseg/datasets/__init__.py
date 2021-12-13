@@ -21,9 +21,16 @@ from .pascal_context import PascalContext
 from .mini_deep_globe_road_extraction import MiniDeepGlobeRoadExtraction
 from .eg1800 import EG1800
 from .supervisely import SUPERVISELY
+<<<<<<< HEAD
 from .cocostuff import CocoStuff
 from .stare import STARE
 from .drive import DRIVE
 from .hrf import HRF
 from .chase_db1 import CHASEDB1
 from .pp_humanseg14k import PPHumanSeg14K
+=======
+from .stare import STARE
+from .drive import DRIVE
+from .hrf import HRF
+from .chase_db1 import CHASEDB1
+>>>>>>> 9c8570af (add new models)

@@ -14,4 +14,9 @@
 
 
 #### Additional Requirement
+<<<<<<< HEAD
 - paddlepaddle develop version after 20211230
+=======
+- paddlepaddle >= 2.2.0  
+- ESPNetV2 does not support exporting.
+>>>>>>> 9c8570af (add new models)

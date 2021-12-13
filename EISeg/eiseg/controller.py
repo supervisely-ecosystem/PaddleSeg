@@ -52,7 +52,7 @@ class InteractiveController:
         self.prob_thresh = prob_thresh
         self.model = None
         self.image = None
-        self.rawImage = None
+        # self.rawImage = None
         self.predictor = None
         self.clicker = clicker.Clicker()
         self.states = []
@@ -259,7 +259,7 @@ class InteractiveController:
             self.predictor.set_states(next_state["predictor"])
             self.probs_history.append(self.undo_probs_history.pop())
 
-    def finishObject(self, building=False):
+    def finishObject(self):
         """
         结束当前物体标注，准备标下一个
         """
@@ -269,8 +269,7 @@ class InteractiveController:
         object_mask = object_prob > self.prob_thresh
         if self.lccFilter:
             object_mask = self.getLargestCC(object_mask)
-        polygon = util.get_polygon((object_mask.astype(np.uint8) * 255), 
-                                   building=building)
+        polygon = util.get_polygon(object_mask.astype(np.uint8) * 255)
         if polygon is not None:
             self._result_mask[object_mask] = self.curr_label_number
             self.resetLastObject()
@@ -402,7 +401,7 @@ class InteractiveController:
 
     @property
     def imgShape(self):
-        return self.image.shape  # [1::-1]
+        return self.image.shape[1::-1]
 
     @property
     def modelSet(self):

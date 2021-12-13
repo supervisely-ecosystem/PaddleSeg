@@ -40,7 +40,10 @@ class HRNetW48Contrast(nn.Layer):
             e.g. 1024x512, otherwise it is True, e.g. 769x769. Default: False.
         pretrained (str, optional): The path or url of pretrained model. Default: None.
     """
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9c8570af (add new models)
     def __init__(self,
                  in_channels,
                  num_classes,
@@ -55,6 +58,7 @@ class HRNetW48Contrast(nn.Layer):
         self.num_classes = num_classes
         self.proj_dim = proj_dim
         self.align_corners = align_corners
+<<<<<<< HEAD
 
         self.cls_head = nn.Sequential(
             layers.ConvBNReLU(
@@ -72,6 +76,25 @@ class HRNetW48Contrast(nn.Layer):
 
         self.pretrained = pretrained
         self.init_weight()
+=======
+        self.pretrained = pretrained
+
+        self.cls_head = nn.Sequential(
+            layers.ConvBNReLU(in_channels,
+                              in_channels,
+                              kernel_size=3,
+                              stride=1,
+                              padding=1),
+            nn.Dropout2D(drop_prob),
+            nn.Conv2D(in_channels,
+                      num_classes,
+                      kernel_size=1,
+                      stride=1,
+                      bias_attr=False),
+        )
+        self.proj_head = ProjectionHead(dim_in=in_channels,
+                                        proj_dim=self.proj_dim)
+>>>>>>> 9c8570af (add new models)
 
     def init_weight(self):
         if self.pretrained is not None:
@@ -84,6 +107,7 @@ class HRNetW48Contrast(nn.Layer):
         if self.training:
             emb = self.proj_head(feats)
             logit_list.append(
+<<<<<<< HEAD
                 F.interpolate(
                     out,
                     paddle.shape(x)[2:],
@@ -97,6 +121,19 @@ class HRNetW48Contrast(nn.Layer):
                     paddle.shape(x)[2:],
                     mode='bilinear',
                     align_corners=self.align_corners))
+=======
+                F.interpolate(out,
+                              paddle.shape(x)[2:],
+                              mode='bilinear',
+                              align_corners=self.align_corners))
+            logit_list.append({'seg': out, 'embed': emb})
+        else:
+            logit_list.append(
+                F.interpolate(out,
+                              paddle.shape(x)[2:],
+                              mode='bilinear',
+                              align_corners=self.align_corners))
+>>>>>>> 9c8570af (add new models)
         return logit_list
 
 
@@ -108,7 +145,10 @@ class ProjectionHead(nn.Layer):
         proj_dim (int, optional): The output dimensions of projection head. Default: 256.
         proj (str, optional): The type of projection head, only support 'linear' and 'convmlp'. Default: 'convmlp'.
     """
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9c8570af (add new models)
     def __init__(self, dim_in, proj_dim=256, proj='convmlp'):
         super(ProjectionHead, self).__init__()
         if proj == 'linear':

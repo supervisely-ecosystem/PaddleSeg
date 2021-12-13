@@ -31,7 +31,11 @@
 | Segformer | Segformer_B0 | 支持 | - | - | - |
 | STDC | STDC_STDC1 | 支持 | - | - | - |
 | MODNet | PP-Matting | 支持 | - | - | - |
+<<<<<<< HEAD
 | PFPNNet | PFPNNet | 支持 | - | - | - |
+=======
+
+>>>>>>> 9c8570af (add new models)
 
 
 ## 3. 测试工具简介

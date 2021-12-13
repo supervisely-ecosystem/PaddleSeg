@@ -14,4 +14,8 @@
 
 from . import models, datasets, transforms
 
+<<<<<<< HEAD
 __version__ = '2.4.0'
+=======
+__version__ = '2.3.0'
+>>>>>>> 9c8570af (add new models)

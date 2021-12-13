@@ -5,5 +5,8 @@ A self-developed ultra lightweight model ConnectNet, is suitable for real-time s
 ## Network Structure
 ![](pphumanseg_lite.png)
 
+## Network Structure
+![](pphumanseg_lite.png)
+
 ## Performance
 Refer to [PP-HumanSeg](../../contrib/PP-HumanSeg).

@@ -11,10 +11,14 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 <<<<<<< HEAD
+<<<<<<< HEAD
 # limitations under the License.
 =======
 # limitations under the License. 
 >>>>>>> 506337f3 (add segent (#1345))
+=======
+# limitations under the License.
+>>>>>>> 9c8570af (add new models)
 
 import paddle
 import paddle.nn as nn
@@ -23,9 +27,13 @@ import paddle.nn.functional as F
 from paddleseg.cvlibs import manager, param_init
 from paddleseg.models import layers
 <<<<<<< HEAD
+<<<<<<< HEAD
 from paddleseg.utils import utils
 =======
 >>>>>>> 506337f3 (add segent (#1345))
+=======
+from paddleseg.utils import utils
+>>>>>>> 9c8570af (add new models)
 
 
 @manager.MODELS.add_component
@@ -33,6 +41,9 @@ class SegNet(nn.Layer):
     """
     The SegNet implementation based on PaddlePaddle.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9c8570af (add new models)
     The original article refers to
     Badrinarayanan, Vijay, et al. "SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation"
     (https://arxiv.org/pdf/1511.00561.pdf).
@@ -148,6 +159,7 @@ class SegNet(nn.Layer):
         logit_list.append(x)
 
         return logit_list
+<<<<<<< HEAD
 =======
 
     The original article refers to
@@ -258,3 +270,5 @@ class Encoder(nn.Layer):
         return x
 
 >>>>>>> 506337f3 (add segent (#1345))
+=======
+>>>>>>> 9c8570af (add new models)
