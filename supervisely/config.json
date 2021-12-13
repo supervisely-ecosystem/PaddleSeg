@@ -10,7 +10,78 @@
   "docker_image": "supervisely/eiseg:1.0.3",
   "main_script": "supervisely/smarttool/main.py",
   "modal_template": "supervisely/smarttool/modal.html",
-  "modal_template_state": {"modelName": "hrnet18_ocr64_cocolvis", "thresh": 0.5},
+  "modal_template_state": {
+    "selectedModel": "static_hrnet18_ocr64_cocolvis",
+    "thresh": 0.5,
+    "models": [
+             {
+            "Model type": "High precision model",
+            "Applicable scene": "Suitable for general labeling",
+            "Model structure": "HRNet18_OCR64",
+            "Model name": "static_hrnet18_ocr64_cocolvis"
+        },
+        {
+            "Model type": "Lightweight model",
+            "Applicable scene": "Suitable for general labeling",
+            "Model structure": "HRNet18s_OCR48",
+            "Model name": "static_hrnet18s_ocr48_cocolvis"
+        },
+        {
+            "Model type": "High precision model",
+            "Applicable scene": "Suitable for human portrait labeling",
+            "Model structure": "HRNet18_OCR64",
+            "Model name": "static_hrnet18_ocr64_human"
+        },
+        {
+            "Model type": "Lightweight model",
+            "Applicable scene": "Suitable for human portrait labeling",
+            "Model structure": "HRNet18s_OCR48",
+            "Model name": "static_hrnet18s_ocr48_human"
+        },
+        {
+            "Model type": "High precision model",
+            "Applicable scene": "Suitable for general labeling",
+            "Model structure": "EdgeFlow",
+            "Model name": "static_edgeflow_cocolvis"
+        },
+        {
+            "Model type": "Lightweight model",
+            "Applicable scene": "Suitable for human portrait labeling",
+            "Model structure": "HRNet18s_OCR48",
+            "Model name": "static_hrnet18_ocr48_rsbuilding_instance"
+        },
+        {
+            "Model type": "Lightweight model",
+            "Applicable scene": "Suitable for medical scenes of liver labeling",
+            "Model structure": "HRNet18s_OCR48",
+            "Model name": "static_hrnet18s_ocr48_lits"
+        }
+    ],
+    "modelColumns": [
+      {
+        "key": "Model_type",
+        "title": "Model type",
+        "subtitle": null
+      },
+      {
+        "key": "Applicable",
+        "title": "Applicable to",
+        "subtitle": null
+      },
+            {
+        "key": "Model_structure",
+        "title": "Model structure",
+        "subtitle": null
+      },
+            {
+        "key": "Model_name",
+        "title": "Model name",
+        "subtitle": null
+      }
+    ]
+  },
+
+
   "task_location": "application_sessions",
   "icon": "https://i.imgur.com/SL7H4GB.png",
   "icon_background": "#FFFFFF",
