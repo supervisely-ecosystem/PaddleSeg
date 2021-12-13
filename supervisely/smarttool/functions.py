@@ -2,9 +2,8 @@ import os
 import numpy as np
 import globals as g
 import supervisely_lib as sly
+from eiseg.inference.clicker import Click
 from supervisely_lib.io.fs import silent_remove
-from eiseg.inference.predictor import get_predictor
-from eiseg.inference import clicker
 
 
 def download_image_from_context(context):
@@ -22,22 +21,40 @@ def get_smart_bbox(crop):
     return x1, y1, x2, y2
 
 
-def get_pos_neg_points_list_from_context_bbox_relative(x1, y1, pos_points, neg_points):
+def get_pos_neg_points_list_from_context_bbox_relative(x1, y1, pos_points, neg_points, cropped_shape, resized_shape):
+    width_scale = 1
+    height_scale = 1
+    if resized_shape is not None:
+        width_scale = resized_shape[0] / cropped_shape[0]
+        height_scale = resized_shape[1] / cropped_shape[1]
+
     bbox_pos_points = []
     for coords in pos_points:
-        x = coords[0] - x1
-        y = coords[1] - y1
+        x = (coords[0] - x1) * width_scale
+        y = (coords[1] - y1) * height_scale
         pos_point = [x, y]
         bbox_pos_points.append(pos_point)
 
     bbox_neg_points = []
     for coords in neg_points:
-        x = coords[0] - x1
-        y = coords[1] - y1
+        x = (coords[0] - x1) * width_scale
+        y = (coords[1] - y1) * height_scale
         neg_point = [x, y]
         bbox_neg_points.append(neg_point)
 
     return bbox_pos_points, bbox_neg_points
+
+
+def get_click_list_from_points(pos_points, neg_points):
+    clicks_list = []
+    for coords in pos_points:
+        click = Click(True, (coords[1], coords[0]))
+        clicks_list.append(click)
+
+    for coords in neg_points:
+        click = Click(False, (coords[1], coords[0]))
+        clicks_list.append(click)
+    return clicks_list
 
 
 def get_pos_neg_points_list_from_context(context):
@@ -45,42 +62,19 @@ def get_pos_neg_points_list_from_context(context):
     neg_points = context["negative"]
 
     pos_points_list = []
-    neg_points_list = []
     for coords in pos_points:
         pos_point = []
         for coord in coords:
             pos_point.append(coords[coord])
         pos_points_list.append(pos_point)
 
+    neg_points_list = []
     for coords in neg_points:
         neg_point = []
         for coord in coords:
             neg_point.append(coords[coord])
         neg_points_list.append(neg_point)
-
     return pos_points_list, neg_points_list
-
-
-def get_bitmap_from_points(pos_points, neg_points, image):
-
-    mask = np.zeros(image.shape[:2], dtype=np.uint8)
-    my_predictor = get_predictor(g.model.model, **g.my_predictor_params)
-    my_predictor.set_input_image(image)
-    my_clicker = clicker.Clicker()
-    for point in pos_points:
-        click = clicker.Click(is_positive=True, coords=(point[1], point[0]))
-        my_clicker.add_click(click)
-    for point in neg_points:
-        click = clicker.Click(is_positive=False, coords=(point[1], point[0]))
-        my_clicker.add_click(click)
-    pred = my_predictor.get_prediction(my_clicker)
-
-    object_mask = pred > g.prob_thresh
-    mask[object_mask] = 1
-
-    bool_mask = np.array(mask, dtype=bool)
-    bitmap = sly.Bitmap(bool_mask)
-    return bitmap
 
 
 def unpack_bitmap(bitmap, bbox_origin_y, bbox_origin_x):
@@ -101,3 +95,13 @@ def get_image_by_hash(hash, save_path):
     else:
         base_image = g.cache.get(hash)
     return base_image
+
+
+def get_bitmap_from_mask(mask, cropped_shape):
+    bool_mask = np.array(mask, dtype=bool)
+    bitmap = sly.Bitmap(bool_mask)
+    mask_shape = mask.shape[:2]
+    if cropped_shape != mask_shape:
+        bitmap = bitmap.resize(mask_shape, cropped_shape)
+
+    return bitmap

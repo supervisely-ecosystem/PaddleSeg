@@ -1,23 +1,30 @@
 <div>
 
-        <sly-field title="Model"
-                   description="Select provided pretrained models with different backbones for interactive segmentation.">
-            <el-select v-model="state.modelName" placeholder="Select model">
-                <el-option key="hrnet18_ocr64_cocolvis" label="HRNet18 OCR64 COCOLVIS"
-                           value="hrnet18_ocr64_cocolvis"></el-option>
-                <el-option key="hrnet18s_ocr48_cocolvis" label="HRNet18s OCR48 COCOLVIS"
-                           value="hrnet18s_ocr48_cocolvis"></el-option>
-                <el-option key="hrnet18_ocr64_human" label="HRNet18s OCR64 Human"
-                           value="hrnet18_ocr64_human"></el-option>
-                <el-option key="hrnet18s_ocr48_human" label="HRNet18s OCR48 Human"
-                           value="hrnet18s_ocr48_human"></el-option>
-            </el-select>
-        </sly-field>
+    <sly-field title="Model"
+               description="Select provided pretrained models with different backbones for interactive segmentation.">
+        <el-select v-model="state.modelName" placeholder="Select model">
+            <el-option key="static_hrnet18_ocr64_cocolvis" label="HRNet18 OCR64 COCOLVIS"
+                       value="static_hrnet18_ocr64_cocolvis"></el-option>
+            <el-option key="static_hrnet18s_ocr48_cocolvis" label="HRNet18s OCR48 COCOLVIS"
+                       value="static_hrnet18s_ocr48_cocolvis"></el-option>
+            <el-option key="static_hrnet18_ocr64_human" label="HRNet18s OCR64 Human"
+                       value="static_hrnet18_ocr64_human"></el-option>
+            <el-option key="static_hrnet18s_ocr48_human" label="HRNet18s OCR48 Human"
+                       value="static_hrnet18s_ocr48_human"></el-option>
 
-        <sly-field title="Probability Threshold"
-                   description="Threshold for binarization of probability map. Recommended value is 0.5">
-            <el-slider v-model="state.thresh" :min="0" :max="1" :step="0.1" show-input
-                       style="flex:1; max-width: 99%; margin-left: 15px;"></el-slider>
-        </sly-field>
+            <el-option key="static_edgeflow_cocolvis" label="EdgeFlow COCOLVIS"
+                       value="static_edgeflow_cocolvis"></el-option>
+            <el-option key="static_hrnet18s_ocr48_lits" label="HRNet18s OCR48 LiTS"
+                       value="static_hrnet18s_ocr48_lits"></el-option>
+            <el-option key="static_hrnet18_ocr48_rsbuilding_instance" label="HRNet18s OCR48 Buildings"
+                       value="static_hrnet18_ocr48_rsbuilding_instance"></el-option>
+        </el-select>
+    </sly-field>
+
+    <sly-field title="Probability Threshold"
+               description="Threshold for binarization of probability map. Recommended value is 0.5">
+        <el-slider v-model="state.thresh" :min="0" :max="1" :step="0.1" show-input
+                   style="flex:1; max-width: 99%; margin-left: 15px;"></el-slider>
+    </sly-field>
 
 </div>
