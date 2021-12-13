@@ -26,5 +26,5 @@ cache_item_limit = 30
 mkdir(cache_dir)
 
 CONTROLLER = None
-MODEL_NAME = os.environ["modal.state.modelName"]
+MODEL_NAME = os.environ["modal.state.selectedModel"]
 PROB_THRESH = float(os.environ['modal.state.thresh'])
