@@ -48,7 +48,7 @@
             <tbody>
             <tr v-for="model in state.models">
                 <td v-for="column in state.modelColumns">
-                    <div v-if="column.key === 'Model'">
+                    <div v-if="column.key === 'Model_type'">
                         <el-radio class="radio" v-model="state.selectedModel" :label="model[column.key]">
                             {{model[column.key]}}
                         </el-radio>
