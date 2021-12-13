@@ -18,43 +18,43 @@
       {
         "Name": "static_hrnet18_ocr64_cocolvis",
         "Structure": "HRNet18_OCR64",
-        "Applying": "general labeling",
+        "Applying": "General labeling",
         "Type": "High precision model"
       },
       {
         "Name": "static_hrnet18s_ocr48_cocolvis",
         "Structure": "HRNet18s_OCR48",
-        "Applying": "general labeling",
+        "Applying": "General labeling",
         "Type": "Lightweight model"
       },
       {
         "Name": "static_hrnet18_ocr64_human",
         "Structure": "HRNet18_OCR64",
-        "Applying": "human portrait labeling",
+        "Applying": "Human portrait labeling",
         "Type": "High precision model"
       },
       {
         "Name": "static_hrnet18s_ocr48_human",
         "Structure": "HRNet18s_OCR48",
-        "Applying": "human portrait labeling",
+        "Applying": "Human portrait labeling",
         "Type": "Lightweight model"
       },
       {
         "Name": "static_edgeflow_cocolvis",
         "Structure": "EdgeFlow",
-        "Applying": "general labeling",
+        "Applying": "General labeling",
         "Type": "High precision model"
       },
       {
         "Name": "static_hrnet18_ocr48_rsbuilding_instance",
         "Structure": "HRNet18s_OCR48",
-        "Applying": "human portrait labeling",
+        "Applying": "Remote sensing of building labeling",
         "Type": "Lightweight model"
       },
       {
         "Name": "static_hrnet18s_ocr48_lits",
         "Structure": "HRNet18s_OCR48",
-        "Applying": "medical scenes of liver labeling",
+        "Applying": "Medical scenes of liver labeling",
         "Type": "Lightweight model"
       }
     ],
