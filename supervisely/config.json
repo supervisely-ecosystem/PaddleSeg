@@ -15,67 +15,67 @@
     "thresh": 0.5,
     "models": [
              {
-            "Model type": "High precision model",
-            "Applicable scene": "Suitable for general labeling",
-            "Model structure": "HRNet18_OCR64",
-            "Model name": "static_hrnet18_ocr64_cocolvis"
+            "Type": "High precision model",
+            "Applying": "Suitable for general labeling",
+            "Structure": "HRNet18_OCR64",
+            "Name": "static_hrnet18_ocr64_cocolvis"
         },
         {
-            "Model type": "Lightweight model",
-            "Applicable scene": "Suitable for general labeling",
-            "Model structure": "HRNet18s_OCR48",
-            "Model name": "static_hrnet18s_ocr48_cocolvis"
+            "Type": "Lightweight model",
+            "Applying": "Suitable for general labeling",
+            "Structure": "HRNet18s_OCR48",
+            "Name": "static_hrnet18s_ocr48_cocolvis"
         },
         {
-            "Model type": "High precision model",
-            "Applicable scene": "Suitable for human portrait labeling",
-            "Model structure": "HRNet18_OCR64",
-            "Model name": "static_hrnet18_ocr64_human"
+            "Type": "High precision model",
+            "Applying": "Suitable for human portrait labeling",
+            "Structure": "HRNet18_OCR64",
+            "Name": "static_hrnet18_ocr64_human"
         },
         {
-            "Model type": "Lightweight model",
-            "Applicable scene": "Suitable for human portrait labeling",
-            "Model structure": "HRNet18s_OCR48",
-            "Model name": "static_hrnet18s_ocr48_human"
+            "Type": "Lightweight model",
+            "Applying": "Suitable for human portrait labeling",
+            "Structure": "HRNet18s_OCR48",
+            "Name": "static_hrnet18s_ocr48_human"
         },
         {
-            "Model type": "High precision model",
-            "Applicable scene": "Suitable for general labeling",
-            "Model structure": "EdgeFlow",
-            "Model name": "static_edgeflow_cocolvis"
+            "Type": "High precision model",
+            "Applying": "Suitable for general labeling",
+            "Structure": "EdgeFlow",
+            "Name": "static_edgeflow_cocolvis"
         },
         {
-            "Model type": "Lightweight model",
-            "Applicable scene": "Suitable for human portrait labeling",
-            "Model structure": "HRNet18s_OCR48",
-            "Model name": "static_hrnet18_ocr48_rsbuilding_instance"
+            "Type": "Lightweight model",
+            "Applying": "Suitable for human portrait labeling",
+            "Structure": "HRNet18s_OCR48",
+            "Name": "static_hrnet18_ocr48_rsbuilding_instance"
         },
         {
-            "Model type": "Lightweight model",
-            "Applicable scene": "Suitable for medical scenes of liver labeling",
-            "Model structure": "HRNet18s_OCR48",
-            "Model name": "static_hrnet18s_ocr48_lits"
+            "Type": "Lightweight model",
+            "Applying": "Suitable for medical scenes of liver labeling",
+            "Structure": "HRNet18s_OCR48",
+            "Name": "static_hrnet18s_ocr48_lits"
         }
     ],
     "modelColumns": [
       {
-        "key": "Model_type",
-        "title": "Model type",
+        "key": "Type",
+        "title": "Type",
         "subtitle": null
       },
       {
-        "key": "Applicable",
-        "title": "Applicable to",
+        "key": "Applying",
+        "title": "Applying",
         "subtitle": null
       },
             {
-        "key": "Model_structure",
-        "title": "Model structure",
+        "key": "Structure",
+        "title": "Structure",
         "subtitle": null
       },
             {
-        "key": "Model_name",
-        "title": "Model name",
+        "key": "Name",
+        "title": "Name",
         "subtitle": null
       }
     ]
