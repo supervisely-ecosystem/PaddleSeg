@@ -2,7 +2,7 @@
 # learn more here: https://github.com/supervisely/supervisely/blob/master/base_images/py/Dockerfile
 FROM supervisely/base-py-sdk:6.1.98
 
-COPY eiseg_models /
+COPY eiseg_models /eiseg_models
 
 # install pytorch
 RUN pip3 install supervisely==6.1.98 pre-commit yapf==0.26.0

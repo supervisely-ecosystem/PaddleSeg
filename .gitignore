@@ -115,3 +115,4 @@ test_tipc/web/models/
 
 supervisely/docker/eiseg_models
 supervisely/secret_debug.env
+supervisely/smarttool/src/debug
