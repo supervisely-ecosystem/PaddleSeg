@@ -1,24 +1,65 @@
-<div>
+<div id="gl-metric-learning">
+    <sly-style>
+        #gl-metric-learning .el-tabs.el-tabs-cards .el-radio {
+        display: flex;
+        align-items: start;
+        /*margin-bottom: 10px;*/
+        margin-left: 0;
+        white-space: normal;
+        }
+
+        #gl-metric-learning .el-tabs.el-tabs-cards .el-radio__label div {
+        color: #7f858e;
+        font-size: 13px;
+        }
+
+        .beautiful-table { border-collapse: collapse; }
+        .beautiful-table tr:nth-child(2n) { background-color: #f6f8fa; }
+        .beautiful-table td, .beautiful-table th {
+        border: 1px solid #dfe2e5;
+        padding: 6px 13px;
+        text-align: center;
+        line-height: 20px;
+        }
+
+        #gl-metric-learning .el-tabs.el-tabs-cards { border-radius: 4px; box-shadow: none; }
+        #gl-metric-learning .el-tabs.el-tabs-cards .el-tabs__header { background-color: #f6fafd; }
+        #gl-metric-learning .el-tabs.el-tabs-cards .el-tabs__nav { float: none; display: flex; justify-content:
+        space-between; }
+        #gl-metric-learning .el-tabs.el-tabs-cards .el-tabs__item { flex: 1; margin-bottom: -3px; padding: 9px 16px
+        13px;
+        height: auto; line-height: normal; border-radius: 4px; }
+    </sly-style>
 
     <sly-field title="Model"
                description="Select provided pretrained models with different backbones for interactive segmentation.">
-        <el-select v-model="state.modelName" placeholder="Select model">
-            <el-option key="static_hrnet18_ocr64_cocolvis" label="HRNet18 OCR64 COCOLVIS"
-                       value="static_hrnet18_ocr64_cocolvis"></el-option>
-            <el-option key="static_hrnet18s_ocr48_cocolvis" label="HRNet18s OCR48 COCOLVIS"
-                       value="static_hrnet18s_ocr48_cocolvis"></el-option>
-            <el-option key="static_hrnet18_ocr64_human" label="HRNet18s OCR64 Human"
-                       value="static_hrnet18_ocr64_human"></el-option>
-            <el-option key="static_hrnet18s_ocr48_human" label="HRNet18s OCR48 Human"
-                       value="static_hrnet18s_ocr48_human"></el-option>
 
-            <el-option key="static_edgeflow_cocolvis" label="EdgeFlow COCOLVIS"
-                       value="static_edgeflow_cocolvis"></el-option>
-            <el-option key="static_hrnet18s_ocr48_lits" label="HRNet18s OCR48 LiTS"
-                       value="static_hrnet18s_ocr48_lits"></el-option>
-            <el-option key="static_hrnet18_ocr48_rsbuilding_instance" label="HRNet18s OCR48 Buildings"
-                       value="static_hrnet18_ocr48_rsbuilding_instance"></el-option>
-        </el-select>
+        <table class="beautiful-table">
+            <thead>
+            <tr>
+                <th v-for="row in state.modelColumns">
+                    <div v-html="row['title']"></div>
+                    <div style="color: #7f858e; font-weight: normal; font-size: 12px;">
+                        {{row["subtitle"]}}
+                    </div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="model in state.models">
+                <td v-for="column in state.modelColumns">
+                    <div v-if="column.key === 'Model'">
+                        <el-radio class="radio" v-model="state.selectedModel" :label="model[column.key]">
+                            {{model[column.key]}}
+                        </el-radio>
+                    </div>
+                    <div v-else>
+                        {{model[column.key]}}
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </sly-field>
 
     <sly-field title="Probability Threshold"
