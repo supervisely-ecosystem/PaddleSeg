@@ -37,7 +37,7 @@
         <table class="beautiful-table">
             <thead>
             <tr>
-                <th v-for="row in state.modelColumns">
+                <th v-for="row in state.modelColumns" style="text-align: left">
                     <div v-html="row['title']"></div>
                     <div style="color: #7f858e; font-weight: normal; font-size: 12px;">
                         {{row["subtitle"]}}
@@ -49,7 +49,7 @@
             <tr v-for="model in state.models">
                 <td v-for="column in state.modelColumns">
                     <div v-if="column.key === 'Name'">
-                        <el-radio class="radio" v-model="state.selectedModel" :label="model[column.key]">
+                        <el-radio class="radio" v-model="state.selectedModel" :label="model.key">
                             {{model[column.key]}}
                         </el-radio>
                     </div>

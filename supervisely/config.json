@@ -18,7 +18,8 @@
       {
         "Name": "HRNet18_OCR64 (COCOLVIS)",
         "Applying": "General",
-        "Type": "Accurate"
+        "Type": "Accurate",
+        "key": ""
       },
       {
         "Name": "HRNet18s_OCR48 (COCOLVIS)",
