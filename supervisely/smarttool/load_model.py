@@ -17,7 +17,7 @@ def download_file_from_link(api, link, model_path, file_name, progress_message, 
 
 def deploy(model_name):
     model_path = f"/eiseg_models/{model_name}/{model_name}.pdiparams"
-    # model_path = f"/home/paul/Documents/Work/Applications/PaddleSeg/supervisely/docker/eiseg_models/{model_name}/{model_name}.pdiparams"
+    # model_path = f"/home/paul/Documents/Work/Applications/PaddleSeg/supervisely/docker/eiseg_models/{model_name}/{model_name}.pdiparams" # debug
 
     if model_name == "static_edgeflow_cocolvis":
         with_mask = False

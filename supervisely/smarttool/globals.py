@@ -10,20 +10,16 @@ api: sly.Api = my_app.public_api
 TASK_ID = int(os.environ["TASK_ID"])
 TEAM_ID = int(os.environ['context.teamId'])
 
-cache_item_expire_time = 600
-
-storage_dir = os.path.join(my_app.data_dir, "storage_dir")
-mkdir(storage_dir, True)
-work_dir = os.path.join(storage_dir, "work_dir")
-mkdir(work_dir)
-
+work_dir = os.path.join(my_app.data_dir, "work_dir")
+mkdir(work_dir, True)
 img_dir = os.path.join(work_dir, "img")
 
-cache_dir = os.path.join(storage_dir, "cache_dir")
-mkdir(cache_dir)
+# Create Cache
+cache_dir = os.path.join(work_dir, "diskcache")
 cache = Cache(directory=cache_dir)
-cache_item_limit = 30
+cache_item_expire_time = 600  # seconds
 mkdir(cache_dir)
+mkdir(img_dir)
 
 CONTROLLER = None
 MODEL_NAME = os.environ["modal.state.selectedModel"]
