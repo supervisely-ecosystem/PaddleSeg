@@ -17,39 +17,45 @@
     "models": [
       {
         "Name": "HRNet18_OCR64 (COCOLVIS)",
-        "Applying": "General",
+        "Applying": "Generic",
         "Type": "Accurate",
-        "key": ""
+        "key": "static_hrnet18_ocr64_cocolvis"
       },
       {
         "Name": "HRNet18s_OCR48 (COCOLVIS)",
-        "Applying": "General",
-        "Type": "Fast"
+        "Applying": "Generic",
+        "Type": "Fast",
+        "key": "static_hrnet18s_ocr48_cocolvis"
       },
       {
         "Name": "HRNet18_OCR64 (COCOLVIS)",
         "Applying": "Human portrait",
-        "Type": "Accurate"
+        "Type": "Accurate",
+        "key": "static_hrnet18_ocr64_human"
       },
       {
         "Name": "HRNet18s_OCR48 (COCOLVIS)",
         "Applying": "Human portrait",
-        "Type": "Fast"
+        "Type": "Fast",
+        "key": "static_hrnet18s_ocr48_human"
       },
       {
         "Name": "EdgeFlow (COCOLVIS)",
-        "Applying": "General",
-        "Type": "Accurate"
+        "Applying": "Generic",
+        "Type": "Accurate",
+        "key": "static_edgeflow_cocolvis"
       },
       {
         "Name": "HRNet18s_OCR48 (rsbuilding_instance)",
         "Applying": "Remote sensing of building",
-        "Type": "Fast"
+        "Type": "Fast",
+        "key": "static_hrnet18_ocr48_rsbuilding_instance"
       },
       {
         "Name": "HRNet18s_OCR48 (LiTS)",
         "Applying": "Medical scenes of liver",
-        "Type": "Fast"
+        "Type": "Fast",
+        "key": "static_hrnet18s_ocr48_lits"
       }
     ],
     "modelColumns": [
