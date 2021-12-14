@@ -10,7 +10,7 @@
   "docker_image": "supervisely/eiseg:1.0.3",
   "main_script": "supervisely/smarttool/main.py",
   "modal_template": "supervisely/smarttool/modal.html",
-  "modal_width": 870,
+  "modal_width": 630,
   "modal_template_state": {
     "selectedModel": "static_hrnet18_ocr64_cocolvis",
     "thresh": 0.5,
