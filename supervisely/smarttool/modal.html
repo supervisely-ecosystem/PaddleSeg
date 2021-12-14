@@ -18,7 +18,7 @@
         .beautiful-table td, .beautiful-table th {
         border: 1px solid #dfe2e5;
         padding: 6px 13px;
-        text-align: center;
+        text-align: left;
         line-height: 20px;
         }
 
@@ -37,7 +37,7 @@
         <table class="beautiful-table">
             <thead>
             <tr>
-                <th v-for="row in state.modelColumns" style="text-align: left">
+                <th v-for="row in state.modelColumns">
                     <div v-html="row['title']"></div>
                     <div style="color: #7f858e; font-weight: normal; font-size: 12px;">
                         {{row["subtitle"]}}
