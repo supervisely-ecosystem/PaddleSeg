@@ -16,46 +16,39 @@
     "thresh": 0.5,
     "models": [
       {
-        "Name": "static_hrnet18_ocr64_cocolvis",
-        "Structure": "HRNet18_OCR64",
-        "Applying": "General labeling",
-        "Type": "High precision model"
+        "Name": "HRNet18_OCR64 (COCOLVIS)",
+        "Applying": "General",
+        "Type": "Accurate"
       },
       {
-        "Name": "static_hrnet18s_ocr48_cocolvis",
-        "Structure": "HRNet18s_OCR48",
-        "Applying": "General labeling",
-        "Type": "Lightweight model"
+        "Name": "HRNet18s_OCR48 (COCOLVIS)",
+        "Applying": "General",
+        "Type": "Fast"
       },
       {
-        "Name": "static_hrnet18_ocr64_human",
-        "Structure": "HRNet18_OCR64",
-        "Applying": "Human portrait labeling",
-        "Type": "High precision model"
+        "Name": "HRNet18_OCR64 (COCOLVIS)",
+        "Applying": "Human portrait",
+        "Type": "Accurate"
       },
       {
-        "Name": "static_hrnet18s_ocr48_human",
-        "Structure": "HRNet18s_OCR48",
-        "Applying": "Human portrait labeling",
-        "Type": "Lightweight model"
+        "Name": "HRNet18s_OCR48 (COCOLVIS)",
+        "Applying": "Human portrait",
+        "Type": "Fast"
       },
       {
-        "Name": "static_edgeflow_cocolvis",
-        "Structure": "EdgeFlow",
-        "Applying": "General labeling",
-        "Type": "High precision model"
+        "Name": "EdgeFlow (COCOLVIS)",
+        "Applying": "General",
+        "Type": "Accurate"
       },
       {
-        "Name": "static_hrnet18_ocr48_rsbuilding_instance",
-        "Structure": "HRNet18s_OCR48",
-        "Applying": "Remote sensing of building labeling",
-        "Type": "Lightweight model"
+        "Name": "HRNet18s_OCR48 (rsbuilding_instance)",
+        "Applying": "Remote sensing of building",
+        "Type": "Fast"
       },
       {
-        "Name": "static_hrnet18s_ocr48_lits",
-        "Structure": "HRNet18s_OCR48",
-        "Applying": "Medical scenes of liver labeling",
-        "Type": "Lightweight model"
+        "Name": "HRNet18s_OCR48 (LiTS)",
+        "Applying": "Medical scenes of liver",
+        "Type": "Fast"
       }
     ],
     "modelColumns": [
@@ -65,18 +58,13 @@
         "subtitle": null
       },
       {
-        "key": "Structure",
-        "title": "Structure",
-        "subtitle": null
-      },
-      {
         "key": "Applying",
-        "title": "Applying",
+        "title": "Applicable Scenarios",
         "subtitle": null
       },
       {
         "key": "Type",
-        "title": "Type",
+        "title": "Model Type",
         "subtitle": null
       }
     ]
