@@ -27,11 +27,22 @@
 
 # Overview
 
-Application key points:  
+**Application key points:**  
 - Manually selected ROI
 - Capability to correct prediction errors on the fly
-- Select from [4 pretrained models](../contrib/EISeg/README.md#模型准备)
+- Select from [7 pretrained models](../contrib/EISeg/README.md#模型准备)
 - Models are class agnostic you can segment any object from any industry
+
+
+EISeg (Efficient Interactive Segmentation) is an efficient and intelligent interactive segmentation and annotation software developed based on flying paddles. Covers high-quality interactive segmentation models in different directions such as high-precision and lightweight, which is convenient for developers to quickly implement semantic and instance label labeling, and reduce labeling costs. In addition, by applying the annotations obtained by EISeg to other segmentation models provided by PaddleSeg for training, a high-precision model of a customized scene can be obtained, and the entire process of segmentation tasks from data annotation to model training and prediction can be opened up.
+
+<p float="left">
+  <img src="https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/overview_3.gif?raw=true" style="width:49%;"/>
+  <img src="https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/overview_4.gif?raw=true" style="width:49%;"/>
+</p>
+
+
+**Available pretrained models:**
 
 |      Model type      |                       Applicable scene                       | Model structure |                    Model download address                    |
 | :------------------: | :----------------------------------------------------------: | --------------- | :----------------------------------------------------------: |
@@ -43,14 +54,6 @@ Application key points:
 |  Lightweight model   | It is suitable for remote sensing building labeling scenarios. | HRNet18s_OCR48  | [static_hrnet18_ocr48_rsbuilding_instance](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18_ocr48_rsbuilding_instance.zip) |
 |  Lightweight model   |     It is suitable for medical liver labeling scenarios.     | HRNet18s_OCR48  | [static_hrnet18s_ocr48_lits](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18s_ocr48_lits.zip) |
 
-
-
-EISeg (Efficient Interactive Segmentation) is an efficient and intelligent interactive segmentation and annotation software developed based on flying paddles. Covers high-quality interactive segmentation models in different directions such as high-precision and lightweight, which is convenient for developers to quickly implement semantic and instance label labeling, and reduce labeling costs. In addition, by applying the annotations obtained by EISeg to other segmentation models provided by PaddleSeg for training, a high-precision model of a customized scene can be obtained, and the entire process of segmentation tasks from data annotation to model training and prediction can be opened up.
-
-<p float="left">
-  <img src="https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/overview_3.gif?raw=true" style="width:49%;"/>
-  <img src="https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/overview_4.gif?raw=true" style="width:49%;"/>
-</p>
 
 # How to run
 
