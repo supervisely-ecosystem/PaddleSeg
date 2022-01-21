@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/lLTl8to.png"/>
 
 # Efficient Interactive Segmentation
-  
+
   <p align="center"><b>state-of-the art click-based interactive segmentation integrated into Supervisely Image Annotator</b></p>
 
 <p align="center">
@@ -33,6 +33,10 @@ Application key points:
 - Select from [4 pretrained models](../contrib/EISeg/README.md#模型准备)
 - Models are class agnostic you can segment any object from any industry
 
+<div align="center" markdown>
+<img src="https://i.imgur.com/TCa4XOK.png"/>
+</div>
+
 EISeg (Efficient Interactive Segmentation) is an efficient and intelligent interactive segmentation and annotation software developed based on flying paddles. Covers high-quality interactive segmentation models in different directions such as high-precision and lightweight, which is convenient for developers to quickly implement semantic and instance label labeling, and reduce labeling costs. In addition, by applying the annotations obtained by EISeg to other segmentation models provided by PaddleSeg for training, a high-precision model of a customized scene can be obtained, and the entire process of segmentation tasks from data annotation to model training and prediction can be opened up.
 
 <p float="left">
@@ -57,10 +61,11 @@ EISeg (Efficient Interactive Segmentation) is an efficient and intelligent inter
 <img src="https://i.imgur.com/uWMA1x3.png" width="100%"/>
 
 3. Select options in modal window and press the `Run` button.
- 
+
 <div align="center" markdown>
-<img src="https://i.imgur.com/ZJZRg17.png" width="500"/>
+<img src="https://i.imgur.com/ter5m56.png" width="500"/>
 </div>
+
 
 # How to use
 
@@ -127,7 +132,7 @@ We have prepared a videos and demonstrated how EISEG works for the different dom
     </tr>
   </table>
   
-  
+
 # Manual object correction
 
 <a data-key="sly-embeded-video-link" href="https://youtu.be/6pMUHn0jNGE" data-video-code="6pMUHn0jNGE">
