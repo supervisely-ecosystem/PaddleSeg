@@ -31,7 +31,15 @@
 | Segformer | Segformer_B0 | 支持 | - | - | - |
 | STDC | STDC_STDC1 | 支持 | - | - | - |
 | MODNet | PP-Matting | 支持 | - | - | - |
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+| PFPNNet | PFPNNet | 支持 | - | - | - |
+=======
+
+>>>>>>> 9c8570af (add new models)
+>>>>>>> PaddlePaddle-release/2.4
 
 
 ## 3. 测试工具简介

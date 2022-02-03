@@ -10,4 +10,15 @@
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
+<<<<<<< HEAD
+<<<<<<< HEAD:contrib/EISeg/eiseg/plugin/__init__.py
 # limitations under the License.
+=======
+# limitations under the License.
+
+from .train import Trainer
+from .val import evaluate
+>>>>>>> PaddlePaddle-release/2.4:contrib/DomainAdaptation/script/__init__.py
+=======
+# limitations under the License.
+>>>>>>> PaddlePaddle-release/2.4

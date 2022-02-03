@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+# Copyright (c) 2020 PaddlePaddle Authors. All Rights Reserved.
+=======
 # Copyright (c) 2021 PaddlePaddle Authors. All Rights Reserved.
+>>>>>>> PaddlePaddle-release/2.4
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,9 +25,21 @@ import paddle
 from paddle.distributed import fleet
 import paddle.nn.functional as F
 
+<<<<<<< HEAD
+<<<<<<< HEAD:slim/distill/distill_utils.py
 from paddleseg.utils import TimeAverager, calculate_eta, resume, logger, worker_init_fn
 from paddleseg.core.val import evaluate
 from paddleseg.models.losses import DistillCrossEntropyLoss
+=======
+from paddleseg.utils import (TimeAverager, calculate_eta, resume, logger,
+                             worker_init_fn, train_profiler, op_flops_funs)
+from .val import evaluate
+>>>>>>> PaddlePaddle-release/2.4:contrib/LaneSeg/core/train.py
+=======
+from paddleseg.utils import TimeAverager, calculate_eta, resume, logger, worker_init_fn
+from paddleseg.core.val import evaluate
+from paddleseg.models.losses import DistillCrossEntropyLoss
+>>>>>>> PaddlePaddle-release/2.4
 
 
 def check_logits_losses(logits_list, losses):
@@ -53,6 +69,10 @@ def loss_computation(logits_list, labels, losses, edges=None):
     return loss_list
 
 
+<<<<<<< HEAD
+<<<<<<< HEAD:slim/distill/distill_utils.py
+=======
+>>>>>>> PaddlePaddle-release/2.4
 def distill_loss_computation(student_logits_list,
                              teacher_logits_list,
                              labels,
@@ -87,6 +107,28 @@ def distill_train(distill_model,
                   keep_checkpoint_max=5,
                   test_config=None,
                   fp16=False):
+<<<<<<< HEAD
+=======
+def train(model,
+          train_dataset,
+          val_dataset=None,
+          optimizer=None,
+          save_dir='output',
+          iters=10000,
+          batch_size=2,
+          resume_model=None,
+          save_interval=1000,
+          log_iters=10,
+          num_workers=0,
+          use_vdl=False,
+          losses=None,
+          keep_checkpoint_max=5,
+          test_config=None,
+          fp16=False,
+          profiler_options=None):
+>>>>>>> PaddlePaddle-release/2.4:contrib/LaneSeg/core/train.py
+=======
+>>>>>>> PaddlePaddle-release/2.4
     """
     Launch training.
 
@@ -103,12 +145,25 @@ def distill_train(distill_model,
         log_iters (int, optional): Display logging information at every log_iters. Default: 10.
         num_workers (int, optional): Num workers for data loader. Default: 0.
         use_vdl (bool, optional): Whether to record the data to VisualDL during training. Default: False.
+<<<<<<< HEAD
+        losses (dict, optional): A dict including 'types' and 'coef'. The length of coef should equal to 1 or len(losses['types']).
+=======
         losses (dict): A dict including 'types' and 'coef'. The length of coef should equal to 1 or len(losses['types']).
+>>>>>>> PaddlePaddle-release/2.4
             The 'types' item is a list of object of paddleseg.models.losses while the 'coef' item is a list of the relevant coefficient.
         distill_losses (dict): A dict including 'types' and 'coef'. The format of distill_losses is the same as losses.
         keep_checkpoint_max (int, optional): Maximum number of checkpoints to save. Default: 5.
         test_config(dict, optional): Evaluation config.
+<<<<<<< HEAD
+<<<<<<< HEAD:slim/distill/distill_utils.py
         fp16 (bool, optional): Whether to use amp. Not support for now.
+=======
+        fp16 (bool, optional): Whether to use amp.
+        profiler_options (str, optional): The option of train profiler.
+>>>>>>> PaddlePaddle-release/2.4:contrib/LaneSeg/core/train.py
+=======
+        fp16 (bool, optional): Whether to use amp. Not support for now.
+>>>>>>> PaddlePaddle-release/2.4
     """
     if fp16:
         raise RuntimeError("Distillation doesn't support amp training.")
@@ -127,6 +182,10 @@ def distill_train(distill_model,
         os.makedirs(save_dir)
 
     if nranks > 1:
+<<<<<<< HEAD
+<<<<<<< HEAD:slim/distill/distill_utils.py
+=======
+>>>>>>> PaddlePaddle-release/2.4
         strategy = fleet.DistributedStrategy()
         strategy.find_unused_parameters = True
         fleet.init(is_collective=True, strategy=strategy)
@@ -134,6 +193,15 @@ def distill_train(distill_model,
         optimizer = fleet.distributed_optimizer(
             optimizer)  # The return is Fleet object
         ddp_distill_model = fleet.distributed_model(distill_model)
+<<<<<<< HEAD
+=======
+        paddle.distributed.fleet.init(is_collective=True)
+        optimizer = paddle.distributed.fleet.distributed_optimizer(
+            optimizer)  # The return is Fleet object
+        ddp_model = paddle.distributed.fleet.distributed_model(model)
+>>>>>>> PaddlePaddle-release/2.4:contrib/LaneSeg/core/train.py
+=======
+>>>>>>> PaddlePaddle-release/2.4
 
     batch_sampler = paddle.io.DistributedBatchSampler(
         train_dataset, batch_size=batch_size, shuffle=True, drop_last=True)
@@ -146,6 +214,13 @@ def distill_train(distill_model,
         worker_init_fn=worker_init_fn,
     )
 
+<<<<<<< HEAD
+<<<<<<< HEAD:slim/distill/distill_utils.py
+=======
+    # use amp
+>>>>>>> PaddlePaddle-release/2.4:contrib/LaneSeg/core/train.py
+=======
+>>>>>>> PaddlePaddle-release/2.4
     if fp16:
         logger.info('use amp to train')
         scaler = paddle.amp.GradScaler(init_loss_scaling=1024)
@@ -160,7 +235,11 @@ def distill_train(distill_model,
     avg_feature_distill_loss = 0.0
     avg_out_loss_list = []
     iters_per_epoch = len(batch_sampler)
+<<<<<<< HEAD
+    best_acc = -1.0
+=======
     best_mean_iou = -1.0
+>>>>>>> PaddlePaddle-release/2.4
     best_model_iter = -1
     reader_cost_averager = TimeAverager()
     batch_cost_averager = TimeAverager()
@@ -172,15 +251,32 @@ def distill_train(distill_model,
         for data in loader:
             iter += 1
             if iter > iters:
+<<<<<<< HEAD
+                version = paddle.__version__
+                if version == '2.1.2':
+                    continue
+                else:
+                    break
+=======
                 break
+>>>>>>> PaddlePaddle-release/2.4
             reader_cost_averager.record(time.time() - batch_start)
             images = data[0]
             labels = data[1].astype('int64')
             edges = None
             if len(data) == 3:
                 edges = data[2].astype('int64')
+<<<<<<< HEAD
+<<<<<<< HEAD:slim/distill/distill_utils.py
             if hasattr(distill_model,
                        'data_format') and distill_model.data_format == 'NHWC':
+=======
+            if hasattr(model, 'data_format') and model.data_format == 'NHWC':
+>>>>>>> PaddlePaddle-release/2.4:contrib/LaneSeg/core/train.py
+=======
+            if hasattr(distill_model,
+                       'data_format') and distill_model.data_format == 'NHWC':
+>>>>>>> PaddlePaddle-release/2.4
                 images = images.transpose((0, 2, 3, 1))
 
             if fp16:
@@ -191,9 +287,21 @@ def distill_train(distill_model,
                         },
                         custom_black_list={'bilinear_interp_v2'}):
                     if nranks > 1:
+<<<<<<< HEAD
+<<<<<<< HEAD:slim/distill/distill_utils.py
                         logits_list = ddp_distill_model(images)
                     else:
                         logits_list = distill_model(images)
+=======
+                        logits_list = ddp_model(images)
+                    else:
+                        logits_list = model(images)
+>>>>>>> PaddlePaddle-release/2.4:contrib/LaneSeg/core/train.py
+=======
+                        logits_list = ddp_distill_model(images)
+                    else:
+                        logits_list = distill_model(images)
+>>>>>>> PaddlePaddle-release/2.4
                     loss_list = loss_computation(
                         logits_list=logits_list,
                         labels=labels,
@@ -203,12 +311,24 @@ def distill_train(distill_model,
 
                 scaled = scaler.scale(loss)  # scale the loss
                 scaled.backward()  # do backward
+<<<<<<< HEAD
+<<<<<<< HEAD:slim/distill/distill_utils.py
                 if isinstance(optimizer, fleet.Fleet):
+=======
+                if isinstance(optimizer, paddle.distributed.fleet.Fleet):
+>>>>>>> PaddlePaddle-release/2.4:contrib/LaneSeg/core/train.py
+=======
+                if isinstance(optimizer, fleet.Fleet):
+>>>>>>> PaddlePaddle-release/2.4
                     scaler.minimize(optimizer.user_defined_optimizer, scaled)
                 else:
                     scaler.minimize(optimizer, scaled)  # update parameters
             else:
                 if nranks > 1:
+<<<<<<< HEAD
+<<<<<<< HEAD:slim/distill/distill_utils.py
+=======
+>>>>>>> PaddlePaddle-release/2.4
                     s_logits_list, t_logits_list, feature_distill_loss = ddp_distill_model(
                         images)
                 else:
@@ -231,20 +351,52 @@ def distill_train(distill_model,
                 out_distill_loss = sum(out_distill_loss_list)
 
                 loss = out_loss + out_distill_loss + feature_distill_loss
+<<<<<<< HEAD
+=======
+                    logits_list = ddp_model(images)
+                else:
+                    logits_list = model(images)
+                loss_list = loss_computation(
+                    logits_list=logits_list,
+                    labels=labels,
+                    losses=losses,
+                    edges=edges)
+                loss = sum(loss_list)
+>>>>>>> PaddlePaddle-release/2.4:contrib/LaneSeg/core/train.py
+=======
+>>>>>>> PaddlePaddle-release/2.4
                 loss.backward()
                 optimizer.step()
 
             lr = optimizer.get_lr()
 
             # update lr
+<<<<<<< HEAD
+<<<<<<< HEAD:slim/distill/distill_utils.py
             if isinstance(optimizer, fleet.Fleet):
+=======
+            if isinstance(optimizer, paddle.distributed.fleet.Fleet):
+>>>>>>> PaddlePaddle-release/2.4:contrib/LaneSeg/core/train.py
+=======
+            if isinstance(optimizer, fleet.Fleet):
+>>>>>>> PaddlePaddle-release/2.4
                 lr_sche = optimizer.user_defined_optimizer._learning_rate
             else:
                 lr_sche = optimizer._learning_rate
             if isinstance(lr_sche, paddle.optimizer.lr.LRScheduler):
                 lr_sche.step()
 
+<<<<<<< HEAD
+<<<<<<< HEAD:slim/distill/distill_utils.py
             distill_model.clear_gradients()
+=======
+            train_profiler.add_profiler_step(profiler_options)
+
+            model.clear_gradients()
+>>>>>>> PaddlePaddle-release/2.4:contrib/LaneSeg/core/train.py
+=======
+            distill_model.clear_gradients()
+>>>>>>> PaddlePaddle-release/2.4
             avg_loss += loss.numpy()[0]
             avg_out_loss += out_loss.numpy()[0]
             avg_out_distill_loss += out_distill_loss.numpy()[0]
@@ -307,6 +459,10 @@ def distill_train(distill_model,
                 if test_config is None:
                     test_config = {}
 
+<<<<<<< HEAD
+<<<<<<< HEAD:slim/distill/distill_utils.py
+=======
+>>>>>>> PaddlePaddle-release/2.4
                 mean_iou, acc, _, _, _ = evaluate(
                     student_model,
                     val_dataset,
@@ -314,6 +470,19 @@ def distill_train(distill_model,
                     **test_config)
 
                 student_model.train()
+<<<<<<< HEAD
+=======
+                acc, fp, fn = evaluate(
+                    model,
+                    val_dataset,
+                    num_workers=num_workers,
+                    save_dir=save_dir,
+                    **test_config)
+
+                model.train()
+>>>>>>> PaddlePaddle-release/2.4:contrib/LaneSeg/core/train.py
+=======
+>>>>>>> PaddlePaddle-release/2.4
 
             if (iter % save_interval == 0 or iter == iters) and local_rank == 0:
                 current_save_dir = os.path.join(save_dir,
@@ -330,24 +499,55 @@ def distill_train(distill_model,
                     shutil.rmtree(model_to_remove)
 
                 if val_dataset is not None:
+<<<<<<< HEAD
+                    if acc > best_acc:
+                        best_acc = acc
+=======
                     if mean_iou > best_mean_iou:
                         best_mean_iou = mean_iou
+>>>>>>> PaddlePaddle-release/2.4
                         best_model_iter = iter
                         best_model_dir = os.path.join(save_dir, "best_model")
                         paddle.save(
                             student_model.state_dict(),
                             os.path.join(best_model_dir, 'model.pdparams'))
                     logger.info(
+<<<<<<< HEAD
+                        '[EVAL] The model with the best validation Acc ({:.4f}) was saved at iter {}.'
+                        .format(best_acc, best_model_iter))
+
+                    if use_vdl:
+<<<<<<< HEAD:slim/distill/distill_utils.py
+                        log_writer.add_scalar('Evaluate/mIoU', mean_iou, iter)
+=======
+>>>>>>> PaddlePaddle-release/2.4:contrib/LaneSeg/core/train.py
+                        log_writer.add_scalar('Evaluate/Acc', acc, iter)
+                        log_writer.add_scalar('Evaluate/Fp', fp, iter)
+                        log_writer.add_scalar('Evaluate/Fn', fn, iter)
+=======
                         '[EVAL] The model with the best validation mIoU ({:.4f}) was saved at iter {}.'
                         .format(best_mean_iou, best_model_iter))
 
                     if use_vdl:
                         log_writer.add_scalar('Evaluate/mIoU', mean_iou, iter)
                         log_writer.add_scalar('Evaluate/Acc', acc, iter)
+>>>>>>> PaddlePaddle-release/2.4
             batch_start = time.time()
 
     # Calculate flops.
     if local_rank == 0:
+<<<<<<< HEAD
+        _, c, h, w = images.shape
+<<<<<<< HEAD:slim/distill/distill_utils.py
+        flops = paddle.flops(
+            student_model, [1, c, h, w],
+            custom_ops={paddle.nn.SyncBatchNorm: count_syncbn})
+=======
+        _ = paddle.flops(
+            model, [1, c, h, w],
+            custom_ops={paddle.nn.SyncBatchNorm: op_flops_funs.count_syncbn})
+>>>>>>> PaddlePaddle-release/2.4:contrib/LaneSeg/core/train.py
+=======
 
         def count_syncbn(m, x, y):
             x = x[0]
@@ -358,6 +558,7 @@ def distill_train(distill_model,
         flops = paddle.flops(
             student_model, [1, c, h, w],
             custom_ops={paddle.nn.SyncBatchNorm: count_syncbn})
+>>>>>>> PaddlePaddle-release/2.4
 
     # Sleep for half a second to let dataloader release resources.
     time.sleep(0.5)

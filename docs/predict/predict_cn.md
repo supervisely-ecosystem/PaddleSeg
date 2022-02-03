@@ -69,8 +69,13 @@ paddleseg.core.predict(
 | save_dir        | str               | 结果输出路径                                         | 否         | 'output' |
 | aug_pred        | bool              | 是否使用多尺度和翻转增广进行预测                     | 否         | False    |
 | scales          | list/float        | 设置缩放因子，`aug_pred`为True时生效                   | 否         | 1.0      |
+<<<<<<< HEAD
+| flip_horizontal | bool              | 是否使用水平翻转，`aug_pred`为True时生效           | 否         | True     |
+| flip_vertical   | bool              | 是否使用垂直翻转，`aug_pred`为True时生效           | 否         | False    |
+=======
 | flip_horizontal | bool              | 是否使用水平翻转，`aug_eval`为True时生效               | 否         | True     |
 | flip_vertical   | bool              | 是否使用垂直翻转，`aug_eval`为True时生效               | 否         | False    |
+>>>>>>> 9c8570af (add new models)
 | is_slide        | bool              | 是否通过滑动窗口进行评估                             | 否         | False    |
 | stride          | tuple/list        | 设置滑动窗宽的宽度和高度，`is_slide`为True时生效       | 否         | None     |
 | crop_size       | tuple/list        | 设置滑动窗口的裁剪的宽度和高度，`is_slide`为True时生效 | 否         | None     |
@@ -106,6 +111,9 @@ predict(
         |  |--...
 
 
+<<<<<<< HEAD
+
+=======
 ## 4.自定义color map
 经过预测后，我们得到的是默认color map配色的预测分割结果。以视盘分割为例：
 ![](./color_map/before_mapped.jpeg)
@@ -139,3 +147,4 @@ python predict.py \
 ```
 
 我们建议你参照RGB颜色数值对照表来设置`--custom_color`。
+>>>>>>> 9c8570af (add new models)

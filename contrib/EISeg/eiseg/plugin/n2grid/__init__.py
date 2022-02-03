@@ -12,5 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+<<<<<<< HEAD
+<<<<<<< HEAD:contrib/EISeg/eiseg/plugin/n2grid/__init__.py
 
 from .grid import Grids
+=======
+from .config import Config
+>>>>>>> PaddlePaddle-release/2.4:contrib/DomainAdaptation/cvlibs/__init__.py
+=======
+
+from .grid import Grids
+>>>>>>> PaddlePaddle-release/2.4

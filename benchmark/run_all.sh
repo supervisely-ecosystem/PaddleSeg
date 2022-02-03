@@ -24,7 +24,15 @@ model_name_list=(fastscnn segformer_b0 ocrnet_hrnetw48)
 fp_item_list=(fp32)     # set fp32 or fp16, segformer_b0 doesn't support fp16 with Paddle2.1.2
 bs_list=(2)
 max_iters=500           # control the test time
+<<<<<<< HEAD
 num_workers=5           # num_workers for dataloader
+=======
+<<<<<<< HEAD
+num_workers=5           # num_workers for dataloader, as for fastscnn and ocrnet_hrnetw48, it is better to set 8
+=======
+num_workers=5           # num_workers for dataloader
+>>>>>>> 9c8570af (add new models)
+>>>>>>> PaddlePaddle-release/2.4
 
 for model_name in ${model_name_list[@]}; do
       for fp_item in ${fp_item_list[@]}; do

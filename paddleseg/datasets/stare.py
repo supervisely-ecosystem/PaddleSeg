@@ -1,4 +1,12 @@
+<<<<<<< HEAD
+<<<<<<< HEAD:paddleseg/datasets/stare.py
 # Copyright (c) 2021 PaddlePaddle Authors. All Rights Reserved.
+=======
+# Copyright (c) 2022 PaddlePaddle Authors. All Rights Reserved.
+>>>>>>> PaddlePaddle-release/2.4:paddleseg/datasets/pp_humanseg14k.py
+=======
+# Copyright (c) 2021 PaddlePaddle Authors. All Rights Reserved.
+>>>>>>> PaddlePaddle-release/2.4
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,8 +22,17 @@
 
 import os
 
+<<<<<<< HEAD
+<<<<<<< HEAD:paddleseg/datasets/stare.py
 from paddleseg.utils.download import download_file_and_uncompress
 from paddleseg.utils import seg_env
+=======
+from .dataset import Dataset
+>>>>>>> PaddlePaddle-release/2.4:paddleseg/datasets/pp_humanseg14k.py
+=======
+from paddleseg.utils.download import download_file_and_uncompress
+from paddleseg.utils import seg_env
+>>>>>>> PaddlePaddle-release/2.4
 from paddleseg.cvlibs import manager
 from paddleseg.transforms import Compose
 from paddleseg.datasets import Dataset
@@ -24,6 +41,10 @@ URL = 'https://bj.bcebos.com/paddleseg/dataset/stare/stare.zip'
 
 
 @manager.DATASETS.add_component
+<<<<<<< HEAD
+<<<<<<< HEAD:paddleseg/datasets/stare.py
+=======
+>>>>>>> PaddlePaddle-release/2.4
 class STARE(Dataset):
     """
     STARE dataset is processed from the STARE(STructured Analysis of the Retina) project.
@@ -34,6 +55,25 @@ class STARE(Dataset):
         dataset_root (str): The dataset directory. Default: None
         edge (bool): whether extract edge infor in the output
         mode (str, optional): Which part of dataset to use. it is one of ('train', 'val', 'test'). Default: 'train'.
+<<<<<<< HEAD
+=======
+class PPHumanSeg14K(Dataset):
+    """
+    This is the PP-HumanSeg14K Dataset.
+
+    This dataset was introduced in the work:
+    Chu, Lutao, et al. "PP-HumanSeg: Connectivity-Aware Portrait Segmentation with a Large-Scale Teleconferencing Video Dataset." Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision. 2022.
+
+    This dataset is divided into training set, validation set and test set. The training set includes 8770 pictures, the validation set includes 2431 pictures, and the test set includes 2482 pictures.
+
+    Args:
+        dataset_root (str, optional): The dataset directory. Default: None.
+        transforms (list, optional): Transforms for image. Default: None.
+        mode (str, optional): Which part of dataset to use. It is one of ('train', 'val'). Default: 'train'.
+        edge (bool, optional): Whether to compute edge while training. Default: False.
+>>>>>>> PaddlePaddle-release/2.4:paddleseg/datasets/pp_humanseg14k.py
+=======
+>>>>>>> PaddlePaddle-release/2.4
     """
     NUM_CLASSES = 2
 
@@ -81,7 +121,11 @@ class STARE(Dataset):
 
         with open(file_path, 'r') as f:
             for line in f:
+<<<<<<< HEAD
+                items = line.strip().split(' ')
+=======
                 items = line.strip().split()
+>>>>>>> PaddlePaddle-release/2.4
                 if len(items) != 2:
                     if mode == 'train' or mode == 'val':
                         raise Exception(

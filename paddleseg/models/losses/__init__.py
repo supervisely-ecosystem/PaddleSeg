@@ -32,3 +32,8 @@ from .rmi_loss import RMILoss
 from .detail_aggregate_loss import DetailAggregateLoss
 from .point_cross_entropy_loss import PointCrossEntropyLoss
 from .pixel_contrast_cross_entropy_loss import PixelContrastCrossEntropyLoss
+<<<<<<< HEAD
+from .semantic_encode_cross_entropy_loss import SECrossEntropyLoss
+from .semantic_connectivity_loss import SemanticConnectivityLoss
+=======
+>>>>>>> 9c8570af (add new models)

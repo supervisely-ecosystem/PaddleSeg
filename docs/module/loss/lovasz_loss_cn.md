@@ -1,8 +1,14 @@
 # Lovasz loss
+<<<<<<< HEAD
+在图像分割任务中，经常出现类别分布不均匀的情况，例如：工业产品的瑕疵检测、道路提取及病变区域提取等。我们可使用lovasz loss解决这个问题。
+
+Lovasz loss基于子模损失(submodular losses)的凸Lovasz扩展，对神经网络的mean IoU损失进行优化。Lovasz loss根据分割目标的类别数量可分为两种：lovasz hinge loss和lovasz softmax loss. 其中lovasz hinge loss适用于二分类问题，lovasz softmax loss适用于多分类问题。该工作发表在CVPR 2018上，可点击[参考文献](#参考文献)查看具体原理。
+=======
 
 在图像分割任务中，经常出现类别分布不均匀的情况，例如：工业产品的瑕疵检测、道路提取及病变区域提取等。我们可使用lovasz loss解决这个问题。
 
 Lovasz loss基于子模损失(submodular losses)的凸Lovasz扩展，对神经网络的mean IoU损失进行优化。Lovasz loss根据分割目标的类别数量可分为两种：lovasz hinge loss和lovasz softmax loss. 其中lovasz hinge loss适用于二分类问题，lovasz softmax loss适用于多分类问题。该工作发表在CVPR 2018上，可点击[参考文献](https://openaccess.thecvf.com/content_cvpr_2018/html/Berman_The_LovaSz-Softmax_Loss_CVPR_2018_paper.html)查看具体原理。
+>>>>>>> 9c8570af (add new models)
 
 
 ## Lovasz loss使用指南
@@ -10,8 +16,16 @@ Lovasz loss基于子模损失(submodular losses)的凸Lovasz扩展，对神经�
 - （1）与cross entropy loss或bce loss(binary cross-entropy loss)加权结合使用。
 - （2）先使用cross entropy loss或bce loss进行训练，再使用lovasz softmax loss或lovasz hinge loss进行finetuning.
 
+<<<<<<< HEAD
+以方式（1）为例，通过`MixedLoss`类选择训练时的损失函数， 通过`coef`参数对不同loss进行权重配比，从而灵活地进行训练调参。
+
+一般的网络仅有一个输出logit，使用示例如下：
+
+Lovasz softmax loss示例
+=======
 以方式（1）为例，通过`MixedLoss`类选择训练时的损失函数， 通过`coef`参数对不同loss进行权重配比，从而灵活地进行训练调参。如下所示：
 
+>>>>>>> 9c8570af (add new models)
 ```yaml
 loss:
   types:
@@ -20,8 +34,15 @@ loss:
         - type: CrossEntropyLoss
         - type: LovaszSoftmaxLoss
       coef: [0.8, 0.2]
+<<<<<<< HEAD
+  coef: [1]
 ```
 
+Lovasz hinge loss示例
+=======
+```
+
+>>>>>>> 9c8570af (add new models)
 ```yaml
 loss:
   types:
@@ -30,8 +51,30 @@ loss:
         - type: CrossEntropyLoss
         - type: LovaszHingeLoss
       coef: [1, 0.02]
+<<<<<<< HEAD
+  coef: [1]
 ```
 
+对于多个输出logit的网络，使用示例如下（以2个输出为例）：
+```yaml
+loss:
+  types:
+    - type: MixedLoss
+      losses:
+        - type: CrossEntropyLoss
+        - type: LovaszSoftmaxLoss
+      coef: [0.8, 0.2]
+    - type: MixedLoss
+      losses:
+        - type: CrossEntropyLoss
+        - type: LovaszSoftmaxLoss
+      coef: [0.8, 0.2]
+  coef: [1, 0.4]
+  ```
+=======
+```
+
+>>>>>>> 9c8570af (add new models)
 
 ## Lovasz softmax loss实验对比
 
@@ -40,7 +83,11 @@ loss:
 
 * 数据准备
 
+<<<<<<< HEAD
+见[数据集准备教程](data_prepare.md)
+=======
 见数据集准备教程
+>>>>>>> 9c8570af (add new models)
 
 * Lovasz loss训练
 ```shell
@@ -59,8 +106,14 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python -u -m paddle.distributed.launch train.py \
 * 结果比较
 
 实验mIoU曲线如下图所示。
+<<<<<<< HEAD
+<p align="center">
+  <img src="../images/Lovasz_Softmax_Evaluate_mIoU.png" height="400" /> <br />
+ </p>
+=======
 ![img](../images/Lovasz_Softmax_Evaluate_mIoU.png)
 
+>>>>>>> 9c8570af (add new models)
 
 
 
@@ -79,8 +132,14 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python -u -m paddle.distributed.launch train.py \
 我们以道路提取任务为例应用lovasz hinge loss.
 基于MiniDeepGlobeRoadExtraction数据集与cross entropy loss进行了实验对比。
 该数据集来源于[DeepGlobe CVPR2018挑战赛](http://deepglobe.org/)的Road Extraction单项，训练数据道路占比为 4.5%. 道路在整张图片中的比例很小，是典型的类别不均衡场景。图片样例如下：
+<<<<<<< HEAD
+<p align="center">
+  <img src="../images/deepglobe.png" hspace='10'/> <br />
+ </p>
+=======
 ![img](../images/deepglobe.png)
 
+>>>>>>> 9c8570af (add new models)
 
 这里使用OCRNet模型，backbone为HRNet w18.
 
@@ -106,8 +165,14 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python -u -m paddle.distributed.launch train.py \
 * 结果比较
 
 实验mIoU曲线如下图所示。
+<<<<<<< HEAD
+<p align="center">
+  <img src="../images/Lovasz_Hinge_Evaluate_mIoU.png" width="600" /> <br />
+ </p>
+=======
 ![img](../images/Lovasz_Hinge_Evaluate_mIoU.png)
 
+>>>>>>> 9c8570af (add new models)
 
 
 

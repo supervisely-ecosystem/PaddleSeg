@@ -12,5 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+<<<<<<< HEAD
+<<<<<<< HEAD:contrib/EISeg/eiseg/plugin/medical/__init__.py
 
 from .med import has_sitk, dcm_reader, windowlize
+=======
+from .resnet import *
+>>>>>>> PaddlePaddle-release/2.4:contrib/DomainAdaptation/models/backbones/__init__.py
+=======
+
+from .med import has_sitk, dcm_reader, windowlize
+>>>>>>> PaddlePaddle-release/2.4
