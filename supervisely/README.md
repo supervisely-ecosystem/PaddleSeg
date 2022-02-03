@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/lLTl8to.png"/>
 
 # Efficient Interactive Segmentation
-  
+
   <p align="center"><b>state-of-the art click-based interactive segmentation integrated into Supervisely Image Annotator</b></p>
 
 <p align="center">
@@ -27,11 +27,12 @@
 
 # Overview
 
-Application key points:  
+**Application key points:**  
 - Manually selected ROI
 - Capability to correct prediction errors on the fly
-- Select from [4 pretrained models](../contrib/EISeg/README.md#模型准备)
+- Select from [7 pretrained models](../contrib/EISeg/README.md#模型准备)
 - Models are class agnostic you can segment any object from any industry
+
 
 EISeg (Efficient Interactive Segmentation) is an efficient and intelligent interactive segmentation and annotation software developed based on flying paddles. Covers high-quality interactive segmentation models in different directions such as high-precision and lightweight, which is convenient for developers to quickly implement semantic and instance label labeling, and reduce labeling costs. In addition, by applying the annotations obtained by EISeg to other segmentation models provided by PaddleSeg for training, a high-precision model of a customized scene can be obtained, and the entire process of segmentation tasks from data annotation to model training and prediction can be opened up.
 
@@ -39,6 +40,20 @@ EISeg (Efficient Interactive Segmentation) is an efficient and intelligent inter
   <img src="https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/overview_3.gif?raw=true" style="width:49%;"/>
   <img src="https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/overview_4.gif?raw=true" style="width:49%;"/>
 </p>
+
+
+**Available pretrained models:**
+
+|      Model type      |                       Applicable scene                       | Model structure |                    Model download address                    |
+| :------------------: | :----------------------------------------------------------: | --------------- | :----------------------------------------------------------: |
+| High precision model |           Image annotation for general scenarios.            | HRNet18_OCR64   | [static_hrnet18_ocr64_cocolvis](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18_ocr64_cocolvis.zip) |
+|  Lightweight model   |           Image annotation for general scenarios.            | HRNet18s_OCR48  | [static_hrnet18s_ocr48_cocolvis](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18s_ocr48_cocolvis.zip) |
+| High precision model |      It is suitable for portrait annotation scenarios.       | HRNet18_OCR64   | [static_hrnet18_ocr64_human](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18_ocr64_human.zip) |
+|  Lightweight model   |      It is suitable for portrait annotation scenarios.       | HRNet18s_OCR48  | [static_hrnet18s_ocr48_human](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18s_ocr48_human.zip) |
+| High precision model |       Suitable for general image annotation scenarios.       | EdgeFlow        | [static_edgeflow_cocolvis](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_edgeflow_cocolvis.zip) |
+|  Lightweight model   | It is suitable for remote sensing building labeling scenarios. | HRNet18s_OCR48  | [static_hrnet18_ocr48_rsbuilding_instance](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18_ocr48_rsbuilding_instance.zip) |
+|  Lightweight model   |     It is suitable for medical liver labeling scenarios.     | HRNet18s_OCR48  | [static_hrnet18s_ocr48_lits](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18s_ocr48_lits.zip) |
+
 
 # How to run
 
@@ -57,10 +72,11 @@ EISeg (Efficient Interactive Segmentation) is an efficient and intelligent inter
 <img src="https://i.imgur.com/uWMA1x3.png" width="100%"/>
 
 3. Select options in modal window and press the `Run` button.
- 
+
 <div align="center" markdown>
-<img src="https://i.imgur.com/ZJZRg17.png" width="500"/>
+<img src="https://i.imgur.com/ter5m56.png" width="500"/>
 </div>
+
 
 # How to use
 
@@ -127,7 +143,7 @@ We have prepared a videos and demonstrated how EISEG works for the different dom
     </tr>
   </table>
   
-  
+
 # Manual object correction
 
 <a data-key="sly-embeded-video-link" href="https://youtu.be/6pMUHn0jNGE" data-video-code="6pMUHn0jNGE">

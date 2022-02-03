@@ -2,12 +2,7 @@
 # learn more here: https://github.com/supervisely/supervisely/blob/master/base_images/py/Dockerfile
 FROM supervisely/base-py-sdk:6.1.98
 
-RUN mkdir /eiseg_models
-# download checkpoints
-RUN wget -O /eiseg_models/hrnet18_ocr64_cocolvis.pdparams https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18_ocr64_cocolvis.pdparams
-RUN wget -O /eiseg_models/hrnet18s_ocr48_cocolvis.pdparams https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18s_ocr48_cocolvis.pdparams
-RUN wget -O /eiseg_models/hrnet18_ocr64_human.pdparams https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18_ocr64_human.pdparams
-RUN wget -O /eiseg_models/hrnet18s_ocr48_human.pdparams https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18s_ocr48_human.pdparams
+COPY eiseg_models /eiseg_models
 
 # install pytorch
 RUN pip3 install supervisely==6.1.98 pre-commit yapf==0.26.0

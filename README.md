@@ -6,13 +6,11 @@ English | [简体中文](README_CN.md)
 [![Version](https://img.shields.io/github/release/PaddlePaddle/PaddleSeg.svg)](https://github.com/PaddlePaddle/PaddleSeg/releases)
 ![python version](https://img.shields.io/badge/python-3.6+-orange.svg)
 ![support os](https://img.shields.io/badge/os-linux%2C%20win%2C%20mac-yellow.svg)
-
 ## PaddleSeg has released the new version including the following features:
 
-* Our team won the AutoNUE@CVPR 2021 challenge, where the technical [report](https://bj.bcebos.com/paddleseg/docs/autonue21_presentation_PaddleSeg.pdf) and [source code](https://github.com/PaddlePaddle/PaddleSeg/tree/release/2.2/contrib/AutoNUE) are available.
-* We released an efficient interactive annotation tool for image segmentation, named [EISeg](https://github.com/PaddlePaddle/PaddleSeg/tree/release/2.2/contrib/EISeg).
-* We introduced [Panoptic-DeepLab](https://github.com/PaddlePaddle/PaddleSeg/tree/release/2.2/contrib/PanopticDeepLab), which is a proposal-free algorithm  for panoptic segmentation.
-* We provided an ultra-lightweight [portrait segmentation](./contrib/PP-HumanSeg) solution for the mobile devices and even the web
+* We published a paper on interactive segmentation named [EdgeFlow](https://arxiv.org/abs/2109.09406), in which the proposed approach achieved SOTA performance on serveral well-known datasets, and upgraded the interactive annotation tool, [EISeg](./EISeg).
+* We released two [Matting](./contrib/Matting) algorithms, DIM and MODNet, which achieve extremely fine-grained segmentation.
+* We provided advanced features on segmentation model compression, [Knowlede Distillation](./slim/distill) and [Model Quantization](./slim/quant), which accelerate model inference on multi-devices deployment.
 
 ## PaddleSeg Introduction
 
@@ -46,8 +44,6 @@ Welcome to PaddleSeg! PaddleSeg is an end-to-end image segmentation development 
 
 * <img src="./docs/images/f3.png" width="20"/> **High Efficiency**: PaddleSeg provides multi-process asynchronous I/O, multi-card parallel training, evaluation and other acceleration strategies, combined with the memory optimization function of the PaddlePaddle, which can greatly reduce the training overhead of the segmentation model, all this allowing developers to lower cost and more efficiently train image segmentation model.
 
-* :heart:**You can go to  [Complete PaddleSeg Online Documentation Directory](https://paddleseg.readthedocs.io)  for more detailed documentation**:heart:
-
 ## Technical Communication <img src="./docs/images/chat.png" width="30"/>
 
 * If you find any problems or have a suggestion with PaddleSeg, please send us issues through [GitHub Issues](https://github.com/PaddlePaddle/PaddleSeg/issues).
@@ -56,13 +52,14 @@ Welcome to PaddleSeg! PaddleSeg is an end-to-end image segmentation development 
 <img src="./docs/images/QQ_chat.png"  width = "200" />  
 </div>
 
-## Model Instraction  <img src="./docs/images/model.png" width="20"/>
+## Model Zoo Overview  <img src="./docs/images/model.png" width="20"/>
 
-[Model Zoo](./configs/)
+See [Model Zoo Overview](./docs/model_zoo_overview.md) for more infomation.
 
 <div align="center">
-<img src="./docs/images/xingnengtu.png"    width = "700"/>  
+<img src=https://user-images.githubusercontent.com/30695251/140323107-02ce9de4-c8f4-4f18-88b2-59bd0055a70b.png   />  
 </div>
+
 
 
 ## Dataset
@@ -82,22 +79,32 @@ Welcome to PaddleSeg! PaddleSeg is an end-to-end image segmentation development 
    * [Annotating Tutorial](./docs/data/transform/transform.md)
    * [Custom Dataset](./docs/data/custom/data_prepare.md)
 
-*  Custom Software Development of PaddleSeg
+*  Custom Development
     * [Detailed Configuration File](./docs/design/use/use.md)
     * [Create Your Own Model](./docs/design/create/add_new_model.md)
+    * [PR Tutorial](./docs/pr/pr/pr.md)
+    * [Model Guideline](./docs/pr/pr/style_cn.md)
 * [Model Training](/docs/train/train.md)
 * [Model Evaluation](./docs/evaluation/evaluate/evaluate.md)
 * [Prediction](./docs/predict/predict.md)
-* [Model Export](./docs/export/export/model_export.md)
+
+* Model Export
+    * [Export Inference Model](./docs/model_export.md)
+    * [Export ONNX Model](./docs/model_export_onnx.md)
 
 *  Model Deploy
-    * [Inference](./docs/deployment/inference/inference.md)
-    * [Lite](./docs/deployment/lite/lite.md)
-    * [Serving](./docs/deployment/serving/serving.md)
-    * [Web](./docs/deployment/web/web.md)
+    * [Paddle Inference (Python)](./docs/deployment/inference/python_inference.md)
+    * [Paddle Inference (C++)](./docs/deployment/inference/cpp_inference.md)
+    * [Paddle Lite](./docs/deployment/lite/lite.md)
+    * [Paddle Serving](./docs/deployment/serving/serving.md)
+    * [Paddle JS](./docs/deployment/web/web.md)
+    * [Benchmark](./docs/deployment/inference/infer_benchmark.md)
+
 * Model Compression
     * [Quantization](./docs/slim/quant/quant.md)
+    * [Distillation](./docs/slim/distill/distill.md)
     * [Prune](./docs/slim/prune/prune.md)
+
 *  API Tutorial
     * [API Documention](./docs/apis/README.md)
     * [API Application](./docs/api_example.md)
@@ -110,7 +117,7 @@ Welcome to PaddleSeg! PaddleSeg is an end-to-end image segmentation development 
     * [UNet](./docs/models/unet.md)
     * [OCRNet](./docs/models/ocrnet.md)
     * [Fast-SCNN](./docs/models/fascnn.md)
-* [PR Instruction](./docs/pr/pr/pr.md)
+* [Static Graph Version](./docs/static/static.md)
 * [FAQ](./docs/faq/faq/faq.md)
 
 ## Installation
@@ -152,6 +159,9 @@ python train.py --config configs/quick_start/bisenet_optic_disc_512x512_1k.yml
 * [PP-HumanSeg](./contrib/PP-HumanSeg)
 * [Cityscapes SOTA](./contrib/CityscapesSOTA)
 * [Panoptic Segmentation](./contrib/PanopticDeepLab)
+* [CVPR Champion Solution](./contrib/AutoNUE)
+* [Interactive Segmentation](./EISeg)
+* [Matting](./contrib/Matting)
 
 ## Feedbacks and Contact
 * The dynamic version is still under development, if you find any issue or have an idea on new features, please don't hesitate to contact us via [GitHub Issues](https://github.com/PaddlePaddle/PaddleSeg/issues).
@@ -162,6 +172,10 @@ python train.py --config configs/quick_start/bisenet_optic_disc_512x512_1k.yml
 * Thanks [zjhellofss](https://github.com/zjhellofss) (Fu Shenshen) for contributing Attention U-Net, and Dice Loss.
 * Thanks [liuguoyu666](https://github.com/liguoyu666), [geoyee](https://github.com/geoyee) for contributing U-Net++ and U-Net3+.
 * Thanks [yazheng0307](https://github.com/yazheng0307) (LIU Zheng) for contributing quick-start document.
+* Thanks [CuberrChen](https://github.com/CuberrChen) for contributing STDC (rethink BiSeNet), PointRend and DetailAggregateLoss.
+* Thanks [justld](https://github.com/justld) (Lang Du) for contributing ESPNet，HRNet_W48_Contrast and PixelContrastCrossEntropyLoss.
+* Thanks [Herman-Hu-saber](https://github.com/Herman-Hu-saber) (Hu Huiming) for contributing ESPNet.
+* Thanks [zhangjin12138](https://github.com/zhangjin12138) for contributing RandomCenterCrop.
 
 ## Citation
 If you find our project useful in your research, please consider citing:

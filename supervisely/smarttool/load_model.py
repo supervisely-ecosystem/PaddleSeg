@@ -2,11 +2,9 @@ import os
 import requests
 import download_progress
 import globals as g
-from contrib.EISeg.eiseg.ui import Ui_EISeg
-from util import MODELS
 import supervisely_lib as sly
-from supervisely_lib.io.fs import mkdir
-from supervisely_lib.io.fs import download
+from supervisely_lib.io.fs import download, mkdir
+from eiseg.controller import InteractiveController
 
 
 def download_file_from_link(api, link, model_path, file_name, progress_message, app_logger):
@@ -18,33 +16,63 @@ def download_file_from_link(api, link, model_path, file_name, progress_message, 
     app_logger.info(f'{file_name} has been successfully downloaded')
 
 
-def deploy(param_name):
-    model_name = None
-    model_link = None
+def deploy(model_name):
+    available_models = {
+        "static_hrnet18_ocr64_cocolvis":
+            ("https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_hrnet18_ocr64_cocolvis.pdiparams",
+             "https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_hrnet18_ocr64_cocolvis.pdmodel"),
+        "static_hrnet18s_ocr48_cocolvis":
+            ("https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_hrnet18s_ocr48_cocolvis.pdiparams",
+             "https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_hrnet18s_ocr48_cocolvis.pdmodel"),
+        "static_hrnet18_ocr64_human":
+            ("https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_hrnet18_ocr64_human.pdiparams",
+             "https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_hrnet18_ocr64_human.pdmodel"),
+        "static_hrnet18s_ocr48_human":
+            ("https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_hrnet18s_ocr48_human.pdiparams",
+             "https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_hrnet18s_ocr48_human.pdmodel"),
+        "static_edgeflow_cocolvis":
+            ("https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_edgeflow_cocolvis.pdiparams",
+             "https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_edgeflow_cocolvis.pdmodel"),
+        "static_hrnet18_ocr48_rsbuilding_instance":
+            ("https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_hrnet18_ocr48_rsbuilding_instance.pdiparams",
+             "https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_hrnet18_ocr48_rsbuilding_instance.pdmodel"),
+        "static_hrnet18s_ocr48_lits":
+            ("https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_hrnet18s_ocr48_lits.pdiparams",
+             "https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_edgeflow_cocolvis.pdmodel")
+    }
 
-    param_path = f"/eiseg_models/{param_name}"
-    if param_name == 'hrnet18_ocr64_cocolvis.pdparams':
-        model_name = 'HRNet18_OCR64'
-        model_link = 'https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18_ocr64_cocolvis.pdparams'
-    elif param_name == 'hrnet18s_ocr48_cocolvis.pdparams':
-        model_name = 'HRNet18s_OCR48'
-        model_link = 'https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18s_ocr48_cocolvis.pdparams'
-    elif param_name == 'hrnet18_ocr64_human.pdparams':
-        model_name = 'HRNet18_OCR64'
-        model_link = 'https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18_ocr64_human.pdparams'
-    elif param_name == 'hrnet18s_ocr48_human.pdparams':
-        model_name = 'HRNet18s_OCR48'
-        model_link = 'https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/hrnet18s_ocr48_human.pdparams'
-
+    pdiparams_link, pdmodel_link = available_models[model_name]
+    param_path = f"/eiseg_models/{model_name}/{model_name}.pdiparams"
     if os.path.isfile(param_path) is False:
-        param_dir = os.path.join(g.storage_dir, "param_dir")
-        mkdir(param_dir)
-        param_path = os.path.join(param_dir, param_name)
-        download_file_from_link(g.api, model_link, param_path, param_name, f"Download {param_name}", g.my_app.logger)
+        model_dir = os.path.join(g.work_dir, "eiseg_models", model_name)
+        mkdir(model_dir)
+        param_path = os.path.join(model_dir, f"{model_name}.pdiparams")
+        model_path = os.path.join(model_dir, f"{model_name}.pdmodel")
+        download_file_from_link(g.api, pdiparams_link, param_path, model_name, f"Download {model_name}.pdiparams", g.my_app.logger)
+        download_file_from_link(g.api, pdmodel_link, model_path, model_name, f"Download {model_name}.pdmodel", g.my_app.logger)
     else:
-        g.my_app.logger.info(f"{param_name} has been loaded from docker image")
+        g.my_app.logger.info(f"{model_name} has been loaded from docker image")
 
-    model = MODELS[model_name]()
-    g.model = model
-    model.load_param(param_path)
+    if model_name == "static_edgeflow_cocolvis":
+        with_mask = False
+    else:
+        with_mask = True
+
+    predictor_params = {
+        "brs_mode": "NoBRS",
+        "with_flip": False,
+        "zoom_in_params": {
+            "skip_clicks": -1,
+            "target_size": (400, 400),
+            "expansion_ratio": 10,
+        },
+        "predictor_params": {
+            "net_clicks_limit": None,
+            "max_size": 800,
+            "with_mask": with_mask,
+        },
+    }
+
+    g.CONTROLLER = InteractiveController(predictor_params, prob_thresh=g.PROB_THRESH)
+    g.CONTROLLER.setModel(param_path)
     sly.logger.info("🟩 Model has been successfully deployed")

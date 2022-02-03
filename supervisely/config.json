@@ -1,15 +1,81 @@
 {
   "name": "EISeg interactive segmentation SmartTool",
   "type": "app",
+  "restart_policy": "on_error",
   "categories": [
     "Neural Network",
     "SmartTool"
   ],
   "description": "SmartTool integration of Efficient Interactive Segmentation (EISeg)",
-  "docker_image": "supervisely/eiseg:1.0.1",
+  "docker_image": "supervisely/eiseg:1.0.3",
   "main_script": "supervisely/smarttool/main.py",
   "modal_template": "supervisely/smarttool/modal.html",
-  "modal_template_state": {"modelName": "hrnet18_ocr64_cocolvis", "thresh": 0.5},
+  "modal_width": 630,
+  "modal_template_state": {
+    "selectedModel": "static_hrnet18_ocr64_cocolvis",
+    "thresh": 0.5,
+    "models": [
+      {
+        "Name": "HRNet18_OCR64 (COCOLVIS)",
+        "Applying": "Generic",
+        "Type": "Accurate",
+        "key": "static_hrnet18_ocr64_cocolvis"
+      },
+      {
+        "Name": "HRNet18s_OCR48 (COCOLVIS)",
+        "Applying": "Generic",
+        "Type": "Fast",
+        "key": "static_hrnet18s_ocr48_cocolvis"
+      },
+      {
+        "Name": "HRNet18_OCR64 (COCOLVIS)",
+        "Applying": "Human portrait",
+        "Type": "Accurate",
+        "key": "static_hrnet18_ocr64_human"
+      },
+      {
+        "Name": "HRNet18s_OCR48 (COCOLVIS)",
+        "Applying": "Human portrait",
+        "Type": "Fast",
+        "key": "static_hrnet18s_ocr48_human"
+      },
+      {
+        "Name": "EdgeFlow (COCOLVIS)",
+        "Applying": "Generic",
+        "Type": "Accurate",
+        "key": "static_edgeflow_cocolvis"
+      },
+      {
+        "Name": "HRNet18s_OCR48 (rsbuilding_instance)",
+        "Applying": "Remote sensing of building",
+        "Type": "Fast",
+        "key": "static_hrnet18_ocr48_rsbuilding_instance"
+      },
+      {
+        "Name": "HRNet18s_OCR48 (LiTS)",
+        "Applying": "Medical scenes of liver",
+        "Type": "Fast",
+        "key": "static_hrnet18s_ocr48_lits"
+      }
+    ],
+    "modelColumns": [
+      {
+        "key": "Name",
+        "title": "Name",
+        "subtitle": null
+      },
+      {
+        "key": "Applying",
+        "title": "Applicable Scenarios",
+        "subtitle": null
+      },
+      {
+        "key": "Type",
+        "title": "Model Type",
+        "subtitle": null
+      }
+    ]
+  },
   "task_location": "application_sessions",
   "icon": "https://i.imgur.com/SL7H4GB.png",
   "icon_background": "#FFFFFF",

@@ -8,13 +8,17 @@
 ![python version](https://img.shields.io/badge/python-3.6+-orange.svg)
 ![support os](https://img.shields.io/badge/os-linux%2C%20win%2C%20mac-yellow.svg)
 
+## 近期活动
+PaddleSeg团队将举办主题为《产业图像分割应用与实战》的两日课向大家分析在**交互式智能标注工具**和**精细化分割Matting**方向的研究工作。
+<div align="center">
+<img src=https://user-images.githubusercontent.com/14087480/142155222-97b7b93d-3f2a-433a-be70-6b2a565e936b.png  width = "2000" />  
+</div>
 
-## PaddleSeg重磅发布2.2版本，欢迎体验
+## PaddleSeg发布2.3版本，欢迎体验
 
-* PaddleSeg团队在CVPR2021 AutoNUE语义分割赛道中获得冠军! 已发布[演讲报告](https://bj.bcebos.com/paddleseg/docs/autonue21_presentation_PaddleSeg.pdf)和[源代码](https://github.com/PaddlePaddle/PaddleSeg/tree/release/2.2/contrib/AutoNUE)。
-* 发布了交互式分割的智能标注工具 [EISeg](https://github.com/PaddlePaddle/PaddleSeg/tree/release/2.2/contrib/EISeg)。极大的提升了标注效率；
-* 开源了全景分割算法[Panoptic-DeepLab](https://github.com/PaddlePaddle/PaddleSeg/tree/release/2.2/contrib/PanopticDeepLab)丰富了模型种类；
-* 全新升级了[人像分割](./contrib/PP-HumanSeg)功能，提供了web端超轻量模型部署方案
+* PaddleSeg团队发表交互式分割论文[EdgeFlow](https://arxiv.org/abs/2109.09406)，已在多个数据集实现SOTA性能，并升级了交互式分割工具[EISeg](./EISeg)。
+* 开源两种[Matting](./contrib/Matting)算法，经典方法DIM，和实时性方法MODNet，实现精细化人像分割。
+* 发布图像分割高阶功能，[模型蒸馏](./slim/distill)和[模型量化](./slim/quant)方案，进一步提升模型的部署效率。
 
 ## PaddleSeg介绍
 PaddleSeg是基于飞桨[PaddlePaddle](https://www.paddlepaddle.org.cn)开发的端到端图像分割开发套件，涵盖了**高精度**和**轻量级**等不同方向的大量高质量分割模型。通过模块化的设计，提供了**配置化驱动**和**API调用**两种应用方式，帮助开发者更便捷地完成从训练到部署的全流程图像分割应用。
@@ -45,22 +49,8 @@ PaddleSeg是基于飞桨[PaddlePaddle](https://www.paddlepaddle.org.cn)开发的
 * <img src="./docs/images/f2.png" width="20"/> **模块化设计**：支持20+主流 *分割网络* ，结合模块化设计的 *数据增强策略* 、*骨干网络*、*损失函数* 等不同组件，开发者可以基于实际应用场景出发，组装多样化的训练配置，满足不同性能和精度的要求。
 
 * <img src="./docs/images/f3.png" width="20"/> **高性能**：支持多进程异步I/O、多卡并行训练、评估等加速策略，结合飞桨核心框架的显存优化功能，可大幅度减少分割模型的训练开销，让开发者更低成本、更高效地完成图像分割训练。
-* :heart:**您可以前往  [完整PaddleSeg在线使用文档目录](https://paddleseg.readthedocs.io)  获得更详细的说明文档**:heart:
+
 ----------
-
-
-## <img src="./docs/images/love.png" width="40"/> 直播课回放
-
-✨直播课回放--全球冠军带你实现产业级图像分割✨  
-
-* 学习链接：https://aistudio.baidu.com/aistudio/education/group/info/24590
-
-* Day① 顶会冠军图像分割算法深度解密
-
-* Day② 高精度人像分割算法及应用
-
-* Day③ 交互式分割及破圈应用
-
 
 ## 技术交流 <img src="./docs/images/chat.png" width="30"/>
 
@@ -70,13 +60,14 @@ PaddleSeg是基于飞桨[PaddlePaddle](https://www.paddlepaddle.org.cn)开发的
 <img src="./docs/images/QQ_chat.png"  width = "200" />  
 </div>
 
-## 模型说明  <img src="./docs/images/model.png" width="20"/>
+## 模型库总览  <img src="./docs/images/model.png" width="20"/>
 
-[Model Zoo](./configs/)
+更多信息参见[Model Zoo Overview](./docs/model_zoo_overview.md)
 
 <div align="center">
-<img src="./docs/images/xingnengtu.png"    width = "700"/>  
+<img src=https://user-images.githubusercontent.com/30695251/140323107-02ce9de4-c8f4-4f18-88b2-59bd0055a70b.png   />  
 </div>
+
 
 
 ## 使用教程 <img src="./docs/images/teach.png" width="30"/>
@@ -91,19 +82,29 @@ PaddleSeg是基于飞桨[PaddlePaddle](https://www.paddlepaddle.org.cn)开发的
 *  PaddleSeg二次开发教程
     * [配置文件详解](./docs/design/use/use_cn.md)
     * [如何创造自己的模型](./docs/design/create/add_new_model_cn.md)
+    * [提交PR说明](./docs/pr/pr/pr.md)
+    * [模型PR规范](./docs/pr/pr/style_cn.md)
 * [模型训练](/docs/train/train_cn.md)
 * [模型评估](./docs/evaluation/evaluate/evaluate.md)
 * [预测与可视化](./docs/predict/predict_cn.md)
-* [模型导出](./docs/export/export/model_export.md)
 
-*  模型部署
-    * [Inference](./docs/deployment/inference/inference.md)
-    * [Lite](./docs/deployment/lite/lite.md)
-    * [Serving](./docs/deployment/serving/serving.md)
-    * [Web](./docs/deployment/web/web.md)
+* 模型导出
+    * [导出预测模型](./docs/model_export.md)
+    * [导出ONNX模型](./docs/model_export_onnx.md)
+
+* 模型部署
+    * [Paddle Inference部署(Python)](./docs/deployment/inference/python_inference.md)
+    * [Paddle Inference部署(C++)](./docs/deployment/inference/cpp_inference.md)
+    * [Paddle Lite部署](./docs/deployment/lite/lite.md)
+    * [Paddle Serving部署](./docs/deployment/serving/serving.md)
+    * [Paddle JS部署](./docs/deployment/web/web.md)
+    * [推理Benchmark](./docs/deployment/inference/infer_benchmark.md)
+
 * 模型压缩
     * [量化](./docs/slim/quant/quant.md)
+    * [蒸馏](./docs/slim/distill/distill.md)
     * [裁剪](./docs/slim/prune/prune.md)
+
 *  API使用教程
     * [API文档说明](./docs/apis/README_CN.md)
     * [API应用案例](./docs/api_example.md)
@@ -116,21 +117,29 @@ PaddleSeg是基于飞桨[PaddlePaddle](https://www.paddlepaddle.org.cn)开发的
     * [UNet](./docs/models/unet.md)
     * [OCRNet](./docs/models/ocrnet.md)
     * [Fast-SCNN](./docs/models/fascnn.md)
-* [提交PR说明](./docs/pr/pr/pr.md)
-* [FAQ](./docs/faq/faq/faq_cn.md)
+* [静态图版本](./docs/static/static_cn.md)
+* [常见问题汇总](./docs/faq/faq/faq_cn.md)
 
 ## 实践案例 <img src="./docs/images/anli.png" width="20"/>
 
 - [人像分割](./contrib/PP-HumanSeg)
-- [医疗图像](./docs/solution/medical/medical.md)
-- [遥感分割](https://github.com/PaddlePaddle/PaddleSeg/tree/release/2.1/contrib/remote_sensing)
+- [Cityscapes打榜模型](./contrib/CityscapesSOTA)
+- [CVPR冠军模型](./contrib/AutoNUE)
 - [全景分割](./contrib/PanopticDeepLab)
+- [交互式分割](./EISeg)
+- [深度抠图](./contrib/Matting)
 
 ## 代码贡献
 
 - 非常感谢[jm12138](https://github.com/jm12138)贡献U<sup>2</sup>-Net模型。
 - 非常感谢[zjhellofss](https://github.com/zjhellofss)（傅莘莘）贡献Attention U-Net模型，和Dice loss损失函数。
 - 非常感谢[liuguoyu666](https://github.com/liguoyu666)贡献U-Net++模型。
+- 非常感谢[yazheng0307](https://github.com/yazheng0307) (刘正)贡献快速开始教程文档。
+- 非常感谢[CuberrChen](https://github.com/CuberrChen)贡献STDC (rethink BiSeNet) PointRend，和 Detail Aggregate损失函数。
+- 非常感谢[justld](https://github.com/justld)(郎督)贡献 ESPNet，HRNet_W48_Contrast 和 PixelContrastCrossEntropyLoss 损失函数。
+- 非常感谢[Herman-Hu-saber](https://github.com/Herman-Hu-saber)(胡慧明)参与贡献 ESPNet。
+- 非常感谢[zhangjin12138](https://github.com/zhangjin12138)贡献数据增强方法 RandomCenterCrop。
+
 
 ## 学术引用 <img src="./docs/images/yinyong.png" width="30"/>
 
