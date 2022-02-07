@@ -152,16 +152,62 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
 <details>
   <summary><b>Portrait</b></summary>
   <br>
+    <table>
+    <tr style="width: 100%">
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/LQ_oRNiqMzk" data-video-code="LQ_oRNiqMzk">     <img src="https://i.imgur.com/FdXhZpS.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/IwNqvCaf3yM" data-video-code="IwNqvCaf3yM"> <img src="https://i.imgur.com/8qkVtcL.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      </tr>
+      <tr style="width: 100%">
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/2VNNg3RcPT4" data-video-code="2VNNg3RcPT4">     <img src="https://i.imgur.com/H5vrAsf.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td>
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/er_NBHl8AAU" data-video-code="er_NBHl8AAU"> <img src="https://i.imgur.com/fqEqzCU.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td> 
+      </tr>
+    </table>
 </details>
 
 <details>
   <summary><b>Remote Sensing Building</b></summary>
   <br>
+    <table>
+    <tr style="width: 100%">
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/lV0Rglcov_Q" data-video-code="lV0Rglcov_Q">     <img src="https://i.imgur.com/8ZHSci3.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/wwuxlJahPe4" data-video-code="wwuxlJahPe4"> <img src="https://i.imgur.com/IltnQ61.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      </tr>
+    </table>
 </details>
 
 <details>
   <summary><b>Liver</b></summary>
   <br>
+    <table>
+    <tr style="width: 100%">
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/UwfvpjUzGCc" data-video-code="UwfvpjUzGCc">     <img src="https://i.imgur.com/wuNZJ7G.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/d5zCWIyYCX0" data-video-code="d5zCWIyYCX0"> <img src="https://i.imgur.com/RP2bQHj.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      </tr>
+      <tr style="width: 100%">
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/b7O1o4iVvIQ" data-video-code="b7O1o4iVvIQ">     <img src="https://i.imgur.com/af0Izoh.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td>
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/-56XZifWtaw" data-video-code="-56XZifWtaw"> <img src="https://i.imgur.com/hDFEfFy.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td> 
+      </tr>
+    </table>
 </details>
 
 # Manual object correction
