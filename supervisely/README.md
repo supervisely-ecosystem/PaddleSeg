@@ -30,7 +30,7 @@
 **Application key points:**  
 - Manually selected ROI
 - Capability to correct prediction errors on the fly
-- Select from [7 pretrained models](../contrib/EISeg/README_EN.md#model-preparation)
+- Select from [7 pretrained models](../EISeg/README_EN.md#model-preparation)
 - Models are class agnostic you can segment any object from any industry
 
 
@@ -106,43 +106,63 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
 
 # Demo
 
-We have prepared a videos and demonstrated how EISEG works for the different domains:
+**We have prepared a videos and demonstrated how EISEG works for the different domains:**
 
-<table>
-  <tr style="width: 100%">
-    <td>
-       <a data-key="sly-embeded-video-link" href="https://youtu.be/5t8cQOvaknE" data-video-code="5t8cQOvaknE">     <img src="https://i.imgur.com/8b3pU1Y.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-    </td>
-    <td>
-      <a data-key="sly-embeded-video-link" href="https://youtu.be/ImlaIwX9-nE" data-video-code="ImlaIwX9-nE"> <img src="https://i.imgur.com/97iXSJb.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-    </td>
-      </tr>
-    <tr style="width: 100%">
-      <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/hoXB1m8qHJM" data-video-code="hoXB1m8qHJM">     <img src="https://i.imgur.com/biwvd44.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-      </td>
-      <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/cBp6-VPdKQA" data-video-code="cBp6-VPdKQA"> <img src="https://i.imgur.com/pSQWzUV.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-      </td> 
-    </tr>
-    <tr style="width: 100%">  
-      <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/uYhrJz44g0M" data-video-code="uYhrJz44g0M">     <img src="https://i.imgur.com/lapuFFU.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-      </td>
-      <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/VV_akThOIwY" data-video-code="VV_akThOIwY"> <img src="https://i.imgur.com/Uyvh86r.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-      </td>
-    </tr>
-    <tr style="width: 100%">
-      <td>
-      <a data-key="sly-embeded-video-link" href="https://youtu.be/6wiKb-TX934" data-video-code="6wiKb-TX934">     <img src="https://i.imgur.com/OteFM2A.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-      </td>
-      <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/n5qbdvO3fIw" data-video-code="n5qbdvO3fIw">   <img src="https://i.imgur.com/ymFptmd.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-      </td> 
-    </tr>
-  </table>
+
+<details>
+  <summary><b>Generic</b></summary>
+  <br>
   
+  <table>
+    <tr style="width: 100%">
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/5t8cQOvaknE" data-video-code="5t8cQOvaknE">     <img src="https://i.imgur.com/8b3pU1Y.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/ImlaIwX9-nE" data-video-code="ImlaIwX9-nE"> <img src="https://i.imgur.com/97iXSJb.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      </tr>
+      <tr style="width: 100%">
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/hoXB1m8qHJM" data-video-code="hoXB1m8qHJM">     <img src="https://i.imgur.com/biwvd44.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td>
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/cBp6-VPdKQA" data-video-code="cBp6-VPdKQA"> <img src="https://i.imgur.com/pSQWzUV.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td> 
+      </tr>
+      <tr style="width: 100%">  
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/uYhrJz44g0M" data-video-code="uYhrJz44g0M">     <img src="https://i.imgur.com/lapuFFU.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td>
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/VV_akThOIwY" data-video-code="VV_akThOIwY"> <img src="https://i.imgur.com/Uyvh86r.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td>
+      </tr>
+      <tr style="width: 100%">
+        <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/6wiKb-TX934" data-video-code="6wiKb-TX934">     <img src="https://i.imgur.com/OteFM2A.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td>
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/n5qbdvO3fIw" data-video-code="n5qbdvO3fIw">   <img src="https://i.imgur.com/ymFptmd.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td> 
+      </tr>
+    </table>
+</details>
+
+<details>
+  <summary><b>Portrait</b></summary>
+  <br>
+</details>
+
+<details>
+  <summary><b>Remote Sensing Building</b></summary>
+  <br>
+</details>
+
+<details>
+  <summary><b>Liver</b></summary>
+  <br>
+</details>
 
 # Manual object correction
 
