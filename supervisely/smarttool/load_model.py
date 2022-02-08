@@ -58,20 +58,9 @@ def deploy(model_name):
     else:
         with_mask = True
 
-    predictor_params = {
-        "brs_mode": "NoBRS",
-        "with_flip": False,
-        "zoom_in_params": {
-            "skip_clicks": -1,
-            "target_size": (400, 400),
-            "expansion_ratio": 10,
-        },
-        "predictor_params": {
-            "net_clicks_limit": None,
-            "max_size": 800,
-            "with_mask": with_mask,
-        },
-    }
+    predictor_params = {'brs_mode': 'NoBRS', 'with_flip': False,
+                        'zoom_in_params': {'skip_clicks': -1, 'target_size': (400, 400), 'expansion_ratio': 1.4},
+                        'predictor_params': {'net_clicks_limit': None, 'max_size': 800, 'with_mask': True}}
 
     g.CONTROLLER = InteractiveController(predictor_params, prob_thresh=g.PROB_THRESH)
     g.CONTROLLER.setModel(param_path)
