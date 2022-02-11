@@ -108,11 +108,7 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
 
 **We have prepared a videos and demonstrated how EISEG works for the different domains:**
 
-
-<details>
-  <summary><b>Generic</b></summary>
-  <br>
-  
+## Generic  
   <table>
     <tr style="width: 100%">
       <td>
@@ -147,12 +143,9 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
         </td> 
       </tr>
     </table>
-</details>
 
-<details>
-  <summary><b>Portrait</b></summary>
-  <br>
-    <table>
+## Portrait
+  <table>
     <tr style="width: 100%">
       <td>
         <a data-key="sly-embeded-video-link" href="https://youtu.be/LQ_oRNiqMzk" data-video-code="LQ_oRNiqMzk">     <img src="https://i.imgur.com/FdXhZpS.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
@@ -170,12 +163,9 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
         </td> 
       </tr>
     </table>
-</details>
 
-<details>
-  <summary><b>Remote Sensing Building</b></summary>
-  <br>
-    <table>
+## Remote Sensing Building
+  <table>
     <tr style="width: 100%">
       <td>
         <a data-key="sly-embeded-video-link" href="https://youtu.be/lV0Rglcov_Q" data-video-code="lV0Rglcov_Q">     <img src="https://i.imgur.com/8ZHSci3.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
@@ -185,12 +175,9 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
       </td>
       </tr>
     </table>
-</details>
 
-<details>
-  <summary><b>Liver</b></summary>
-  <br>
-    <table>
+## Liver
+  <table>
     <tr style="width: 100%">
       <td>
         <a data-key="sly-embeded-video-link" href="https://youtu.be/UwfvpjUzGCc" data-video-code="UwfvpjUzGCc">     <img src="https://i.imgur.com/wuNZJ7G.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
@@ -208,7 +195,6 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
         </td> 
       </tr>
     </table>
-</details>
 
 # Manual object correction
 
