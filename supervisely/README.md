@@ -30,11 +30,11 @@
 **Application key points:**  
 - Manually selected ROI
 - Capability to correct prediction errors on the fly
-- Select from [7 pretrained models](../contrib/EISeg/README.md#模型准备)
+- Select from [7 pretrained models](../EISeg/README_EN.md#model-preparation)
 - Models are class agnostic you can segment any object from any industry
 
 
-EISeg (Efficient Interactive Segmentation) is an efficient and intelligent interactive segmentation and annotation software developed based on flying paddles. Covers high-quality interactive segmentation models in different directions such as high-precision and lightweight, which is convenient for developers to quickly implement semantic and instance label labeling, and reduce labeling costs. In addition, by applying the annotations obtained by EISeg to other segmentation models provided by PaddleSeg for training, a high-precision model of a customized scene can be obtained, and the entire process of segmentation tasks from data annotation to model training and prediction can be opened up.
+EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/saic-vul/ritm_interactive_segmentation) and [EdgeFlow](https://arxiv.org/abs/2109.09406), is an efficient and intelligent interactive segmentation annotation software developed based on PaddlePaddle. It covers a large number of high-quality segmentation models in different directions such as general scenarios, portrait, remote sensing, medical treatment, etc., providing convenience to the rapid annotation of semantic and instance labels with reduced cost.
 
 <p float="left">
   <img src="https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.2.1/overview_3.gif?raw=true" style="width:49%;"/>
@@ -44,15 +44,15 @@ EISeg (Efficient Interactive Segmentation) is an efficient and intelligent inter
 
 **Available pretrained models:**
 
-|      Model type      |                       Applicable scene                       | Model structure |                    Model download address                    |
-| :------------------: | :----------------------------------------------------------: | --------------- | :----------------------------------------------------------: |
-| High precision model |           Image annotation for general scenarios.            | HRNet18_OCR64   | [static_hrnet18_ocr64_cocolvis](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18_ocr64_cocolvis.zip) |
-|  Lightweight model   |           Image annotation for general scenarios.            | HRNet18s_OCR48  | [static_hrnet18s_ocr48_cocolvis](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18s_ocr48_cocolvis.zip) |
-| High precision model |      It is suitable for portrait annotation scenarios.       | HRNet18_OCR64   | [static_hrnet18_ocr64_human](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18_ocr64_human.zip) |
-|  Lightweight model   |      It is suitable for portrait annotation scenarios.       | HRNet18s_OCR48  | [static_hrnet18s_ocr48_human](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18s_ocr48_human.zip) |
-| High precision model |       Suitable for general image annotation scenarios.       | EdgeFlow        | [static_edgeflow_cocolvis](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_edgeflow_cocolvis.zip) |
-|  Lightweight model   | It is suitable for remote sensing building labeling scenarios. | HRNet18s_OCR48  | [static_hrnet18_ocr48_rsbuilding_instance](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18_ocr48_rsbuilding_instance.zip) |
-|  Lightweight model   |     It is suitable for medical liver labeling scenarios.     | HRNet18s_OCR48  | [static_hrnet18s_ocr48_lits](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18s_ocr48_lits.zip) |
+| Model Type             | Applicable Scenarios                     | Model Architecture | Download Link                                                |
+| ---------------------- | ---------------------------------------- | ------------------ | ------------------------------------------------------------ |
+| High Performance Model | Image annotation in generic scenarios    | HRNet18_OCR64      | [static_hrnet18_ocr64_cocolvis](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18_ocr64_cocolvis.zip) |
+| Lightweight Model      | Image annotation in generic scenarios    | HRNet18s_OCR48     | [static_hrnet18s_ocr48_cocolvis](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18s_ocr48_cocolvis.zip) |
+| High Performance Model | Annotation in portrait scenarios         | HRNet18_OCR64      | [static_hrnet18_ocr64_human](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18_ocr64_human.zip) |
+| Lightweight Model      | Annotation in portrait scenarios         | HRNet18s_OCR48     | [static_hrnet18s_ocr48_human](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18s_ocr48_human.zip) |
+| High Performance Model | Image annotation in generic scenarios    | EdgeFlow           | [static_edgeflow_cocolvis](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_edgeflow_cocolvis.zip) |
+| Lightweight Model      | Annotation of remote sensing building    | HRNet18s_OCR48     | [static_hrnet18_ocr48_rsbuilding_instance](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18_ocr48_rsbuilding_instance.zip) |
+| Lightweight Model      | Annotation of liver in medical scenarios | HRNet18s_OCR48     | [static_hrnet18s_ocr48_lits](https://paddleseg.bj.bcebos.com/eiseg/0.4/static_hrnet18s_ocr48_lits.zip) |
 
 
 # How to run
@@ -106,43 +106,109 @@ EISeg (Efficient Interactive Segmentation) is an efficient and intelligent inter
 
 # Demo
 
-We have prepared a videos and demonstrated how EISEG works for the different domains:
+**We have prepared a videos and demonstrated how EISEG works for the different domains:**
 
-<table>
-  <tr style="width: 100%">
-    <td>
-       <a data-key="sly-embeded-video-link" href="https://youtu.be/5t8cQOvaknE" data-video-code="5t8cQOvaknE">     <img src="https://i.imgur.com/8b3pU1Y.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-    </td>
-    <td>
-      <a data-key="sly-embeded-video-link" href="https://youtu.be/ImlaIwX9-nE" data-video-code="ImlaIwX9-nE"> <img src="https://i.imgur.com/97iXSJb.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-    </td>
-      </tr>
-    <tr style="width: 100%">
-      <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/hoXB1m8qHJM" data-video-code="hoXB1m8qHJM">     <img src="https://i.imgur.com/biwvd44.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-      </td>
-      <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/cBp6-VPdKQA" data-video-code="cBp6-VPdKQA"> <img src="https://i.imgur.com/pSQWzUV.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-      </td> 
-    </tr>
-    <tr style="width: 100%">  
-      <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/uYhrJz44g0M" data-video-code="uYhrJz44g0M">     <img src="https://i.imgur.com/lapuFFU.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-      </td>
-      <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/VV_akThOIwY" data-video-code="VV_akThOIwY"> <img src="https://i.imgur.com/Uyvh86r.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-      </td>
-    </tr>
-    <tr style="width: 100%">
-      <td>
-      <a data-key="sly-embeded-video-link" href="https://youtu.be/6wiKb-TX934" data-video-code="6wiKb-TX934">     <img src="https://i.imgur.com/OteFM2A.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-      </td>
-      <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/n5qbdvO3fIw" data-video-code="n5qbdvO3fIw">   <img src="https://i.imgur.com/ymFptmd.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
-      </td> 
-    </tr>
-  </table>
+
+<details>
+  <summary><b>Generic</b></summary>
+  <br>
   
+  <table>
+    <tr style="width: 100%">
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/5t8cQOvaknE" data-video-code="5t8cQOvaknE">     <img src="https://i.imgur.com/8b3pU1Y.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/ImlaIwX9-nE" data-video-code="ImlaIwX9-nE"> <img src="https://i.imgur.com/97iXSJb.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      </tr>
+      <tr style="width: 100%">
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/hoXB1m8qHJM" data-video-code="hoXB1m8qHJM">     <img src="https://i.imgur.com/biwvd44.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td>
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/cBp6-VPdKQA" data-video-code="cBp6-VPdKQA"> <img src="https://i.imgur.com/pSQWzUV.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td> 
+      </tr>
+      <tr style="width: 100%">  
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/uYhrJz44g0M" data-video-code="uYhrJz44g0M">     <img src="https://i.imgur.com/lapuFFU.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td>
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/VV_akThOIwY" data-video-code="VV_akThOIwY"> <img src="https://i.imgur.com/Uyvh86r.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td>
+      </tr>
+      <tr style="width: 100%">
+        <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/6wiKb-TX934" data-video-code="6wiKb-TX934">     <img src="https://i.imgur.com/OteFM2A.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td>
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/n5qbdvO3fIw" data-video-code="n5qbdvO3fIw">   <img src="https://i.imgur.com/ymFptmd.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td> 
+      </tr>
+    </table>
+</details>
+
+<details>
+  <summary><b>Portrait</b></summary>
+  <br>
+    <table>
+    <tr style="width: 100%">
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/LQ_oRNiqMzk" data-video-code="LQ_oRNiqMzk">     <img src="https://i.imgur.com/FdXhZpS.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/IwNqvCaf3yM" data-video-code="IwNqvCaf3yM"> <img src="https://i.imgur.com/8qkVtcL.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      </tr>
+      <tr style="width: 100%">
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/2VNNg3RcPT4" data-video-code="2VNNg3RcPT4">     <img src="https://i.imgur.com/H5vrAsf.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td>
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/er_NBHl8AAU" data-video-code="er_NBHl8AAU"> <img src="https://i.imgur.com/fqEqzCU.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td> 
+      </tr>
+    </table>
+</details>
+
+<details>
+  <summary><b>Remote Sensing Building</b></summary>
+  <br>
+    <table>
+    <tr style="width: 100%">
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/lV0Rglcov_Q" data-video-code="lV0Rglcov_Q">     <img src="https://i.imgur.com/8ZHSci3.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/wwuxlJahPe4" data-video-code="wwuxlJahPe4"> <img src="https://i.imgur.com/IltnQ61.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      </tr>
+    </table>
+</details>
+
+<details>
+  <summary><b>Liver</b></summary>
+  <br>
+    <table>
+    <tr style="width: 100%">
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/UwfvpjUzGCc" data-video-code="UwfvpjUzGCc">     <img src="https://i.imgur.com/wuNZJ7G.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      <td>
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/d5zCWIyYCX0" data-video-code="d5zCWIyYCX0"> <img src="https://i.imgur.com/RP2bQHj.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+      </td>
+      </tr>
+      <tr style="width: 100%">
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/b7O1o4iVvIQ" data-video-code="b7O1o4iVvIQ">     <img src="https://i.imgur.com/af0Izoh.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td>
+        <td>
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/-56XZifWtaw" data-video-code="-56XZifWtaw"> <img src="https://i.imgur.com/hDFEfFy.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        </td> 
+      </tr>
+    </table>
+</details>
 
 # Manual object correction
 
