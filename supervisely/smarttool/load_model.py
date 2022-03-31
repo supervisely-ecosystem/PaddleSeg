@@ -1,5 +1,6 @@
 import os
 import requests
+import paddle
 import download_progress
 import globals as g
 import supervisely_lib as sly
@@ -53,10 +54,12 @@ def deploy(model_name):
     else:
         g.my_app.logger.info(f"{model_name} has been loaded from docker image")
 
+
     if model_name == "static_edgeflow_cocolvis":
         with_mask = False
     else:
         with_mask = True
+
 
     predictor_params = {'brs_mode': 'NoBRS', 'with_flip': False,
                         'zoom_in_params': {'skip_clicks': -1, 'target_size': (400, 400), 'expansion_ratio': 1.4},
@@ -64,4 +67,5 @@ def deploy(model_name):
 
     g.CONTROLLER = InteractiveController(predictor_params, prob_thresh=g.PROB_THRESH)
     g.CONTROLLER.setModel(param_path)
-    sly.logger.info("🟩 Model has been successfully deployed")
+    device = paddle.device.get_device()
+    sly.logger.info(f"🟩 Model has been successfully deployed on device: {device}")
