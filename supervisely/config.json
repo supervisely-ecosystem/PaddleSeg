@@ -12,7 +12,7 @@
   "modal_template": "supervisely/smarttool/modal.html",
   "modal_width": 630,
   "modal_template_state": {
-    "device": "GPU",
+    "device": "gpu",
     "selectedModel": "static_hrnet18_ocr64_cocolvis",
     "thresh": 0.5,
     "models": [
