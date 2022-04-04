@@ -74,9 +74,14 @@ def deploy(model_name):
 
     use_gpu = False
     support_gpu = paddle.device.is_compiled_with_cuda()
+    sly.logger.info(f"🟩 SUPPORT GPU: {support_gpu}")
+
+
     if g.DEVICE == "gpu" and support_gpu:
         paddle.device.set_device(g.DEVICE)
         use_gpu = True
+        sly.logger.info(f"🟩 USE GPU: {use_gpu}")
+
     device = paddle.device.get_device()
 
     g.CONTROLLER = InteractiveController(predictor_params=predictor_params, prob_thresh=g.PROB_THRESH)
