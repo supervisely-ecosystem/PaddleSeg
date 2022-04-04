@@ -1,8 +1,8 @@
 import os
-from diskcache import Cache
-import supervisely_lib as sly
-from supervisely_lib.io.fs import mkdir
 
+import supervisely_lib as sly
+from diskcache import Cache
+from supervisely_lib.io.fs import mkdir
 
 my_app = sly.AppService()
 api: sly.Api = my_app.public_api
@@ -22,5 +22,6 @@ mkdir(cache_dir)
 mkdir(img_dir)
 
 CONTROLLER = None
+DEVICE = os.environ["modal.state.device"]
 MODEL_NAME = os.environ["modal.state.selectedModel"]
 PROB_THRESH = float(os.environ['modal.state.thresh'])

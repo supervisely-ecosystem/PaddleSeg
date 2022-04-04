@@ -31,6 +31,14 @@
         height: auto; line-height: normal; border-radius: 4px; }
     </sly-style>
 
+    <sly-field title="Device"
+               description="Deploy app on selected device">
+        <el-select v-model="state.device">
+            <el-option key="gpu" label="gpu" value="gpu"></el-option>
+            <el-option key="cpu" label="cpu" value="cpu"></el-option>
+        </el-select>
+    </sly-field>
+
     <sly-field title="Model"
                description="Select provided pretrained models with different backbones for interactive segmentation.">
 
