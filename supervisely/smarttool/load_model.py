@@ -72,21 +72,18 @@ def deploy(model_name):
                         'zoom_in_params': {'skip_clicks': -1, 'target_size': (400, 400), 'expansion_ratio': 1.4},
                         'predictor_params': {'net_clicks_limit': None, 'max_size': 800, 'with_mask': with_mask}}
 
-    # use_gpu = False
-    support_gpu = paddle.device.is_compiled_with_cuda()
-    sly.logger.info(f"🟩 SUPPORT GPU: {support_gpu}")
-
-
-    if g.DEVICE == "gpu" and support_gpu:
-        paddle.device.set_device(g.DEVICE)
-        use_gpu = True
-        sly.logger.info(f"🟩 USE GPU: {use_gpu}")
-        device = paddle.device.get_device()
+    device = None
+    use_gpu = None
+    if g.DEVICE == "gpu":
+        support_gpu = paddle.device.is_compiled_with_cuda()
+        if support_gpu:
+            paddle.device.set_device(g.DEVICE)
+            use_gpu = True
+            device = paddle.device.get_device()
     else:
         paddle.device.set_device(g.DEVICE)
         use_gpu = False
         device = paddle.device.get_device()
-
 
     g.CONTROLLER = InteractiveController(predictor_params=predictor_params, prob_thresh=g.PROB_THRESH)
     g.CONTROLLER.setModel(param_path=param_path, use_gpu=use_gpu)
