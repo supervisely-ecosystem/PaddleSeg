@@ -12,6 +12,7 @@
   "modal_template": "supervisely/smarttool/modal.html",
   "modal_width": 630,
   "modal_template_state": {
+    "device": "gpu:0",
     "selectedModel": "static_hrnet18_ocr64_cocolvis",
     "thresh": 0.5,
     "models": [
@@ -80,6 +81,7 @@
   "icon": "https://i.imgur.com/SL7H4GB.png",
   "icon_background": "#FFFFFF",
   "headless": true,
+  "need_gpu": true,
   "session_tags": [
     "sly_smart_annotation"
   ]

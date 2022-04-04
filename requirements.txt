@@ -9,3 +9,4 @@ filelock
 scipy
 prettytable
 sklearn
+paddlepaddle-gpu==2.2.0

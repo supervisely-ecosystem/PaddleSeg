@@ -1,8 +1,9 @@
-import os
 import math
-import numpy as np
-import mask_image
+import os
+
 import globals as g
+import mask_image
+import numpy as np
 import supervisely_lib as sly
 from eiseg.inference.clicker import Click
 from supervisely_lib.io.fs import silent_remove
