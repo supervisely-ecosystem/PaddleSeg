@@ -9,7 +9,7 @@ COPY eiseg_models /eiseg_models
 RUN pip3 install supervisely==6.1.98 pre-commit yapf==0.26.0
 RUN pip3 install flake8 pyyaml>=5.1 visualdl>=2.0.0
 RUN pip3 install opencv-python tqdm scipy filelock
-RUN pip3 install prettytable eiseg paddlepaddle paddlepaddle-gpu
+RUN pip3 install prettytable eiseg paddlepaddle-gpu
 RUN pip3 install pyqt5 qtpy paddleseg albumentations
 RUN pip3 install cython wget diskcache==5.2.1
 

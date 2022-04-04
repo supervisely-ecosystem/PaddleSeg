@@ -9,5 +9,3 @@ filelock
 scipy
 prettytable
 sklearn
-paddlepaddle
-paddlepaddle-gpu
