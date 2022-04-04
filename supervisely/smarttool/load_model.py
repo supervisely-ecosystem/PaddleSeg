@@ -73,11 +73,11 @@ def deploy(model_name):
                         'predictor_params': {'net_clicks_limit': None, 'max_size': 800, 'with_mask': with_mask}}
 
     use_gpu = False
-    support_gpu = paddle.device.is_compiled_with_cuda()
-    sly.logger.info(f"🟩 SUPPORT GPU: {support_gpu}")
+    # support_gpu = paddle.device.is_compiled_with_cuda()
+    # sly.logger.info(f"🟩 SUPPORT GPU: {support_gpu}")
 
 
-    if g.DEVICE == "gpu" and support_gpu:
+    if g.DEVICE == "gpu":
         paddle.device.set_device(g.DEVICE)
         use_gpu = True
         sly.logger.info(f"🟩 USE GPU: {use_gpu}")
