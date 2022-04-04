@@ -7,12 +7,12 @@
     "SmartTool"
   ],
   "description": "SmartTool integration of Efficient Interactive Segmentation (EISeg)",
-  "docker_image": "supervisely/eiseg:1.0.3",
+  "docker_image": "supervisely/eiseg:1.0.4",
   "main_script": "supervisely/smarttool/main.py",
   "modal_template": "supervisely/smarttool/modal.html",
   "modal_width": 630,
   "modal_template_state": {
-    "device": "gpu:0",
+    "device": "GPU",
     "selectedModel": "static_hrnet18_ocr64_cocolvis",
     "thresh": 0.5,
     "models": [

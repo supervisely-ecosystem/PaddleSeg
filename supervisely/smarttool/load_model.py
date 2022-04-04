@@ -79,6 +79,6 @@ def deploy(model_name):
         use_gpu = True
     device = paddle.device.get_device()
 
-    g.CONTROLLER = InteractiveController(predictor_params, prob_thresh=g.PROB_THRESH)
+    g.CONTROLLER = InteractiveController(predictor_params=predictor_params, prob_thresh=g.PROB_THRESH)
     g.CONTROLLER.setModel(param_path=param_path, use_gpu=use_gpu)
     sly.logger.info(f"🟩 Model has been successfully deployed on device: '{device}'")
