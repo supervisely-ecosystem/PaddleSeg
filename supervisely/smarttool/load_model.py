@@ -69,17 +69,15 @@ def deploy(model_name):
         with_mask = False
 
     predictor_params = {'brs_mode': 'NoBRS', 'with_flip': False,
-                        'zoom_in_params': {'skip_clicks': -1, 'target_size': (400, 400), 'expansion_ratio': 1.4},
+                        'zoom_in_params': None,
+                        # 'zoom_in_params': {'skip_clicks': -1, 'target_size': (400, 400), 'expansion_ratio': 1.4},
                         'predictor_params': {'net_clicks_limit': None, 'max_size': 800, 'with_mask': with_mask}}
 
-    device = None
-    use_gpu = None
-    if g.DEVICE == "gpu":
-        support_gpu = paddle.device.is_compiled_with_cuda()
-        if support_gpu:
-            paddle.device.set_device(g.DEVICE)
-            use_gpu = True
-            device = paddle.device.get_device()
+    support_gpu = paddle.device.is_compiled_with_cuda()
+    if g.DEVICE == "gpu" and support_gpu:
+        paddle.device.set_device(g.DEVICE)
+        use_gpu = True
+        device = paddle.device.get_device()
     else:
         paddle.device.set_device(g.DEVICE)
         use_gpu = False
