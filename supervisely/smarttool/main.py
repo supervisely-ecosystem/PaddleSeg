@@ -1,9 +1,9 @@
 import functools
-import supervisely_lib as sly
-
 # Source dirs
 import sys
 from pathlib import Path
+
+import supervisely as sly
 
 repo_root_source_dir = str(Path(sys.argv[0]).parents[2])
 sly.logger.info(f"Repo root source directory: {repo_root_source_dir}")
@@ -17,9 +17,9 @@ sources_dir = str(Path(sys.argv[0]).parents[0])
 sly.logger.info(f"Source directory: {sources_dir}")
 sys.path.append(sources_dir)
 
+import functions as f
 import globals as g
 import load_model
-import functions as f
 
 
 def send_error_data(func):
@@ -50,8 +50,15 @@ def is_online(api: sly.Api, task_id, context, state, app_logger):
 def smart_segmentation(api: sly.Api, task_id, context, state, app_logger):
     bitmap_origin, bitmap_data = f.process_bitmap_from_clicks(context)
     request_id = context["request_id"]
-    g.my_app.send_response(request_id,
-                           data={"origin": bitmap_origin, "bitmap": bitmap_data, "success": True, "error": None})
+    g.my_app.send_response(
+        request_id,
+        data={
+            "origin": bitmap_origin,
+            "bitmap": bitmap_data,
+            "success": True,
+            "error": None,
+        },
+    )
 
 
 @g.my_app.callback("smart_segmentation_batched")
@@ -72,10 +79,10 @@ def smart_segmentation_batched(api: sly.Api, task_id, context, state, app_logger
 
 
 def main():
-    sly.logger.info("Script arguments", extra={
-        "context.teamId": g.TEAM_ID,
-        "model_name": g.MODEL_NAME
-    })
+    sly.logger.info(
+        "Script arguments",
+        extra={"context.teamId": g.TEAM_ID, "model_name": g.MODEL_NAME},
+    )
     load_model.deploy(g.MODEL_NAME)
     g.my_app.run()
 

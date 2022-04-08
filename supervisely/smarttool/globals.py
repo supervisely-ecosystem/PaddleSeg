@@ -1,14 +1,15 @@
 import os
+
+import supervisely as sly
 from diskcache import Cache
-import supervisely_lib as sly
-from supervisely_lib.io.fs import mkdir
+from supervisely.app.v1.app_service import AppService
+from supervisely.io.fs import mkdir
 
-
-my_app = sly.AppService()
+my_app = AppService()
 api: sly.Api = my_app.public_api
 
 TASK_ID = int(os.environ["TASK_ID"])
-TEAM_ID = int(os.environ['context.teamId'])
+TEAM_ID = int(os.environ["context.teamId"])
 
 work_dir = os.path.join(my_app.data_dir, "work_dir")
 mkdir(work_dir, True)
@@ -23,4 +24,4 @@ mkdir(img_dir)
 
 CONTROLLER = None
 MODEL_NAME = os.environ["modal.state.selectedModel"]
-PROB_THRESH = float(os.environ['modal.state.thresh'])
+PROB_THRESH = float(os.environ["modal.state.thresh"])
