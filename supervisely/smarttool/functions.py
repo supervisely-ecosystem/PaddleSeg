@@ -12,12 +12,12 @@ import globals as g
 import mask_image
 
 
-def download_volume_as_np(
-        volume_id: int,
-        slice_index: int,
-        normal: Dict[str, int],
-        window_center: float,
-        window_width: int,
+def download_volume_slice_as_np(
+    volume_id: int,
+    slice_index: int,
+    normal: Dict[str, int],
+    window_center: float,
+    window_width: int,
 ) -> numpy.ndarray:
     data = {
         "volumeId": volume_id,
@@ -46,7 +46,7 @@ def download_image_from_context(context):
         normal = context["volume"]["normal"]
         window_center = context["volume"]["window_center"]
         window_width = context["volume"]["window_width"]
-        return download_volume_as_np(
+        return download_volume_slice_as_np(
             volume_id=volume_id,
             slice_index=slice_index,
             normal=normal,
@@ -66,7 +66,7 @@ def get_smart_bbox(crop):
 
 
 def get_pos_neg_points_list_from_context_bbox_relative(
-        x1, y1, pos_points, neg_points, cropped_shape, resized_shape
+    x1, y1, pos_points, neg_points, cropped_shape, resized_shape
 ):
     width_scale = 1
     height_scale = 1
@@ -180,12 +180,13 @@ def process_bitmap_from_clicks(data):
     bbox = sly.Rectangle(y1, x1, y2, x2)
 
     base_image_np = download_image_from_context(data)
-    crop_np = sly.image.crop(base_image_np, bbox)
 
+    crop_np = sly.image.crop(base_image_np, bbox)
     crop_np, cropped_shape, resized_shape = optimize_crop(crop_np)
     pos_points, neg_points = get_pos_neg_points_list_from_context_bbox_relative(
         x1, y1, pos_points, neg_points, cropped_shape, resized_shape
     )
+
     clicks_list = get_click_list_from_points(pos_points, neg_points)
 
     res_mask = mask_image.get_mask_from_clicks(crop_np, clicks_list)
