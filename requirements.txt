@@ -9,5 +9,5 @@ filelock
 scipy
 prettytable
 sklearn
-supervisely==6.9.2
-supervisely[apps]==6.9.2
+supervisely==6.14.0
+supervisely[apps]==6.14.0
