@@ -2,6 +2,8 @@
 # learn more here: https://github.com/supervisely/supervisely/blob/master/base_images/py/Dockerfile
 FROM supervisely/base-py-sdk:6.14.0
 
+RUN mkdir /eiseg_models
+# download checkpoints
 RUN wget -O /eiseg_models/static_edgeflow_cocolvis.pdiparams https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_edgeflow_cocolvis.pdiparams
 RUN wget -O /eiseg_models/static_edgeflow_cocolvis.pdmodel https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_edgeflow_cocolvis.pdmodel
 
