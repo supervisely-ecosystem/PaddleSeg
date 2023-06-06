@@ -88,5 +88,8 @@
     "sly_smart_annotation"
   ],
   "poster": "https://i.imgur.com/lLTl8to.png",
-  "community_agent": false
+  "community_agent": false,
+  "license": {
+    "type": "Apache-2.0" 
+  }
 }
