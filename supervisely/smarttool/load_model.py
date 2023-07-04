@@ -10,9 +10,7 @@ import download_progress
 import globals as g
 
 
-def download_file_from_link(
-    api, link, model_path, file_name, progress_message, app_logger
-):
+def download_file_from_link(api, link, model_path, file_name, progress_message, app_logger):
     response = requests.head(link, allow_redirects=True)
     sizeb = int(response.headers.get("content-length", 0))
     progress_cb = download_progress.get_progress_cb(
@@ -51,7 +49,7 @@ def deploy(model_name):
         ),
         "static_hrnet18s_ocr48_lits": (
             "https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_hrnet18s_ocr48_lits.pdiparams",
-            "https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_edgeflow_cocolvis.pdmodel",
+            "https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_hrnet18s_ocr48_lits.pdmodel",
         ),
     }
 

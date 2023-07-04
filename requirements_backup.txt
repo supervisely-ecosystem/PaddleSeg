@@ -1,9 +1,9 @@
-supervisely == 6.1.98
+supervisely==6.72.55
 pre-commit
-yapf == 0.26.0
+yapf==0.26.0
 flake8
-pyyaml >= 5.1
-visualdl >= 2.0.0
+pyyaml>=5.1
+visualdl>=2.0.0
 opencv-python
 tqdm
 filelock

@@ -1,9 +1,13 @@
 import os
 
 import supervisely as sly
+from dotenv import load_dotenv
 from diskcache import Cache
 from supervisely.app.v1.app_service import AppService
 from supervisely.io.fs import mkdir
+
+load_dotenv(os.path.expanduser("~/supervisely.env"))
+load_dotenv("supervisely/local.env")
 
 my_app = AppService()
 api: sly.Api = my_app.public_api
