@@ -1,4 +1,4 @@
-name: Dokcer Image Build
+name: Docker Image Build
 
 on:
   workflow_dispatch:
