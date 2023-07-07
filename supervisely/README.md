@@ -1,5 +1,5 @@
 <div align="center" markdown>
-<img src="https://i.imgur.com/lLTl8to.png"/>
+<img src="media/poster.png"/>
 
 # Efficient Interactive Segmentation
 
@@ -68,22 +68,22 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
 
 1. Add [EISeg interactive segmentation SmartTool](https://ecosystem.supervise.ly/apps/PaddleSeg) to your team from Ecosystem.
 
-<img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/PaddleSeg" src="https://i.imgur.com/xp7xFz6.png" width="600px" style='padding-bottom: 20px'/>  
+<img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/PaddleSeg" src="media/htr1.png" width="600px" style='padding-bottom: 20px'/>  
 
 2. Run app from **Plugins & Apps** page:
 
-<img src="https://i.imgur.com/uWMA1x3.png" width="100%"/>
+<img src="media/htr2.png" width="100%"/>
 
 3. Select options in modal window and press the `Run` button.
 
 <div align="center" markdown>
-<img src="https://i.imgur.com/ter5m56.png" width="500"/>
+<img src="media/htr3.png" width="500"/>
 </div>
 
 
 # How to use
 
-<a data-key="sly-embeded-video-link" href="https://youtu.be/atYG2NQ_WCQ" data-video-code="atYG2NQ_WCQ"> <img src="https://i.imgur.com/zDKk6pC.png" alt="SLY_EMBEDED_VIDEO_LINK"  width="70%"> </a>  
+<a data-key="sly-embeded-video-link" href="https://youtu.be/atYG2NQ_WCQ" data-video-code="atYG2NQ_WCQ"> <img src="media/htu1.png" alt="SLY_EMBEDED_VIDEO_LINK"  width="70%"> </a>  
 
 
 ## Controls
@@ -99,12 +99,12 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
 | <kbd>Ctrl + H</kbd>                                           | Hide all labels                           |
 
 
-<p align="left"> <img align="center" src="https://i.imgur.com/jxySekj.png" width="50"> <b>—</b> Auto add positivie point to rectangle button (<b>ON</b> by default for SmartTool apps) </p>
+<p align="left"> <img align="center" src="media/c1.png" width="50"> <b>—</b> Auto add positivie point to rectangle button (<b>ON</b> by default for SmartTool apps) </p>
 
-<p align="left"> <img align="center" src="https://i.imgur.com/kiwbBkj.png" width="200"> <b>—</b> SmartTool selector button, switch between SmartTool apps and models</p>
+<p align="left"> <img align="center" src="media/c2.png" width="200"> <b>—</b> SmartTool selector button, switch between SmartTool apps and models</p>
 
 <div align="center" markdown>
-<img src="https://i.imgur.com/cr2jdW2.png" width="90%"/>
+<img src="media/c3.png" width="90%"/>
 </div>
 
 # Demo
@@ -115,34 +115,34 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
   <table>
     <tr style="width: 100%">
       <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/5t8cQOvaknE" data-video-code="5t8cQOvaknE">     <img src="https://i.imgur.com/8b3pU1Y.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/5t8cQOvaknE" data-video-code="5t8cQOvaknE">     <img src="media/d1.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
       </td>
       <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/ImlaIwX9-nE" data-video-code="ImlaIwX9-nE"> <img src="https://i.imgur.com/97iXSJb.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/ImlaIwX9-nE" data-video-code="ImlaIwX9-nE"> <img src="media/d2.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
       </td>
       </tr>
       <tr style="width: 100%">
         <td>
-          <a data-key="sly-embeded-video-link" href="https://youtu.be/hoXB1m8qHJM" data-video-code="hoXB1m8qHJM">     <img src="https://i.imgur.com/biwvd44.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/hoXB1m8qHJM" data-video-code="hoXB1m8qHJM">     <img src="media/d3.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
         </td>
         <td>
-          <a data-key="sly-embeded-video-link" href="https://youtu.be/cBp6-VPdKQA" data-video-code="cBp6-VPdKQA"> <img src="https://i.imgur.com/pSQWzUV.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/cBp6-VPdKQA" data-video-code="cBp6-VPdKQA"> <img src="media/d4.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
         </td> 
       </tr>
       <tr style="width: 100%">  
         <td>
-          <a data-key="sly-embeded-video-link" href="https://youtu.be/uYhrJz44g0M" data-video-code="uYhrJz44g0M">     <img src="https://i.imgur.com/lapuFFU.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/uYhrJz44g0M" data-video-code="uYhrJz44g0M">     <img src="media/d5.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
         </td>
         <td>
-          <a data-key="sly-embeded-video-link" href="https://youtu.be/VV_akThOIwY" data-video-code="VV_akThOIwY"> <img src="https://i.imgur.com/Uyvh86r.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/VV_akThOIwY" data-video-code="VV_akThOIwY"> <img src="media/d6.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
         </td>
       </tr>
       <tr style="width: 100%">
         <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/6wiKb-TX934" data-video-code="6wiKb-TX934">     <img src="https://i.imgur.com/OteFM2A.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/6wiKb-TX934" data-video-code="6wiKb-TX934">     <img src="media/d7.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
         </td>
         <td>
-          <a data-key="sly-embeded-video-link" href="https://youtu.be/n5qbdvO3fIw" data-video-code="n5qbdvO3fIw">   <img src="https://i.imgur.com/ymFptmd.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/n5qbdvO3fIw" data-video-code="n5qbdvO3fIw">   <img src="media/d8.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
         </td> 
       </tr>
     </table>
@@ -151,18 +151,18 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
   <table>
     <tr style="width: 100%">
       <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/LQ_oRNiqMzk" data-video-code="LQ_oRNiqMzk">     <img src="https://i.imgur.com/FdXhZpS.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/LQ_oRNiqMzk" data-video-code="LQ_oRNiqMzk">     <img src="media/p1.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
       </td>
       <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/IwNqvCaf3yM" data-video-code="IwNqvCaf3yM"> <img src="https://i.imgur.com/8qkVtcL.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/IwNqvCaf3yM" data-video-code="IwNqvCaf3yM"> <img src="media/p2.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
       </td>
       </tr>
       <tr style="width: 100%">
         <td>
-          <a data-key="sly-embeded-video-link" href="https://youtu.be/2VNNg3RcPT4" data-video-code="2VNNg3RcPT4">     <img src="https://i.imgur.com/H5vrAsf.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/2VNNg3RcPT4" data-video-code="2VNNg3RcPT4">     <img src="media/p3.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
         </td>
         <td>
-          <a data-key="sly-embeded-video-link" href="https://youtu.be/er_NBHl8AAU" data-video-code="er_NBHl8AAU"> <img src="https://i.imgur.com/fqEqzCU.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/er_NBHl8AAU" data-video-code="er_NBHl8AAU"> <img src="media/p4.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
         </td> 
       </tr>
     </table>
@@ -171,10 +171,10 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
   <table>
     <tr style="width: 100%">
       <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/lV0Rglcov_Q" data-video-code="lV0Rglcov_Q">     <img src="https://i.imgur.com/8ZHSci3.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/lV0Rglcov_Q" data-video-code="lV0Rglcov_Q">     <img src="media/rs1.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
       </td>
       <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/wwuxlJahPe4" data-video-code="wwuxlJahPe4"> <img src="https://i.imgur.com/IltnQ61.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/wwuxlJahPe4" data-video-code="wwuxlJahPe4"> <img src="media/rs2.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
       </td>
       </tr>
     </table>
@@ -183,18 +183,18 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
   <table>
     <tr style="width: 100%">
       <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/UwfvpjUzGCc" data-video-code="UwfvpjUzGCc">     <img src="https://i.imgur.com/wuNZJ7G.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/UwfvpjUzGCc" data-video-code="UwfvpjUzGCc">     <img src="media/l1.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
       </td>
       <td>
-        <a data-key="sly-embeded-video-link" href="https://youtu.be/d5zCWIyYCX0" data-video-code="d5zCWIyYCX0"> <img src="https://i.imgur.com/RP2bQHj.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+        <a data-key="sly-embeded-video-link" href="https://youtu.be/d5zCWIyYCX0" data-video-code="d5zCWIyYCX0"> <img src="media/l2.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
       </td>
       </tr>
       <tr style="width: 100%">
         <td>
-          <a data-key="sly-embeded-video-link" href="https://youtu.be/b7O1o4iVvIQ" data-video-code="b7O1o4iVvIQ">     <img src="https://i.imgur.com/af0Izoh.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/b7O1o4iVvIQ" data-video-code="b7O1o4iVvIQ">     <img src="media/l3.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
         </td>
         <td>
-          <a data-key="sly-embeded-video-link" href="https://youtu.be/-56XZifWtaw" data-video-code="-56XZifWtaw"> <img src="https://i.imgur.com/hDFEfFy.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
+          <a data-key="sly-embeded-video-link" href="https://youtu.be/-56XZifWtaw" data-video-code="-56XZifWtaw"> <img src="media/l4.png" alt="SLY_EMBEDED_VIDEO_LINK"  style="max-width:100%;"> </a> 
         </td> 
       </tr>
     </table>
@@ -202,7 +202,7 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
 # Manual object correction
 
 <a data-key="sly-embeded-video-link" href="https://youtu.be/6pMUHn0jNGE" data-video-code="6pMUHn0jNGE">
-    <img src="https://i.imgur.com/skXXok8.png" alt="SLY_EMBEDED_VIDEO_LINK"  width="700px">
+    <img src="media/m1.png" alt="SLY_EMBEDED_VIDEO_LINK"  width="700px">
 </a>
 
 # Acknowledgment
