@@ -82,13 +82,13 @@
     ]
   },
   "task_location": "application_sessions",
-  "icon": "https://i.imgur.com/SL7H4GB.png",
+  "icon": "media/icon.png",
   "icon_background": "#FFFFFF",
   "headless": true,
   "session_tags": [
     "sly_smart_annotation"
   ],
-  "poster": "https://i.imgur.com/lLTl8to.png",
+  "poster": "media/poster.png",
   "community_agent": false,
   "license": {
     "type": "Apache-2.0" 
