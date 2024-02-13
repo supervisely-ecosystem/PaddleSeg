@@ -9,4 +9,4 @@ filelock
 scipy
 prettytable
 sklearn
-supervisely==6.72.55
+supervisely==6.73.22
