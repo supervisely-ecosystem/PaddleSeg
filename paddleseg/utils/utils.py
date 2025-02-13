@@ -21,6 +21,7 @@ from urllib.parse import urlparse, unquote
 import yaml
 import numpy as np
 import paddle
+import paddle.nn as nn
 import cv2
 
 from paddleseg.utils import logger, seg_env, get_sys_env
@@ -90,6 +91,18 @@ def convert_sync_batchnorm(model, device):
         model = NaiveSyncBatchNorm.convert_sync_batchnorm(model)
         logger.info("Convert bn to sync_bn in NPU Device")
     return model
+
+
+def convert_bn(model):
+    for n, m in model.named_children():
+        if isinstance(m, nn.SyncBatchNorm):
+            bn = nn.BatchNorm2D(
+                m._num_features, m._momentum, m._epsilon, m._weight_attr, m._bias_attr
+            )
+            bn.set_dict(m.state_dict())
+            setattr(model, n, bn)
+        else:
+            convert_bn(m)
 
 
 def set_cv2_num_threads(num_workers):
