@@ -15,7 +15,7 @@
 </p>
 
 
-[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervisely.com/apps/PaddleSeg/supervisely)
+[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](../../../../supervisely-ecosystem/PaddleSeg/supervisely)
 [![](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://supervisely.com/slack)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/PaddleSeg)
 [![views](https://app.supervisely.com/img/badges/views/supervisely-ecosystem/paddleseg/supervisely.png)](https://supervisely.com)
@@ -66,7 +66,7 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
 
 ---
 
-1. Add [EISeg interactive segmentation SmartTool](https://ecosystem.supervisely.com/apps/PaddleSeg) to your team from Ecosystem.
+1. Add [EISeg interactive segmentation SmartTool](../../../../supervisely-ecosystem/PaddleSeg) to your team from Ecosystem.
 
 <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/PaddleSeg" src="https://i.imgur.com/xp7xFz6.png" width="600px" style='padding-bottom: 20px'/>  
 
