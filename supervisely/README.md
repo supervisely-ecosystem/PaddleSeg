@@ -66,7 +66,7 @@ EISeg (Efficient Interactive Segmentation), built on [RITM](https://github.com/s
 
 ---
 
-1. Add [EISeg interactive segmentation SmartTool](../../../../supervisely-ecosystem/PaddleSeg) to your team from Ecosystem.
+1. Add [EISeg interactive segmentation SmartTool](https://ecosystem.supervisely.com/apps/PaddleSeg) to your team from Ecosystem.
 
 <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/PaddleSeg" src="https://i.imgur.com/xp7xFz6.png" width="600px" style='padding-bottom: 20px'/>  
 
