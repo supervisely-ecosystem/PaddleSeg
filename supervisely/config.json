@@ -1,101 +1,104 @@
 {
-  "name": "EiSeg interactive segmentation SmartTool",
-  "type": "app",
-  "restart_policy": "on_error",
-  "categories": [
-    "neural network",
-    "images",
-    "videos",
-    "dicom",
-    "interactive segmentation",
-    "serve"
-  ],
-  "description": "SmartTool integration of Efficient Interactive Segmentation (EISeg)",
-  "docker_image": "supervisely/eiseg:1.0.7",
-  "need_gpu": false,
-  "gpu": "preferred",
-  "main_script": "supervisely/smarttool/main.py",
-  "modal_template": "supervisely/smarttool/modal.html",
-  "modal_width": 630,
-  "modal_template_state": {
-    "selectedModel": "static_hrnet18_ocr64_cocolvis",
-    "thresh": 0.5,
-    "models": [
-      {
-        "Name": "HRNet18_OCR64 (COCOLVIS)",
-        "Applying": "Generic",
-        "Type": "Accurate",
-        "key": "static_hrnet18_ocr64_cocolvis"
-      },
-      {
-        "Name": "HRNet18s_OCR48 (COCOLVIS)",
-        "Applying": "Generic",
-        "Type": "Fast",
-        "key": "static_hrnet18s_ocr48_cocolvis"
-      },
-      {
-        "Name": "HRNet18_OCR64 (COCOLVIS)",
-        "Applying": "Human portrait",
-        "Type": "Accurate",
-        "key": "static_hrnet18_ocr64_human"
-      },
-      {
-        "Name": "HRNet18s_OCR48 (COCOLVIS)",
-        "Applying": "Human portrait",
-        "Type": "Fast",
-        "key": "static_hrnet18s_ocr48_human"
-      },
-      {
-        "Name": "EdgeFlow (COCOLVIS)",
-        "Applying": "Generic",
-        "Type": "Accurate",
-        "key": "static_edgeflow_cocolvis"
-      },
-      {
-        "Name": "HRNet18s_OCR48 (rsbuilding_instance)",
-        "Applying": "Remote sensing of building",
-        "Type": "Fast",
-        "key": "static_hrnet18_ocr48_rsbuilding_instance"
-      },
-      {
-        "Name": "HRNet18s_OCR48 (LiTS)",
-        "Applying": "Medical scenes of liver",
-        "Type": "Fast",
-        "key": "static_hrnet18s_ocr48_lits"
-      }
+    "name": "EiSeg interactive segmentation SmartTool",
+    "type": "app",
+    "restart_policy": "on_error",
+    "categories": [
+        "neural network",
+        "images",
+        "videos",
+        "dicom",
+        "interactive segmentation",
+        "serve"
     ],
-    "modelColumns": [
-      {
-        "key": "Name",
-        "title": "Name",
-        "subtitle": null
-      },
-      {
-        "key": "Applying",
-        "title": "Applicable Scenarios",
-        "subtitle": null
-      },
-      {
-        "key": "Type",
-        "title": "Model Type",
-        "subtitle": null
-      }
-    ]
-  },
-  "task_location": "application_sessions",
-  "icon": "https://i.imgur.com/SL7H4GB.png",
-  "icon_background": "#FFFFFF",
-  "headless": true,
-  "session_tags": [
-    "sly_smart_annotation"
-  ],
-  "poster": "https://i.imgur.com/lLTl8to.png",
-  "access_restriction": [{
-        "instance": "community_free",
-        "message": "The best interactive models for AI-assisted segmentation are already deployed in the Supervisely Cloud and are available for auto-labeling to all platform users. The number of API calls and the ability to run this app on your own agent (GPU) are limited for Free accounts. To increase usage limits or run the app on your GPU, switch to the <a href=\"/billing\">Pro</a> plan or request the <a href=\"https://supervisely.com/contact-us/\" target=\"_blank\">Enterprise</a> Edition."
-    }],
-  "community_agent": false,
-  "license": {
-    "type": "Apache-2.0" 
-  }
+    "description": "SmartTool integration of Efficient Interactive Segmentation (EISeg)",
+    "docker_image": "supervisely/eiseg:1.0.8",
+    "need_gpu": false,
+    "gpu": "preferred",
+    "main_script": "supervisely/smarttool/main.py",
+    "modal_template": "supervisely/smarttool/modal.html",
+    "modal_width": 630,
+    "modal_template_state": {
+        "selectedModel": "static_hrnet18_ocr64_cocolvis",
+        "thresh": 0.5,
+        "models": [
+            {
+                "Name": "HRNet18_OCR64 (COCOLVIS)",
+                "Applying": "Generic",
+                "Type": "Accurate",
+                "key": "static_hrnet18_ocr64_cocolvis"
+            },
+            {
+                "Name": "HRNet18s_OCR48 (COCOLVIS)",
+                "Applying": "Generic",
+                "Type": "Fast",
+                "key": "static_hrnet18s_ocr48_cocolvis"
+            },
+            {
+                "Name": "HRNet18_OCR64 (COCOLVIS)",
+                "Applying": "Human portrait",
+                "Type": "Accurate",
+                "key": "static_hrnet18_ocr64_human"
+            },
+            {
+                "Name": "HRNet18s_OCR48 (COCOLVIS)",
+                "Applying": "Human portrait",
+                "Type": "Fast",
+                "key": "static_hrnet18s_ocr48_human"
+            },
+            {
+                "Name": "EdgeFlow (COCOLVIS)",
+                "Applying": "Generic",
+                "Type": "Accurate",
+                "key": "static_edgeflow_cocolvis"
+            },
+            {
+                "Name": "HRNet18s_OCR48 (rsbuilding_instance)",
+                "Applying": "Remote sensing of building",
+                "Type": "Fast",
+                "key": "static_hrnet18_ocr48_rsbuilding_instance"
+            },
+            {
+                "Name": "HRNet18s_OCR48 (LiTS)",
+                "Applying": "Medical scenes of liver",
+                "Type": "Fast",
+                "key": "static_hrnet18s_ocr48_lits"
+            }
+        ],
+        "modelColumns": [
+            {
+                "key": "Name",
+                "title": "Name",
+                "subtitle": null
+            },
+            {
+                "key": "Applying",
+                "title": "Applicable Scenarios",
+                "subtitle": null
+            },
+            {
+                "key": "Type",
+                "title": "Model Type",
+                "subtitle": null
+            }
+        ]
+    },
+    "task_location": "application_sessions",
+    "icon": "https://i.imgur.com/SL7H4GB.png",
+    "icon_background": "#FFFFFF",
+    "headless": true,
+    "session_tags": [
+        "sly_smart_annotation"
+    ],
+    "poster": "https://i.imgur.com/lLTl8to.png",
+    "access_restriction": [
+        {
+            "instance": "community_free",
+            "message": "The best interactive models for AI-assisted segmentation are already deployed in the Supervisely Cloud and are available for auto-labeling to all platform users. The number of API calls and the ability to run this app on your own agent (GPU) are limited for Free accounts. To increase usage limits or run the app on your GPU, switch to the <a href=\"/billing\">Pro</a> plan or request the <a href=\"https://supervisely.com/contact-us/\" target=\"_blank\">Enterprise</a> Edition."
+        }
+    ],
+    "community_agent": false,
+    "license": {
+        "type": "Apache-2.0"
+    },
+    "min_instance_version": "6.15.35"
 }

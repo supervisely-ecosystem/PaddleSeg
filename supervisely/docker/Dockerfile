@@ -43,3 +43,5 @@ RUN pip3 install opencv-python tqdm scipy filelock
 RUN pip3 install prettytable eiseg paddlepaddle pyqt5
 RUN pip3 install qtpy paddleseg albumentations
 RUN pip3 install cython wget diskcache==5.2.1
+
+LABEL python_sdk_version="6.73.486"
