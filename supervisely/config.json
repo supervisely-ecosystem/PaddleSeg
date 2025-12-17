@@ -11,7 +11,7 @@
         "serve"
     ],
     "description": "SmartTool integration of Efficient Interactive Segmentation (EISeg)",
-    "docker_image": "supervisely/eiseg:1.0.8",
+    "docker_image": "supervisely/eiseg:1.0.10",
     "need_gpu": false,
     "gpu": "preferred",
     "main_script": "supervisely/smarttool/main.py",
