@@ -37,13 +37,14 @@ RUN wget -O /eiseg_models/static_resnet50_deeplab_chest_xray.pdiparams https://g
 RUN wget -O /eiseg_models/static_resnet50_deeplab_chest_xray.pdmodel https://github.com/supervisely-ecosystem/PaddleSeg/releases/download/v2.3.4/static_resnet50_deeplab_chest_xray.pdmodel
 
 # install pytorch
+RUN pip3 install numpy==1.23.5
 RUN pip3 install pre-commit yapf==0.26.0 flake8 pyyaml>=5.1 visualdl>=2.0.0
 RUN pip3 install opencv-python tqdm scipy filelock
-RUN pip3 install prettytable eiseg pyqt5
+RUN pip3 install paddlepaddle prettytable eiseg pyqt5
 RUN pip3 install qtpy paddleseg albumentations
 RUN pip3 install cython wget diskcache==5.2.1
 
 RUN pip3 install supervisely==6.73.486
-RUN pip3 install paddlepaddle
+
 
 LABEL python_sdk_version="6.73.486"
